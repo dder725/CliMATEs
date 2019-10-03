@@ -1147,7 +1147,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0.16666794, y: 0.17398453, z: 0}
+  m_ChunkCullingBounds: {x: 0.1666705, y: 0.6023636, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -5365,7 +5365,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 4926648996583829748}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1793609435}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f38460940eb0c4fa2a466722906fc555, type: 3}
@@ -6396,6 +6396,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1793609435 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4926648995844204010, guid: c89eb7e6ed121401196d5225c1a5598c,
+    type: 3}
+  m_PrefabInstance: {fileID: 4926648996583829748}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1793609436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793609435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37203999e788d413f86b7a80001f00fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  block: {fileID: 8182224534215556994, guid: cf37b0151a46c4f5789e2513a54f6549, type: 3}
+  numberOfBlocks: 10
+  sprites:
+  - {fileID: -194818066077126744, guid: 54ba67a4d80094073bbcd4383705fbf7, type: 3}
+  - {fileID: -2467277832640511131, guid: 54ba67a4d80094073bbcd4383705fbf7, type: 3}
+  - {fileID: 6405367485782044311, guid: 54ba67a4d80094073bbcd4383705fbf7, type: 3}
+  - {fileID: 3310741456530074652, guid: 54ba67a4d80094073bbcd4383705fbf7, type: 3}
+  - {fileID: 79603516130197206, guid: 54ba67a4d80094073bbcd4383705fbf7, type: 3}
+  - {fileID: 7703376952451735685, guid: 54ba67a4d80094073bbcd4383705fbf7, type: 3}
+  - {fileID: -2514515654098470544, guid: 54ba67a4d80094073bbcd4383705fbf7, type: 3}
+  - {fileID: -9087322176660908062, guid: 54ba67a4d80094073bbcd4383705fbf7, type: 3}
+  - {fileID: 5357673012412135974, guid: 54ba67a4d80094073bbcd4383705fbf7, type: 3}
+  - {fileID: -8987570170506044883, guid: 54ba67a4d80094073bbcd4383705fbf7, type: 3}
+  player: {fileID: 742249760}
 --- !u!1001 &4926648996583829748
 PrefabInstance:
   m_ObjectHideFlags: 0
