@@ -1147,7 +1147,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0.16666794, y: 0.17398453, z: 0}
+  m_ChunkCullingBounds: {x: 0.1666705, y: 0.6023636, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -6595,12 +6595,17 @@ PrefabInstance:
     - target: {fileID: 8905474007106327634, guid: f999dc16ec07c493c9a1eb32b10c2118,
         type: 3}
       propertyPath: m_Offset.y
-      value: -0.57799554
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8905474007106327634, guid: f999dc16ec07c493c9a1eb32b10c2118,
         type: 3}
       propertyPath: m_Size.y
       value: 0.8238778
+      objectReference: {fileID: 0}
+    - target: {fileID: 8905474007106327634, guid: f999dc16ec07c493c9a1eb32b10c2118,
+        type: 3}
+      propertyPath: m_AutoTiling
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6267719159537944919, guid: f999dc16ec07c493c9a1eb32b10c2118,
         type: 3}

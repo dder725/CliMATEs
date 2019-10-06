@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class Entity : MonoBehaviour {
 
     public float speed;
+    public string entityName;
 
     // Start is called before the first frame update
     void Start()
