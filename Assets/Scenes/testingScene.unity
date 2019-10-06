@@ -6627,12 +6627,17 @@ PrefabInstance:
     - target: {fileID: 8905474007106327634, guid: f999dc16ec07c493c9a1eb32b10c2118,
         type: 3}
       propertyPath: m_Offset.y
-      value: -0.57799554
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8905474007106327634, guid: f999dc16ec07c493c9a1eb32b10c2118,
         type: 3}
       propertyPath: m_Size.y
       value: 0.8238778
+      objectReference: {fileID: 0}
+    - target: {fileID: 8905474007106327634, guid: f999dc16ec07c493c9a1eb32b10c2118,
+        type: 3}
+      propertyPath: m_AutoTiling
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6267719159537944919, guid: f999dc16ec07c493c9a1eb32b10c2118,
         type: 3}
