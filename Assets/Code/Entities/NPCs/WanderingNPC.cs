@@ -1,63 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class WanderingNPC : Entity
 {
 
-    [SerializeField]
-    public Canvas dialogueCanvas;
-
-    public Dialogue dialogue;
-
-    public Queue<string> sentences;
-
-    public Text dialogueText;
-
-    private bool canStartConvo = false;
-    private bool convoStarted = false;
-
     private Rigidbody2D myRigidbody2D;
 
     public bool isWalking;
-    private bool stopForConvo = false;
-
     public float walkTime;
     private float walkCounter;
     public float waitTime;
     private float waitCounter;
 
     private int walkDirection;
-
+    // Start is called before the first frame update
     void Start()
     {
-        dialogueCanvas.enabled = false;
-        sentences = new Queue<string>();
-
-        myRigidbody2D = GetComponent<Rigidbody2D>();
-
         waitCounter = waitTime;
         walkCounter = walkTime;
 
         ChooseDirection();
     }
 
+    // Update is called once per frame
     void Update()
     {
-        if(canStartConvo && Input.GetKeyDown(KeyCode.T)){
- 
-            convoStarted = true;
-            stopForConvo = true;
-            StartDialogue(dialogue);
-        }
-
-        if(canStartConvo && convoStarted && Input.GetKeyDown(KeyCode.Return))
-        {
-            DisplayNextSentence();
-        }
-
-        if (isWalking == true && !stopForConvo)
+        if (isWalking == true)
         {
             walkCounter -= Time.deltaTime;
 
@@ -99,85 +68,10 @@ public class WanderingNPC : Entity
         }
     }
 
-
     public void ChooseDirection()
     {
         walkDirection = Random.Range(0, 4);
         isWalking = true;
         walkCounter = walkTime;
     }
-
-
-
-
-    void OnTriggerStay2D(Collider2D other)
-    {
-        EnableDialogue();
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        EndDialogue();
-    }
-
-    private void EnableDialogue()
-    {
-        dialogueCanvas.enabled = true;
-
-        canStartConvo = true;
-    }
-
-    private void DisableDialogue()
-    {
-        dialogueCanvas.enabled = false;
-        stopForConvo = false;
-        canStartConvo = false;
-    }
-
-    public void StartDialogue(Dialogue dialogue)
-    {
-        sentences.Clear();
-
-        foreach (string sentence in dialogue.sentences)
-        {
-            sentences.Enqueue(sentence);
-        }
-
-        DisplayNextSentence();
-    }
-
-
-
-    public void DisplayNextSentence()
-    {
-        if (sentences.Count == 0)
-        {
-            EndDialogue();
-            return;
-        }
-
-        string sentence = sentences.Dequeue();
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
-
-    }
-
-    IEnumerator TypeSentence (string sentence)
-    {
-        dialogueText.text = "";
-        foreach(char letter in sentence.ToCharArray())
-        {
-            dialogueText.text += letter;
-            yield return new WaitForSeconds(0.05f);
-        }
-    }
-
-    public void EndDialogue()
-    {
-        canStartConvo = false;
-        convoStarted = false;
-        DisableDialogue();
-        dialogueText.text = "Press \"t\" to talk";
-    }
-
 }
