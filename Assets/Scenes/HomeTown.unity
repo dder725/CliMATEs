@@ -35739,8 +35739,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 353823320}
-  - component: {fileID: 353823321}
   - component: {fileID: 353823322}
+  - component: {fileID: 353823321}
   - component: {fileID: 353823319}
   m_Layer: 0
   m_Name: ObjectiveManager
@@ -35758,14 +35758,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 353823318}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a044cbf38f984db596cea89d58c6f30, type: 3}
+  m_Script: {fileID: 11500000, guid: 772f8f2b404ea46d9a61e8b6d91e8df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveName: 
-  objectiveDescription: 
-  objectiveID: 0
-  levelID: 0
-  player: {fileID: 0}
+  objectiveName: fsdfsd
+  objectiveDescription: fsdfs
+  objectiveID: 2
+  levelID: 1
+  isActiveObjective: 0
+  enteredZone: 0
 --- !u!4 &353823320
 Transform:
   m_ObjectHideFlags: 0
@@ -35789,13 +35790,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 353823318}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 772f8f2b404ea46d9a61e8b6d91e8df0, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a044cbf38f984db596cea89d58c6f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveName: lol
-  objectiveDescription: mere lol
-  objectiveID: 2
+  objectiveName: fggse
+  objectiveDescription: fdsf
+  objectiveID: 1
   levelID: 1
+  isActiveObjective: 0
+  enteredZone: 0
+  player: {fileID: 0}
 --- !u!114 &353823322
 MonoBehaviour:
   m_ObjectHideFlags: 0
