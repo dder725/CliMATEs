@@ -30,6 +30,6 @@ public class ObjectiveOneHT : Objective
 
     public override void RunTearDownLogicForObjective()
     {
-
+        GameObject.Find("HUD").SetActive(false);
     }
 }

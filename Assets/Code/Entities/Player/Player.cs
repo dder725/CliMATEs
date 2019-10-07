@@ -4,18 +4,27 @@ using UnityEngine;
 
 public class Player : Entity
 {
-
+    public bool froze;
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
 
     Vector2 movement; //stores horizontal and vertical movement
     public Animator animator;
 
+   // Start is called before the first frame update
+    void Start()
+    {
+        froze = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
         //Input
-
+     if (froze)
+        {                    
+            moveSpeed = 0;
+        } else {
   
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
@@ -23,7 +32,7 @@ public class Player : Entity
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
-
+}
 
 
 
