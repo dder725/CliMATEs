@@ -187,7 +187,7 @@ public class WanderingTalkingNPC : Entity
         canStartConvo = false;
         convoStarted = false;
         DisableDialogue();
-        dialogueText.text = "Press \"t\" to talk";
+        //dialogueText.text = "Press \"t\" to talk";
     }
 
 }

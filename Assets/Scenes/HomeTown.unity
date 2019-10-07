@@ -1082,6 +1082,8 @@ GameObject:
   - component: {fileID: 1486891397}
   - component: {fileID: 1486891396}
   - component: {fileID: 1486891400}
+  - component: {fileID: 1486891401}
+  - component: {fileID: 1486891402}
   m_Layer: 0
   m_Name: ObjectiveManager
   m_TagString: Untagged
