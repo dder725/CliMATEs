@@ -4,36 +4,34 @@ using UnityEngine;
 
 public class WalkingNPC : Entity
 {
-
-    private Rigidbody2D myRigidbody2D;
-    public bool isWalking;
+    public bool isWalking = true;
     public float walkTime;
-    //0 = up, 1 = right, 2 = down, 3 = left
-    public int direction;
+
+    public int walkDirection;
+ 
 
     // Update is called once per frame
     void Update()
     {
-
-        if (isWalking)
+        if (isWalking == true)
         {
+
             walkTime -= Time.deltaTime;
-            switch (direction)
+
+            switch (walkDirection)
             {
                 case 0:
-                    myRigidbody2D.velocity = new Vector2(0, speed);
+                    transform.Translate(Vector2.up * speed * Time.deltaTime);
                     break;
 
                 case 1:
-                    myRigidbody2D.velocity = new Vector2(0, speed);
+                    transform.Translate(Vector2.right * speed * Time.deltaTime);
                     break;
-
                 case 2:
-                    myRigidbody2D.velocity = new Vector2(0, speed);
+                    transform.Translate(Vector2.down * speed * Time.deltaTime);
                     break;
-
                 case 3:
-                    myRigidbody2D.velocity = new Vector2(0, speed);
+                    transform.Translate(Vector2.left * speed * Time.deltaTime);
                     break;
             }
 
@@ -42,6 +40,6 @@ public class WalkingNPC : Entity
                 isWalking = false;
             }
         }
-
+        
     }
 }
