@@ -15,6 +15,7 @@ public class CombatSelection : MonoBehaviour
 	public Text introductoryMessage;
 
 	private bool inCombat = false;
+	private bool combatActive = false;
 	private string monsterName;
 	public Text action1;
 	public Text action2;
@@ -38,49 +39,53 @@ public class CombatSelection : MonoBehaviour
 
     void Update()
     {
-        if (inCombat) {
-			if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return)) {
-				// Switch from introductory panel to combat panel
-				if (currentPanel == Panel.IntroductoryPanel){
-					changePanel(Panel.ActionsPanel);
-				}
-				else {
-					// Perform the selected action
-					switch (actionSelection) {
-						case 0:
-							CombatManager.nextMove = CombatManager.Move.Attack;
-							break;
-						case 1:
-							CombatManager.nextMove = CombatManager.Move.Heal;
-							break;
-						case 2:
-							CombatManager.nextMove = CombatManager.Move.Flee;
-							break;
-						case 3:
-							// Show animal moves
-							break;
+		if (inCombat) {
+			if (combatActive) {
+				if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return)) {
+					// Switch from introductory panel to combat panel
+					if (currentPanel == Panel.IntroductoryPanel){
+						changePanel(Panel.ActionsPanel);
 					}
+					else {
+						// Perform the selected action
+						switch (actionSelection) {
+							case 0:
+								CombatManager.nextMove = CombatManager.Move.Attack;
+								break;
+							case 1:
+								CombatManager.nextMove = CombatManager.Move.Heal;
+								break;
+							case 2:
+								CombatManager.nextMove = CombatManager.Move.Flee;
+								break;
+							case 3:
+								// Show animal moves
+								break;
+						}
 
-					// Trigger the turn logic
-					EventManager.TriggerEvent("combatNextTurn");
+						// Trigger the turn logic
+						EventManager.TriggerEvent("combatNextTurn");
+					}
+				}
+				else if (Input.GetKeyDown("right")) {
+					actionSelection = (actionSelection + 1) % numSelections;
+					changeSelection();
+				}
+				else if (Input.GetKeyDown("left")) {
+					actionSelection = Math.Max(0, (actionSelection - 1) % numSelections);
+					changeSelection();
 				}
 			}
-			else if (Input.GetKeyDown("right")) {
-				actionSelection = (actionSelection + 1) % numSelections;
-				changeSelection();
-			}
-			else if (Input.GetKeyDown("left")) {
-				actionSelection = Math.Max(0, (actionSelection - 1) % numSelections);
-				changeSelection();
-			}
-		}
-		else {
-			if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
-			{
-				Debug.Log("Exiting combat view");
-				ExitPanel.gameObject.SetActive(false);
-				ExitStatus.gameObject.SetActive(false);
-				EventManager.TriggerEvent("combatExit");
+			else {
+				if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+				{
+					Debug.Log("Exiting combat view");
+					ExitPanel.gameObject.SetActive(false);
+					ExitStatus.gameObject.SetActive(false);
+					changePanel(Panel.IntroductoryPanel);
+					inCombat = false;
+					EventManager.TriggerEvent("combatExit");
+				}
 			}
 		}
     }
@@ -89,6 +94,7 @@ public class CombatSelection : MonoBehaviour
 		monsterName = CombatManager.mob.GetComponent<CombatStats>().combatName;
 		changePanel(Panel.IntroductoryPanel);
 		changeSelection();
+		combatActive = true;
 		inCombat = true;
 	}
 	
@@ -145,6 +151,6 @@ public class CombatSelection : MonoBehaviour
 		ExitPanel.gameObject.SetActive(true);
 		ExitStatus.gameObject.SetActive(true);
 
-		inCombat = false;
+		combatActive = false;
 	}
 }
