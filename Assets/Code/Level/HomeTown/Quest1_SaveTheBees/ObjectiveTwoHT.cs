@@ -13,7 +13,6 @@ public class ObjectiveTwoHT : Objective
     public BlockPlacing blockPlacing;
 
     private bool mumNPCInitialized = false;
-
     private bool talkedToShopKeeper = false;
     private bool talkedToMum = false;
 

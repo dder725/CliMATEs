@@ -21,20 +21,24 @@ public class ObjectiveFourHT : Objective
     public override void RunStartUpLogicForObjective()
     {
         SetupSurfer();
-
-
     }
 
     public override void RunTearDownLogicForObjective()
     {
-        Destroy(GameObject.Find("SurderDudeNPC(Clone)"));
+        DestroySurfer();
     }
 
     private void SetupSurfer()
     {
         Instantiate(surferDudeNPC, new Vector3(20, -22, 0), Quaternion.identity);
-        GameObject NPCInstance = GameObject.Find("SurderDudeNPC(Clone)");
+        GameObject NPCInstance = GameObject.Find("SurferDudeNPC(Clone)");
         surferNPCScript = NPCInstance.GetComponent<WanderingTalkingNPC>();
+    }
+
+    private void DestroySurfer()
+    {
+
+        Destroy(GameObject.Find("SurferDudeNPC(Clone)"));
     }
 
 

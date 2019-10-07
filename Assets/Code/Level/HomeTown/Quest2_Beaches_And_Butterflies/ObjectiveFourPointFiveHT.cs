@@ -8,6 +8,7 @@ public class ObjectiveFourPointFiveHT : Objective
 
     public Transform surferDudeNPC;
     private WanderingTalkingNPC surferNPCScript;
+
     public override void GiveObjectiveRewards()
     {
         //TODO - give turtle token
@@ -25,12 +26,13 @@ public class ObjectiveFourPointFiveHT : Objective
 
     public override void RunTearDownLogicForObjective()
     {
+
     }
 
     private void SetupSurfer()
     {
         Instantiate(surferDudeNPC, new Vector3(20, -22, 0), Quaternion.identity);
-        GameObject NPCInstance = GameObject.Find("SurderDudeNPC(Clone)");
+        GameObject NPCInstance = GameObject.Find("SurferDude2NPC(Clone)");
         surferNPCScript = NPCInstance.GetComponent<WanderingTalkingNPC>();
     }
 }
