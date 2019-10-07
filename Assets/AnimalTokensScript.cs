@@ -33,21 +33,25 @@ public class AnimalTokensScript : MonoBehaviour
     {
         //Disable the 'no animals' text
         noAnimalsText.gameObject.SetActive(false);
+        beeButton.gameObject.SetActive(true);
         beeButton.enabled = true;
     }
 
     public void ShowButterflyToken()
     {
+        butterflyButton.gameObject.SetActive(true);
         butterflyButton.enabled = true;
     }
 
     public void ShowTurtleToken()
     {
+        turtleButton.gameObject.SetActive(true);
         turtleButton.enabled = true;
     }
 
     public void ShowPolarBearToken()
     {
+        polarBearButton.gameObject.SetActive(true);
         polarBearButton.enabled = true;
     }
 

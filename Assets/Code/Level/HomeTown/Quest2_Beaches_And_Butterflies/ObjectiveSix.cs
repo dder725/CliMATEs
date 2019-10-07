@@ -12,6 +12,8 @@ public class ObjectiveSix : Objective
     private WanderingTalkingNPC butterflyGirlNPCScript;
     private bool notCreated = true;
 
+    private AnimalTokensScript animalTokensScript;
+
     private void Update()
     {
         if(blockPlacingScript.numberOfBlocks <= 0 && notCreated)
@@ -24,6 +26,8 @@ public class ObjectiveSix : Objective
     public override void GiveObjectiveRewards()
     {
         //TODO - give butterfly token
+        animalTokensScript = FindObjectOfType<AnimalTokensScript>();
+        animalTokensScript.ShowButterflyToken();
     }
 
     public override bool ObjectiveGoalIsAchieved()

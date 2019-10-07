@@ -12,15 +12,26 @@ public class ObjectiveThreeHT : Objective
     public Transform butterflyGirl;
     private WanderingTalkingNPC talkingNPCScript;
 
+    private AnimalTokensScript animalTokensScript;
+
     private bool completed = false;
+    private bool isCreated = false;
 
     public override void GiveObjectiveRewards()
     {
-        
+        Debug.Log("Bee token gained");
+        animalTokensScript = FindObjectOfType<AnimalTokensScript>();
+        animalTokensScript.ShowBeeToken();
     }
 
     public override bool ObjectiveGoalIsAchieved()
     {
+        if (blockPlacingScript.numberOfBlocks <= 0 && !isCreated)
+        {
+            SetupButterflyGirl();
+            completed = true;
+            isCreated = true;
+        }
         return completed;
         //return blockPlacingScript.numberOfBlocks <= 0;
     }
@@ -35,15 +46,6 @@ public class ObjectiveThreeHT : Objective
     public override void RunTearDownLogicForObjective()
     {
         blockPlacingScript.CanNotPlaceBlocksNow();
-    }
-
-    private void Update()
-    {
-        if(blockPlacingScript.numberOfBlocks <= 0)
-        {
-            SetupButterflyGirl();
-            completed = true;
-        }
     }
 
     private void SetupButterflyGirl()

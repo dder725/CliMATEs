@@ -9,9 +9,13 @@ public class ObjectiveFourPointFiveHT : Objective
     public Transform surferDudeNPC;
     private WanderingTalkingNPC surferNPCScript;
 
+    private AnimalTokensScript animalTokensScript;
+
     public override void GiveObjectiveRewards()
     {
         //TODO - give turtle token
+        animalTokensScript = FindObjectOfType<AnimalTokensScript>();
+        animalTokensScript.ShowTurtleToken();
     }
 
     public override bool ObjectiveGoalIsAchieved()
