@@ -8,6 +8,12 @@ public class ObjectiveThreeHT : Objective
     private GameObject player;
     private BlockPlacing blockPlacingScript;
 
+
+    public Transform butterflyGirl;
+    private WanderingTalkingNPC talkingNPCScript;
+
+    private bool completed = false;
+
     public override void GiveObjectiveRewards()
     {
         
@@ -15,7 +21,8 @@ public class ObjectiveThreeHT : Objective
 
     public override bool ObjectiveGoalIsAchieved()
     {
-        return blockPlacingScript.numberOfBlocks <= 0;
+        return completed;
+        //return blockPlacingScript.numberOfBlocks <= 0;
     }
 
     public override void RunStartUpLogicForObjective()
@@ -29,4 +36,23 @@ public class ObjectiveThreeHT : Objective
     {
         blockPlacingScript.CanNotPlaceBlocksNow();
     }
+
+    private void Update()
+    {
+        if(blockPlacingScript.numberOfBlocks <= 0)
+        {
+            SetupButterflyGirl();
+            completed = true;
+        }
+    }
+
+    private void SetupButterflyGirl()
+    {
+        Instantiate(butterflyGirl, new Vector3(34, -6, 0), Quaternion.identity);
+        GameObject NPCInstance = GameObject.Find("ButterflyGirlNPC(Clone)");
+        talkingNPCScript = NPCInstance.GetComponent<WanderingTalkingNPC>();
+    }
+
+
+
 }
