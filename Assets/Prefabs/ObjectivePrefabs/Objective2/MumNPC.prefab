@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 6257138246062593360, guid: d6a4f8fd7fbda4dfd96a0fcc4edaee92,
         type: 3}
       propertyPath: dialogue.sentences.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6257138246062593360, guid: d6a4f8fd7fbda4dfd96a0fcc4edaee92,
         type: 3}
@@ -80,7 +80,22 @@ PrefabInstance:
     - target: {fileID: 6257138246062593360, guid: d6a4f8fd7fbda4dfd96a0fcc4edaee92,
         type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
-      value: A bunch of mixed flower seeds! Perfect! Follow me.
+      value: A bunch of mixed flower seeds! Perfect!
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257138246062593360, guid: d6a4f8fd7fbda4dfd96a0fcc4edaee92,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: Now, go plant the seeds near the beehives. They're east, by the forest.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257138246062593360, guid: d6a4f8fd7fbda4dfd96a0fcc4edaee92,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[2]
+      value: I would come with you but I need to go hang the washing out.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257138246062593360, guid: d6a4f8fd7fbda4dfd96a0fcc4edaee92,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[3]
+      value: No sense wasting electricty on such a lovely day. Good luck!
       objectReference: {fileID: 0}
     - target: {fileID: 6767056184113855328, guid: d6a4f8fd7fbda4dfd96a0fcc4edaee92,
         type: 3}
