@@ -9,7 +9,9 @@ public class CombatSelection : MonoBehaviour
 {
 	private Panel currentPanel;
 	public GameObject ActionMenu;
-	public GameObject IntroductoryMenu; 
+	public GameObject IntroductoryMenu;
+	public GameObject ExitPanel;
+	public GameObject ExitStatus;
 	public Text introductoryMessage;
 
 	private bool inCombat = false;
@@ -25,7 +27,12 @@ public class CombatSelection : MonoBehaviour
     void Start()
     {
 		actions = new Text[] {action1, action2, action3, action4};
+
+		ExitPanel.gameObject.SetActive(false);
+		ExitStatus.gameObject.SetActive(false);
+
 		EventManager.StartListening("combatStart", new UnityAction(startCombat)); 
+		EventManager.StartListening("combatConclusion", new UnityAction(concludeCombat));
     }
 
 
@@ -65,6 +72,15 @@ public class CombatSelection : MonoBehaviour
 			else if (Input.GetKeyDown("left")) {
 				actionSelection = Math.Max(0, (actionSelection - 1) % numSelections);
 				changeSelection();
+			}
+		}
+		else {
+			if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+			{
+				Debug.Log("Exiting combat view");
+				ExitPanel.gameObject.SetActive(false);
+				ExitStatus.gameObject.SetActive(false);
+				EventManager.TriggerEvent("combatExit");
 			}
 		}
     }
@@ -110,5 +126,25 @@ public class CombatSelection : MonoBehaviour
 	private enum Panel {
 		IntroductoryPanel,
 		ActionsPanel
+	}
+
+	private void concludeCombat() {
+		Text exitStatus = ExitStatus.GetComponent<Text>();
+		Text exitPanelText = ExitPanel.GetComponentInChildren<Text>();
+
+		// Set exit messages
+		if (CombatManager.combatStatus == CombatManager.CombatStatus.Win) {
+			exitStatus.text = "VICTORY!";
+			exitPanelText.text = "THE WILD " + monsterName.ToUpper() +" HAS VANISHED!";
+		}
+		else {
+			exitStatus.text = "YOU LOSE!";
+			exitPanelText.text = "THE WILD " + monsterName.ToUpper() +" KNOCKED YOU OUT!";
+		}
+
+		ExitPanel.gameObject.SetActive(true);
+		ExitStatus.gameObject.SetActive(true);
+
+		inCombat = false;
 	}
 }

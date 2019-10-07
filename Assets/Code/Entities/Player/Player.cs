@@ -25,6 +25,7 @@ public class Player : Entity
         {                    
             moveSpeed = 0;
         } else {
+        moveSpeed = 5f;
   
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
@@ -63,4 +64,12 @@ public class Player : Entity
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
         
     }
+
+    public static void freezePlayer() {
+        GameObject.Find("Player").GetComponent<Player>().froze = true;
+    }   
+
+    public static void unfreezePlayer() {
+        GameObject.Find("Player").GetComponent<Player>().froze = false;
+    }   
 }
