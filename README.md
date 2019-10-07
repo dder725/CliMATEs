@@ -4,10 +4,10 @@
 |---|---|
 | dder725 | Daria Derecha (dder725) | 
 | jason-mak | Jason Mak (UPI) |
-| lolagarden | Lola Garden (UPI) |
+| lolagarden | Lola Garden (lgar863) |
 | magnusrand | Magnus Rand (cran263) |
 | rmoradc | Rupert Moran-Adcokck (rmor188) |
-| tia365 | Tia Saunders (UPI) |
+| tia365 | Tia Saunders (tsau354) |
 | willHol | Will Holmes (UPI) |
 
 ## Screenshots
