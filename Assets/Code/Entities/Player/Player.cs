@@ -4,18 +4,28 @@ using UnityEngine;
 
 public class Player : Entity
 {
-
+    public bool froze;
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
 
     Vector2 movement; //stores horizontal and vertical movement
     public Animator animator;
 
+    void Start()
+    {
+        froze = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
         //Input
-
+	if (froze)
+        {                    
+            moveSpeed = 0;
+        } else {
+        moveSpeed = 5f;
+  
   
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
@@ -23,6 +33,7 @@ public class Player : Entity
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
+}
 
 
 
@@ -45,7 +56,13 @@ public class Player : Entity
         //}
 
     }
+public static void freezePlayer() {
+        GameObject.Find("Player").GetComponent<Player>().froze = true;
+    }   
 
+    public static void unfreezePlayer() {
+        GameObject.Find("Player").GetComponent<Player>().froze = false;
+    }
     //Called 50 times a second 
     private void FixedUpdate()
     {
