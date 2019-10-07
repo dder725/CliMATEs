@@ -5,8 +5,22 @@ using UnityEngine;
 public class ObjectiveSix : Objective
 {
 
+    private GameObject player;
+    public MilkBlockPlacing blockPlacingScript;
+
     public Transform butterflyGirlNPC;
     private WanderingTalkingNPC butterflyGirlNPCScript;
+    private bool notCreated = true;
+
+    private void Update()
+    {
+        if(blockPlacingScript.numberOfBlocks <= 0 && notCreated)
+        {
+            Destroy(GameObject.Find("ButterflyGirlNPC(Clone)"));
+            SetupButterflyGirlNPC();
+            notCreated = false;
+        }
+    }
     public override void GiveObjectiveRewards()
     {
         //TODO - give butterfly token
@@ -14,13 +28,15 @@ public class ObjectiveSix : Objective
 
     public override bool ObjectiveGoalIsAchieved()
     {
-        return butterflyGirlNPCScript.ConversationFinished();
+        return blockPlacingScript.numberOfBlocks <= 0 && butterflyGirlNPCScript.ConversationFinished();
     }
 
     public override void RunStartUpLogicForObjective()
     {
-        Destroy(GameObject.Find("ButterflyGirlNPC(Clone)"));
-        SetupButterflyGirlNPC();
+        player = GameObject.Find("Player");
+        blockPlacingScript = player.GetComponent<MilkBlockPlacing>();
+        blockPlacingScript.CanPlaceBlocksNow();
+
     }
 
     public override void RunTearDownLogicForObjective()

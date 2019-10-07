@@ -45954,7 +45954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c25923bd05e5406581496568a1baeb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveName: 
+  objectiveName: Get flower seeds.
   objectiveDescription: 
   objectiveID: 2
   levelID: 1
@@ -45974,7 +45974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 587b306af4e5f44948cad10f4ddbfc01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveName: 
+  objectiveName: Talk to your mother.
   objectiveDescription: 
   objectiveID: 1
   levelID: 1
@@ -46018,7 +46018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d71606314337548fc90471a414dfa562, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveName: 
+  objectiveName: Plant flowers.
   objectiveDescription: 
   objectiveID: 3
   levelID: 1
@@ -46036,7 +46036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4aa17c609bdc414db9746282a908856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveName: 
+  objectiveName: Go to the beach.
   objectiveDescription: 
   objectiveID: 4
   levelID: 1
@@ -46054,7 +46054,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 591c01c3f95f41247b4882a8aa3fc465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveName: 
+  objectiveName: Clean up the beach.
   objectiveDescription: 
   objectiveID: 5
   levelID: 1
@@ -46072,12 +46072,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e7fa49957bbb6443823cff20ba96e72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveName: 
+  objectiveName: Trade with the Shopkeeper for milkweed.
   objectiveDescription: 
   objectiveID: 6
   levelID: 1
-  blockPlacingScript: {fileID: 616567357}
-  sprite: {fileID: -6556402119703177869, guid: 54ba67a4d80094073bbcd4383705fbf7, type: 3}
   shopKeeperNPC: {fileID: 2723168499729834143, guid: 6af6631e3896b3e4f8427ab81590b305,
     type: 3}
 --- !u!114 &1486891404
@@ -46092,10 +46090,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89fca88f835eedb4c9049dd40b28766c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveName: 
+  objectiveName: Plant the milkweed by the beehives.
   objectiveDescription: 
   objectiveID: 7
   levelID: 1
+  blockPlacingScript: {fileID: 616567357}
   butterflyGirlNPC: {fileID: 6698218039988221055, guid: 71948e4f4af2f644293d5a9fa2053690,
     type: 3}
 --- !u!1 &1590973201

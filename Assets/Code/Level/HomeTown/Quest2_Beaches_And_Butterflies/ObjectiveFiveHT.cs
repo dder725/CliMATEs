@@ -5,11 +5,6 @@ using UnityEngine;
 public class ObjectiveFiveHT : Objective
 {
 
-    private GameObject player;
-    public MilkBlockPlacing blockPlacingScript;
-
-    public Sprite sprite;
-
     public Transform shopKeeperNPC;
     private WanderingTalkingNPC shopKeeperNPCScript;
     public override void GiveObjectiveRewards()
@@ -29,10 +24,7 @@ public class ObjectiveFiveHT : Objective
 
     public override void RunTearDownLogicForObjective()
     {
-        player = GameObject.Find("Player");
-        blockPlacingScript = player.GetComponent<MilkBlockPlacing>();
-        blockPlacingScript.CanPlaceBlocksNow();
-
+        
     }
 
     private void SetUpShopKeeperNPC()
