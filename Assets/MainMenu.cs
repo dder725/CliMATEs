@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour
 
     public void NewGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("HomeTown");
     }
 
     public void QuitGame() 
