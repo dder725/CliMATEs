@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Talk to shopkeeper for flowers and talk to mum objective
 public class ObjectiveTwoHT : Objective
 {
     public Transform shopKeeperNPC;

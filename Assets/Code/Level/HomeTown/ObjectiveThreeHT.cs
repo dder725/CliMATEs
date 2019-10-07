@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Plant flowers objective
 public class ObjectiveThreeHT : Objective
 {
     private GameObject player;

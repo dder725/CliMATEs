@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Talk to the mum objective
 public class ObjectiveOneHT : Objective
 {
     public Transform mumNPC;
