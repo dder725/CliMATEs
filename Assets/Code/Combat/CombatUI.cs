@@ -29,20 +29,26 @@ public class CombatUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        int mobHealth;
+        if (CombatManager.mob != null)
+            mobHealth = CombatManager.mob.GetComponent<CombatStats>().health;
+        else
+            mobHealth = 0;
+
         //Check if health of either party has changed
         if (playerHealthBar.BarValue != GameObject.Find("Player").GetComponent<CombatStats>().health)
         {
             StartCoroutine("DamagePopUp", "Player");
         }
 
-        if (mobHealthBar.BarValue != GameObject.Find("Monster").GetComponent<CombatStats>().health)
+        if (mobHealthBar.BarValue != mobHealth)
         {
             StartCoroutine("DamagePopUp", "Monster");
         }
 
         // Update healthbars
         playerHealthBar.BarValue = GameObject.Find("Player").GetComponent<CombatStats>().health;
-        mobHealthBar.BarValue = GameObject.Find("Monster").GetComponent<CombatStats>().health;
+        mobHealthBar.BarValue = mobHealth;
 
     }
 

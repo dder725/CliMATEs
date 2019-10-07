@@ -9,6 +9,13 @@ public class CombatManager : MonoBehaviour
 {
     private Camera worldCamera;
     private Camera combatCamera;
+    private bool ready = false;
+
+    public enum CombatStatus {
+        Win,
+        Lose
+    }
+    public static CombatStatus combatStatus;
 
     public static GameObject player;
     public static CombatStats playerStats;
@@ -26,10 +33,7 @@ public class CombatManager : MonoBehaviour
         Heal,
         Flee
     }
-
     public static Move nextMove;
-
-    public bool ready = false;
 	
 
     // Start is called before the first frame update
@@ -39,6 +43,7 @@ public class CombatManager : MonoBehaviour
         worldCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         EventManager.StartListening("combatStart", new UnityAction(startCombat));   
         EventManager.StartListening("combatNextTurn", new UnityAction(nextTurn));
+        EventManager.StartListening("combatExit", new UnityAction(exitCombat));
     }
 
     // Update is called once per frame
@@ -51,11 +56,13 @@ public class CombatManager : MonoBehaviour
     {
         Debug.Log("Starting combat with: " + mob.name);
 
+        GameObject.Find("HUD").SetActive(false);
+        GameObject.Find("Minimap Player Icon").SetActive(false);
+
+
         // Switch cameras
         combatCamera.enabled = true;
         worldCamera.enabled = false;
-        GameObject.Find("HUD").SetActive(false);
-        GameObject.Find("Minimap Player Icon").SetActive(false);
 
         // Translate mob and remember original position
         mobOriginalPosition.position = mob.transform.position;
@@ -63,7 +70,7 @@ public class CombatManager : MonoBehaviour
 
         // Translate/freeze player and remember original position
         player = GameObject.Find("Player");
-        player.GetComponent<Player>().froze = true;
+        Player.freezePlayer();
         playerOriginalPosition.position = player.transform.position;
         player.transform.position = playerSpawn.position;
 
@@ -89,6 +96,12 @@ public class CombatManager : MonoBehaviour
             case Move.Attack:
                 playerAttack();
                 break;
+            case Move.Heal:
+                
+                break;
+            case Move.Flee:
+                
+                break;
             default:
                 break;
         }
@@ -96,7 +109,9 @@ public class CombatManager : MonoBehaviour
         // Check for mob death
         if (mobStats.health <= 0)
         {
-
+            combatStatus = CombatStatus.Win;
+            EventManager.TriggerEvent("combatConclusion");
+            return;
         }
 
         // Allow mob to attack
@@ -105,7 +120,9 @@ public class CombatManager : MonoBehaviour
         // Check for player death
         if (playerStats.health <= 0)
         {
-            
+            combatStatus = CombatStatus.Lose;
+            EventManager.TriggerEvent("combatConclusion");
+            return;
         }
 
         ready = true;
@@ -133,9 +150,31 @@ public class CombatManager : MonoBehaviour
         playerStats.health = Math.Max(0, playerStats.health - damage);
     }
 
-    private void exitCombat(){
-        //Return player to the original location
-        player = GameObject.Find("Player");
-        player.transform.position = playerOriginalPosition.position;
+    private void exitCombat()
+    {
+        // Return mob to original location if player lost
+        if (combatStatus == CombatStatus.Win)
+        {
+            // Return player to the original location
+            player.transform.position = playerOriginalPosition.position;
+
+            // Remove mob
+            Destroy(mob);
+            mob = null;
+        }
+        else {
+            // Return mob to original location
+            mob.transform.position = mobOriginalPosition.position;
+
+            // TODO: Reset player
+            player.transform.position = GameObject.Find("PlayerRespawn").transform.position;
+            playerStats.health = 100;
+        }
+
+        Player.unfreezePlayer();
+
+        // Switch cameras
+        GameObject.Find("Combat Camera").GetComponent<Camera>().enabled = false;
+        GameObject.Find("Main Camera").GetComponent<Camera>().enabled = true;
     }
 }
