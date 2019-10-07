@@ -6,7 +6,7 @@ using UnityEngine;
 public class ObjectiveThreeHT : Objective
 {
     private GameObject player;
-    private BlockPlacing blockPlacingScript;
+    public BlockPlacing blockPlacingScript;
 
 
     public Transform butterflyGirl;
