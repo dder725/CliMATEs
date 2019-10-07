@@ -1,2 +1,11 @@
 # CliMates – A game about climate change 
-This game is under development in the course SE306 and will be made with the Unity Game Engine.
+
+| Github username | University user name |
+|---|---|
+| dder725 | Daria Derecha (UPI) | 
+| jason-mak | Jason Mak (UPI) |
+| lolagarden | Lola Garden (UPI) |
+| magnusrand | Magnus Rand (cran263) |
+| rmoradc | Rupert Moran-Adcokck (UPI) |
+| tia365 | Tia Saunders (UPI) |
+| willHol | Will Holmes (UPI) |
