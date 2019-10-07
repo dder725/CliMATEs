@@ -9,6 +9,10 @@ public class CombatManager : MonoBehaviour
 {
     private Camera worldCamera;
     private Camera combatCamera;
+
+    public GameObject hud;
+    public GameObject miniMap;
+    
     private bool ready = false;
 
     public enum CombatStatus {
@@ -41,6 +45,7 @@ public class CombatManager : MonoBehaviour
     {
         combatCamera = GameObject.Find("Combat Camera").GetComponent<Camera>();
         worldCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+        
         EventManager.StartListening("combatStart", new UnityAction(startCombat));   
         EventManager.StartListening("combatNextTurn", new UnityAction(nextTurn));
         EventManager.StartListening("combatExit", new UnityAction(exitCombat));
@@ -56,8 +61,8 @@ public class CombatManager : MonoBehaviour
     {
         Debug.Log("Starting combat with: " + mob.name);
 
-        GameObject.Find("HUD").SetActive(false);
-        GameObject.Find("Minimap Player Icon").SetActive(false);
+        hud.SetActive(false);
+        miniMap.SetActive(false);
 
 
         // Switch cameras
@@ -174,8 +179,8 @@ public class CombatManager : MonoBehaviour
         Player.unfreezePlayer();
 
         // Show HUD
-        GameObject.Find("HUD").SetActive(true);
-        GameObject.Find("Minimap Player Icon").SetActive(true);
+        hud.SetActive(true);
+        miniMap.SetActive(true);
 
         // Switch cameras
         GameObject.Find("Combat Camera").GetComponent<Camera>().enabled = false;
