@@ -173,6 +173,10 @@ public class CombatManager : MonoBehaviour
 
         Player.unfreezePlayer();
 
+        // Show HUD
+        GameObject.Find("HUD").SetActive(true);
+        GameObject.Find("Minimap Player Icon").SetActive(true);
+
         // Switch cameras
         GameObject.Find("Combat Camera").GetComponent<Camera>().enabled = false;
         GameObject.Find("Main Camera").GetComponent<Camera>().enabled = true;
