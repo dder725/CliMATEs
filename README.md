@@ -2,7 +2,7 @@
 
 | Github username | University user name |
 |---|---|
-| dder725 | Daria Derecha (UPI) | 
+| dder725 | Daria Derecha (dder725) | 
 | jason-mak | Jason Mak (UPI) |
 | lolagarden | Lola Garden (UPI) |
 | magnusrand | Magnus Rand (cran263) |
