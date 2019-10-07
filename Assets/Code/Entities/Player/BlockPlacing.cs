@@ -8,7 +8,7 @@ public class BlockPlacing : MonoBehaviour
     public Transform block;
     public int numberOfBlocks;
     public Sprite[] sprites;
-    private bool canPlaceBlocks = false;
+    public bool canPlaceBlocks = false;
 
     public Entity player;
 

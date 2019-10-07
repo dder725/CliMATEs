@@ -9,6 +9,8 @@ public class ObjectiveTwoHT : Objective
     public Transform mumNPC;
     private WanderingTalkingNPC shopKeeperNPCScript;
     private WanderingTalkingNPC mumNPCScript;
+    
+    public BlockPlacing blockPlacing;
 
     private bool mumNPCInitialized = false;
 
@@ -17,15 +19,15 @@ public class ObjectiveTwoHT : Objective
 
     public override void GiveObjectiveRewards()
     {
-  
+
     }
 
     public override bool ObjectiveGoalIsAchieved()
     {
-        talkedToShopKeeper |= shopKeeperNPCScript.InConversation();
+        talkedToShopKeeper |= shopKeeperNPCScript.ConversationFinished();
         if (mumNPCInitialized)
         {
-            talkedToMum |= mumNPCScript.InConversation();
+            talkedToMum |= mumNPCScript.ConversationFinished();
         }
         return talkedToShopKeeper && talkedToMum;
     }

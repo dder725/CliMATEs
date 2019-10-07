@@ -20,7 +20,7 @@ public class ObjectiveOneHT : Objective
 
     public override bool ObjectiveGoalIsAchieved()
     {
-        return mumNPCScript.InConversation();
+        return mumNPCScript.ConversationFinished();
     }
 
     public override void RunStartUpLogicForObjective()

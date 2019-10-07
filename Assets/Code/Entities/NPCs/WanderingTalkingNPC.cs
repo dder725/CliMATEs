@@ -17,6 +17,7 @@ public class WanderingTalkingNPC : Entity
 
     private bool canStartConvo = false;
     private bool convoStarted = false;
+    private bool convoEnded = false;
 
     private Rigidbody2D myRigidbody2D;
 
@@ -99,9 +100,9 @@ public class WanderingTalkingNPC : Entity
         }
     }
 
-    public bool InConversation()
+    public bool ConversationFinished()
     {
-        return convoStarted;
+        return convoEnded;
     }
 
     public void ChooseDirection()
@@ -160,6 +161,7 @@ public class WanderingTalkingNPC : Entity
     {
         if (sentences.Count == 0)
         {
+            convoEnded = true;
             EndDialogue();
             return;
         }
