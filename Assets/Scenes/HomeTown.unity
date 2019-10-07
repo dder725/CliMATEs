@@ -676,6 +676,36 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3201830390714271253, guid: 8462b2f09616e7036b85a77193a694d7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3201830390714271253, guid: 8462b2f09616e7036b85a77193a694d7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -364
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418701486567465703, guid: 8462b2f09616e7036b85a77193a694d7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418701486567465703, guid: 8462b2f09616e7036b85a77193a694d7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3201830390049204484, guid: 8462b2f09616e7036b85a77193a694d7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 3201830391443452549, guid: 8462b2f09616e7036b85a77193a694d7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8462b2f09616e7036b85a77193a694d7, type: 3}
 --- !u!1 &730615287 stripped
@@ -1082,8 +1112,6 @@ GameObject:
   - component: {fileID: 1486891397}
   - component: {fileID: 1486891396}
   - component: {fileID: 1486891400}
-  - component: {fileID: 1486891401}
-  - component: {fileID: 1486891402}
   m_Layer: 0
   m_Name: ObjectiveManager
   m_TagString: Untagged
@@ -1171,6 +1199,7 @@ MonoBehaviour:
   objectiveDescription: 
   objectiveID: 3
   levelID: 1
+  butterflyGirl: {fileID: 0}
 --- !u!1 &1815277840
 GameObject:
   m_ObjectHideFlags: 0
