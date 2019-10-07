@@ -112,7 +112,11 @@ public class WanderingTalkingNPC : Entity
 
     void OnTriggerStay2D(Collider2D other)
     {
-        EnableDialogue();
+        if (other.name.Equals("Player"))
+        {
+            EnableDialogue();
+        }
+       
     }
 
     void OnTriggerExit2D(Collider2D other)
