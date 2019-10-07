@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class ObjectiveOneHT : Objective
 {
-    public Transform player;
+    public Transform mumNPC;
+    private WanderingTalkingNPC mumNPCScript;
+
+    private void Awake()
+    {
+        mumNPCScript = mumNPC.GetComponent<WanderingTalkingNPC>();
+    }
 
     public override void GiveObjectiveRewards()
     {
@@ -13,7 +19,7 @@ public class ObjectiveOneHT : Objective
 
     public override bool ObjectiveGoalIsAchieved()
     {
-        return player.transform.position.x < 10;
+        return mumNPCScript.InConversation();
     }
 
     public override void RunStartUpLogicForObjective()

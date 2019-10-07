@@ -99,6 +99,10 @@ public class WanderingTalkingNPC : Entity
         }
     }
 
+    public bool InConversation()
+    {
+        return convoStarted;
+    }
 
     public void ChooseDirection()
     {
