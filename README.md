@@ -10,6 +10,9 @@
 | tia365 | Tia Saunders (UPI) |
 | willHol | Will Holmes (UPI) |
 
+## Screenshots
+![Game screen](Screenshots/game_screen.png)
+
 ## Set up
 
 ## How to play
