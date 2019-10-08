@@ -8,29 +8,39 @@ public class WalkingNPC : Entity
     public float walkTime;
 
     public int walkDirection;
- 
+
+    private Rigidbody2D rb;
+    public Animator animator;
+
 
     // Update is called once per frame
     void Update()
     {
+
+        animator.SetBool("isWalking", isWalking);
+
         if (isWalking == true)
         {
+   
+
+            //give the speed to the animator....
+            animator.SetFloat("speed", speed);
 
             walkTime -= Time.deltaTime;
 
             switch (walkDirection)
             {
-                case 0:
+                case 0: //up
                     transform.Translate(Vector2.up * speed * Time.deltaTime);
                     break;
 
-                case 1:
+                case 1: //right
                     transform.Translate(Vector2.right * speed * Time.deltaTime);
                     break;
-                case 2:
+                case 2: //down
                     transform.Translate(Vector2.down * speed * Time.deltaTime);
                     break;
-                case 3:
+                case 3: //left
                     transform.Translate(Vector2.left * speed * Time.deltaTime);
                     break;
             }

@@ -17,6 +17,26 @@ MonoBehaviour:
   isWalking: 1
   walkTime: 3
   walkDirection: 0
+  animator: {fileID: 3850431912144729079}
+--- !u!95 &3850431912144729079
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3603488747332640629}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ef8fd1b7c4f911a46ab4460fc26c4b19, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &2303560704695243117
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -174,16 +194,6 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5088371500518613677, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5088371500518613677, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 6.8
-      objectReference: {fileID: 0}
     - target: {fileID: 4206487983363111061, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -224,10 +234,15 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 408
       objectReference: {fileID: 0}
-    - target: {fileID: 2568402319380876158, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
+    - target: {fileID: 5088371500518613677, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
         type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
+      propertyPath: m_AnchoredPosition.x
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088371500518613677, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 6.8
       objectReference: {fileID: 0}
     - target: {fileID: 7149072904177754333, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
         type: 3}
@@ -238,13 +253,29 @@ PrefabInstance:
     - target: {fileID: 7149072904177754333, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568402319380876158, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3311779247689403928, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
+        type: 3}
+      propertyPath: m_Name
+      value: ButterflyGirlSprite
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ffc8e23ca2daea43bebaaeb1f76df36, type: 3}
 --- !u!1 &4272722517767364765 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2647032721850675696, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
+    type: 3}
+  m_PrefabInstance: {fileID: 2303560704695243117}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3603488747332640629 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3311779247689403928, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
     type: 3}
   m_PrefabInstance: {fileID: 2303560704695243117}
   m_PrefabAsset: {fileID: 0}
