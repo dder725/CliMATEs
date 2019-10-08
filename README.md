@@ -3,12 +3,12 @@
 | Github username | University user name |
 |---|---|
 | dder725 | Daria Derecha (dder725) | 
-| jason-mak | Jason Mak (UPI) |
+| jason-mak | Jason Mak (cmak623) |
 | lolagarden | Lola Garden (lgar863) |
 | magnusrand | Magnus Rand (cran263) |
 | rmoradc | Rupert Moran-Adcokck (rmor188) |
 | tia365 | Tia Saunders (tsau354) |
-| willHol | Will Holmes (UPI) |
+| willHol | Will Holmes (whol106) |
 
 ## Screenshots
 ![Game screen](Screenshots/game_screen.png)
