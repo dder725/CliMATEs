@@ -8,33 +8,29 @@ public class CharacterSelectionManager : MonoBehaviour
 
     [SerializeField]
 
-    //private GameObject girlCharacter;
-    //private GameObject boyCharacter;
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-
+    private static int CharID;
 
     public void SelectGirlCharacter()
     {
+        CharID = 1;
 
     }
-
 
     public void SelectBoyCharacter()
     {
+        CharID = 2;
 
     }
-
 
     public void Continue()
     {
         SceneManager.LoadScene("HomeTown");
+    }
+
+
+    //Returns the id of the character the user has chosen
+    public static int GetCharID()
+    {
+        return CharID;
     }
 }
