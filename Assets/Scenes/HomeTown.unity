@@ -7913,6 +7913,22 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5088371500518613677, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3311779247689403928, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
+        type: 3}
+      propertyPath: m_Name
+      value: VillagerSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 7149072904177754333, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5849e862780a6d345a03fab5acf1e0a5,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ffc8e23ca2daea43bebaaeb1f76df36, type: 3}
 --- !u!114 &79524858 stripped
@@ -48383,6 +48399,26 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4926648995844203988, guid: c89eb7e6ed121401196d5225c1a5598c,
+        type: 3}
+      propertyPath: entityName
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926648995844203988, guid: c89eb7e6ed121401196d5225c1a5598c,
+        type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 616567354}
+    - target: {fileID: 4926648995844203988, guid: c89eb7e6ed121401196d5225c1a5598c,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 616567355}
+    - target: {fileID: 4926648995844203988, guid: c89eb7e6ed121401196d5225c1a5598c,
+        type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4926648995844204011, guid: c89eb7e6ed121401196d5225c1a5598c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -48447,26 +48483,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4926648995844203988, guid: c89eb7e6ed121401196d5225c1a5598c,
-        type: 3}
-      propertyPath: entityName
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4926648995844203988, guid: c89eb7e6ed121401196d5225c1a5598c,
-        type: 3}
-      propertyPath: rb
-      value: 
-      objectReference: {fileID: 616567354}
-    - target: {fileID: 4926648995844203988, guid: c89eb7e6ed121401196d5225c1a5598c,
-        type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 616567355}
-    - target: {fileID: 4926648995844203988, guid: c89eb7e6ed121401196d5225c1a5598c,
-        type: 3}
-      propertyPath: speed
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4926648996215770639, guid: c89eb7e6ed121401196d5225c1a5598c,
         type: 3}
@@ -48690,6 +48706,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2200672586601300845, guid: b1ebd5f0effa8d246b17ed8813c4199d,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1ebd5f0effa8d246b17ed8813c4199d, type: 3}
