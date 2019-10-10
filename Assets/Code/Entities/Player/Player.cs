@@ -9,11 +9,14 @@ public class Player : Entity
     public Rigidbody2D rb;
 
     Vector2 movement; //stores horizontal and vertical movement
-    public Animator animator;
+    private Animator animator;
 
     void Start()
     {
         froze = false;
+        animator = (Animator) gameObject.GetComponent<Animator>();
+        //if it's the girl, use one animator else if it's the boy use another animator
+
     }
 
     // Update is called once per frame
@@ -34,10 +37,6 @@ public class Player : Entity
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
 }
-
-
-
-
         //if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         //{
         //    GetComponent<Rigidbody2D>().transform.position += Vector3.up * speed * Time.deltaTime;
