@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ObjectivesManager : MonoBehaviour
 {
@@ -18,7 +17,6 @@ public class ObjectivesManager : MonoBehaviour
         levelIsCompleted = false;
         currentObjectiveIndex = 1;
         StartNewObjective();
-        UpdateQuestLogName();
     }
 
     private void StartNewObjective()
@@ -84,7 +82,6 @@ public class ObjectivesManager : MonoBehaviour
         {
             AdvanceToNextObjective();
         }
-        UpdateQuestLogName();
     }
 
     private bool CurrentObjectiveWasLastObjective()
@@ -103,18 +100,5 @@ public class ObjectivesManager : MonoBehaviour
     {
         currentObjectiveIndex++;
         StartNewObjective();
-    }
-
-    private void UpdateQuestLogName()
-    {
-        Text textBox = GameObject.Find("QuestName").GetComponent<Text>();
-        if (!levelIsCompleted)
-        {
-            textBox.text = currentObjective.GetObjectiveName();
-        }
-        else
-        {
-            textBox.text = "Level complete!";
-        }
     }
 }
