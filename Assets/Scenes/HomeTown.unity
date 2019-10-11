@@ -36733,6 +36733,7 @@ RectTransform:
   - {fileID: 210260503}
   - {fileID: 1127939515}
   - {fileID: 679896672}
+  - {fileID: 1626408136}
   m_Father: {fileID: 460631610}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -37182,6 +37183,8 @@ MonoBehaviour:
   achDescription: {fileID: 1127939514}
   ach01Image: {fileID: 679896671}
   ach01Triggered: 0
+  ach02Image: {fileID: 1626408135}
+  ach02Triggered: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -37770,7 +37773,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &679896672
 RectTransform:
   m_ObjectHideFlags: 0
@@ -47363,6 +47366,76 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1600456352}
   m_CullTransparentMesh: 0
+--- !u!1 &1626408135
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1626408136}
+  - component: {fileID: 1626408138}
+  - component: {fileID: 1626408137}
+  m_Layer: 5
+  m_Name: ach02ForestMan
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1626408136
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626408135}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 371580256}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 41, y: 0}
+  m_SizeDelta: {x: 65, y: 65}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1626408137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626408135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: b25d8c1089f5ea770b115602bd332697, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1626408138
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626408135}
+  m_CullTransparentMesh: 0
 --- !u!1 &1633802204
 GameObject:
   m_ObjectHideFlags: 0
@@ -49413,10 +49486,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ForestMan
       objectReference: {fileID: 0}
+    - target: {fileID: 1866925935851199969, guid: b1ebd5f0effa8d246b17ed8813c4199d,
+        type: 3}
+      propertyPath: entityName
+      value: ForestMan
+      objectReference: {fileID: 0}
     - target: {fileID: 2200672586601300845, guid: b1ebd5f0effa8d246b17ed8813c4199d,
         type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2200672586601300845, guid: b1ebd5f0effa8d246b17ed8813c4199d,
+        type: 3}
+      propertyPath: m_Simulated
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2936302530589394047, guid: b1ebd5f0effa8d246b17ed8813c4199d,
         type: 3}
@@ -49437,6 +49520,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.x
       value: 8.720483
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055016857434576192, guid: b1ebd5f0effa8d246b17ed8813c4199d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055016857434576192, guid: b1ebd5f0effa8d246b17ed8813c4199d,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.11880493
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055016857434576192, guid: b1ebd5f0effa8d246b17ed8813c4199d,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 6.5046544
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055016857434576192, guid: b1ebd5f0effa8d246b17ed8813c4199d,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 36.13435
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055016857434576192, guid: b1ebd5f0effa8d246b17ed8813c4199d,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 38.533714
       objectReference: {fileID: 0}
     - target: {fileID: 5823112827968521938, guid: b1ebd5f0effa8d246b17ed8813c4199d,
         type: 3}

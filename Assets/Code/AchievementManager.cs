@@ -17,12 +17,23 @@ public class AchievementManager : MonoBehaviour
     
     public static bool ach01Trigger;
     public bool ach01Triggered = false;
+
+     //Achievement 02 -- Forest man
+    public GameObject ach02Image;
+    
+    public static bool ach02Trigger;
+    public bool ach02Triggered = false;
     // Update is called once per frame
     void Update()
     {
         if(ach01Trigger & !ach01Triggered){
             Debug.Log("Achievement unlocking!");
             StartCoroutine(Trigger01Ach());
+        }
+
+        if(ach02Trigger & !ach02Triggered){
+            Debug.Log("Achievement unlocking!");
+            StartCoroutine(Trigger02Ach());
         }
     }
 
@@ -44,6 +55,29 @@ public class AchievementManager : MonoBehaviour
         //Resetting
         achNotification.SetActive(false);
         ach01Image.SetActive(false);
+        achTitle.GetComponent<Text>().text = "";
+        achDescription.GetComponent<Text>().text = "";
+        achActive = false;
+    }
+
+     IEnumerator Trigger02Ach(){
+        achActive = true;
+        ach02Triggered = true;
+
+        achTitle.GetComponent<Text>().text = "The Hermitage";
+        achDescription.GetComponent<Text>().text = "You found the forest hermit";
+        achTitle.SetActive(true);
+        achDescription.SetActive(true);
+
+        achSound.Play();
+        ach02Image.SetActive(true);
+      
+        achNotification.SetActive(true);
+        yield return new WaitForSeconds(7);
+
+        //Resetting
+        achNotification.SetActive(false);
+        ach02Image.SetActive(false);
         achTitle.GetComponent<Text>().text = "";
         achDescription.GetComponent<Text>().text = "";
         achActive = false;
