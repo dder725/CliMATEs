@@ -8,6 +8,7 @@ public class WanderingTalkingNPC : Entity
 
     [SerializeField]
     public Canvas dialogueCanvas;
+    public Animator animator;
 
     public Dialogue dialogue;
 
@@ -46,6 +47,9 @@ public class WanderingTalkingNPC : Entity
 
     void Update()
     {
+
+
+
         if(canStartConvo && Input.GetKeyDown(KeyCode.T)){
  
             convoStarted = true;
@@ -90,7 +94,6 @@ public class WanderingTalkingNPC : Entity
         }
         else
         {
-
             waitCounter -= Time.deltaTime;
             myRigidbody2D.velocity = Vector2.zero;
             if (waitCounter < 0)
@@ -98,6 +101,20 @@ public class WanderingTalkingNPC : Entity
                 ChooseDirection();
             }
         }
+
+ 
+        //Updating the animator on the NPCs movements 
+
+        if (animator!=null)
+        {
+            animator.SetFloat("Horizontal", myRigidbody2D.velocity.x); //x movement 
+            animator.SetFloat("Vertical", myRigidbody2D.velocity.y); //y movement
+            animator.SetFloat("Speed", myRigidbody2D.velocity.sqrMagnitude);
+
+        }
+       
+
+
     }
 
     public bool ConversationFinished()
@@ -113,6 +130,17 @@ public class WanderingTalkingNPC : Entity
     }
 
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!collision.name.Equals("Player"))
+        {
+            ChooseDirection();
+
+        }
+        
+    }
+
+
 
 
     void OnTriggerStay2D(Collider2D other)
@@ -121,7 +149,23 @@ public class WanderingTalkingNPC : Entity
         {
             EnableDialogue();
         }
-       
+
+        else
+        {
+            Debug.Log("Collision that wasn't with player");
+
+            //myRigidbody2D.velocity.Set(2, -2);
+
+            //ChooseDirection();
+
+            //Vector2 newVelo = new Vector2(-5, 0);
+            //myRigidbody2D.velocity = newVelo;
+            //walkCounter = 0;
+
+            //why is none of this changing the character's velocity???
+            //myRigidbody2D.velocity = new Vector2(-5, 0);
+        }
+
     }
 
     void OnTriggerExit2D(Collider2D other)

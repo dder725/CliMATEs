@@ -19,11 +19,19 @@ public class MainMenu : MonoBehaviour
 
     public void NewGame()
     {
-        SceneManager.LoadScene("HomeTown");
+        SceneManager.LoadScene("CharacterCustomisation");
     }
 
     public void QuitGame() 
     {
         Application.Quit();
     }
+
+    public void OpenSettings()
+    {
+        SceneManager.LoadScene("Settings");
+    }
+
+
+
 }
