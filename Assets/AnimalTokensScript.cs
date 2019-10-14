@@ -35,6 +35,11 @@ public class AnimalTokensScript : MonoBehaviour
         noAnimalsText.gameObject.SetActive(false);
         beeButton.gameObject.SetActive(true);
         beeButton.enabled = true;
+
+        // Trigger an achievement
+        AchievementManager.ach01Trigger = true;
+        Debug.Log("Ach01 Trigger is" + AchievementManager.ach01Trigger);
+
     }
 
     public void ShowButterflyToken()

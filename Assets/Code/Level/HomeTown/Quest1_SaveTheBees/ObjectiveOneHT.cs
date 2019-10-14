@@ -15,7 +15,7 @@ public class ObjectiveOneHT : Objective
 
     public override void GiveObjectiveRewards()
     {
-  
+     
     }
 
     public override bool ObjectiveGoalIsAchieved()
