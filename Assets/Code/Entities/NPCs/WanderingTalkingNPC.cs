@@ -11,6 +11,9 @@ public class WanderingTalkingNPC : Entity
     public Animator animator;
 
     public Dialogue dialogue;
+   
+    private AudioSource dialogueSound;
+
 
     public Queue<string> sentences;
 
@@ -38,7 +41,7 @@ public class WanderingTalkingNPC : Entity
         sentences = new Queue<string>();
 
         myRigidbody2D = GetComponent<Rigidbody2D>();
-
+        dialogueSound = GetComponent<AudioSource>();
         waitCounter = waitTime;
         walkCounter = walkTime;
 
@@ -194,7 +197,7 @@ public class WanderingTalkingNPC : Entity
     public void StartDialogue(Dialogue dialogue)
     {
         sentences.Clear();
-
+        dialogueSound.Play();
         foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
@@ -215,6 +218,7 @@ public class WanderingTalkingNPC : Entity
         }
 
         string sentence = sentences.Dequeue();
+        dialogueSound.Play();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
 
