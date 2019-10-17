@@ -11,6 +11,9 @@ public class WanderingTalkingNPC : Entity
     public Animator animator;
 
     public Dialogue dialogue;
+   
+    private AudioSource dialogueSound;
+
 
     public Queue<string> sentences;
 
@@ -38,7 +41,7 @@ public class WanderingTalkingNPC : Entity
         sentences = new Queue<string>();
 
         myRigidbody2D = GetComponent<Rigidbody2D>();
-
+        dialogueSound = GetComponent<AudioSource>();
         waitCounter = waitTime;
         walkCounter = walkTime;
 
@@ -50,14 +53,15 @@ public class WanderingTalkingNPC : Entity
 
 
 
-        if(canStartConvo && Input.GetKeyDown(KeyCode.T)){
- 
+        if (canStartConvo && Input.GetKeyDown(KeyCode.T))
+        {
+
             convoStarted = true;
             stopForConvo = true;
             StartDialogue(dialogue);
         }
 
-        if(canStartConvo && convoStarted && Input.GetKeyDown(KeyCode.Return))
+        if (canStartConvo && convoStarted && Input.GetKeyDown(KeyCode.Return))
         {
             DisplayNextSentence();
         }
@@ -102,17 +106,17 @@ public class WanderingTalkingNPC : Entity
             }
         }
 
- 
+
         //Updating the animator on the NPCs movements 
 
-        if (animator!=null)
+        if (animator != null)
         {
             animator.SetFloat("Horizontal", myRigidbody2D.velocity.x); //x movement 
             animator.SetFloat("Vertical", myRigidbody2D.velocity.y); //y movement
             animator.SetFloat("Speed", myRigidbody2D.velocity.sqrMagnitude);
 
         }
-       
+
 
 
     }
@@ -135,9 +139,14 @@ public class WanderingTalkingNPC : Entity
         if (!collision.name.Equals("Player"))
         {
             ChooseDirection();
-
+        } else {
+            if (this.entityName.Equals("ForestMan"))
+            {
+                Debug.LogError("COllided with a forestman");
+                AchievementManager.ach02Trigger = true;
+            }
         }
-        
+
     }
 
 
@@ -152,8 +161,6 @@ public class WanderingTalkingNPC : Entity
 
         else
         {
-            Debug.Log("Collision that wasn't with player");
-
             //myRigidbody2D.velocity.Set(2, -2);
 
             //ChooseDirection();
@@ -190,7 +197,7 @@ public class WanderingTalkingNPC : Entity
     public void StartDialogue(Dialogue dialogue)
     {
         sentences.Clear();
-
+        dialogueSound.Play();
         foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
@@ -211,15 +218,16 @@ public class WanderingTalkingNPC : Entity
         }
 
         string sentence = sentences.Dequeue();
+        dialogueSound.Play();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
 
     }
 
-    IEnumerator TypeSentence (string sentence)
+    IEnumerator TypeSentence(string sentence)
     {
         dialogueText.text = "";
-        foreach(char letter in sentence.ToCharArray())
+        foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
             yield return new WaitForSeconds(0.05f);

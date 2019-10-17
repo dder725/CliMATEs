@@ -19,13 +19,13 @@ public class WanderingNPC : Entity
     {
         waitCounter = waitTime;
         walkCounter = walkTime;
-
         ChooseDirection();
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (isWalking == true)
         {
             walkCounter -= Time.deltaTime;
@@ -73,5 +73,11 @@ public class WanderingNPC : Entity
         walkDirection = Random.Range(0, 4);
         isWalking = true;
         walkCounter = walkTime;
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        Debug.LogError("COllided with a forestman");
+        AchievementManager.ach02Trigger = true;
     }
 }
