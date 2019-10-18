@@ -9,13 +9,17 @@ public class CombatManager : MonoBehaviour
 {
     private Camera worldCamera;
     private Camera combatCamera;
+    private AudioSource combatMusic;
+    private AudioSource hitSound;
+    public AudioSource mainMusic;
 
     public GameObject hud;
     public GameObject miniMap;
-    
+
     private bool ready = false;
 
-    public enum CombatStatus {
+    public enum CombatStatus
+    {
         Win,
         Lose
     }
@@ -32,21 +36,24 @@ public class CombatManager : MonoBehaviour
     public Transform mobOriginalPosition;
 
 
-    public enum Move {
+    public enum Move
+    {
         Attack,
         Heal,
         Flee
     }
     public static Move nextMove;
-	
+
 
     // Start is called before the first frame update
     void Start()
     {
         combatCamera = GameObject.Find("Combat Camera").GetComponent<Camera>();
         worldCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
-        
-        EventManager.StartListening("combatStart", new UnityAction(startCombat));   
+        combatMusic = GameObject.Find("CombatSound").GetComponent<AudioSource>();
+        hitSound = GameObject.Find("HitSound").GetComponent<AudioSource>();
+
+        EventManager.StartListening("combatStart", new UnityAction(startCombat));
         EventManager.StartListening("combatNextTurn", new UnityAction(nextTurn));
         EventManager.StartListening("combatExit", new UnityAction(exitCombat));
     }
@@ -63,7 +70,8 @@ public class CombatManager : MonoBehaviour
 
         hud.SetActive(false);
         miniMap.SetActive(false);
-
+        combatMusic.Play();
+        mainMusic.Stop();
 
         // Switch cameras
         combatCamera.enabled = true;
@@ -87,14 +95,15 @@ public class CombatManager : MonoBehaviour
         ready = true;
     }
 
-    private void nextTurn() {
+    private void nextTurn()
+    {
         Debug.Log("Executing combat turn logic with move: " + nextMove);
 
         // Short-circuit if not ready
         if (!ready)
             return;
         ready = false;
-        
+
         // Execute chosen move
         switch (nextMove)
         {
@@ -102,10 +111,10 @@ public class CombatManager : MonoBehaviour
                 playerAttack();
                 break;
             case Move.Heal:
-                
+
                 break;
             case Move.Flee:
-                
+
                 break;
             default:
                 break;
@@ -133,26 +142,34 @@ public class CombatManager : MonoBehaviour
         ready = true;
     }
 
-    private void playerAttack(){
+    private void playerAttack()
+    {
         double criticalChance = new System.Random().NextDouble();
         int multiplier = 1;
-        if(criticalChance > 0.2){
+        if (criticalChance > 0.2)
+        {
             multiplier = 2;
         }
         int damage = (playerStats.attack / mobStats.defense) * multiplier;
 
         mobStats.health = Math.Max(0, mobStats.health - damage);
+        hitSound.Play();
+
     }
 
-    private void mobAttack(){
+    private void mobAttack()
+    {
         double criticalChance = new System.Random().NextDouble();
         int multiplier = 1;
-        if(criticalChance > 0.2){
+        if (criticalChance > 0.2)
+        {
             multiplier = 2;
         }
         int damage = (mobStats.attack / playerStats.defense) * multiplier;
 
         playerStats.health = Math.Max(0, playerStats.health - damage);
+        hitSound.Play();
+
     }
 
     private void exitCombat()
@@ -167,14 +184,22 @@ public class CombatManager : MonoBehaviour
             Destroy(mob);
             mob = null;
         }
-        else {
+        else
+        {
             // Return mob to original location
             mob.transform.position = mobOriginalPosition.position;
+
 
             // TODO: Reset player
             player.transform.position = GameObject.Find("PlayerRespawn").transform.position;
             playerStats.health = 100;
+
+
         }
+
+        // Reset the music sources
+        combatMusic.Stop();
+        mainMusic.Play();
 
         Player.unfreezePlayer();
 
