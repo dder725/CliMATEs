@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class WanderingTalkingNPC : Entity
 {
+    public enum Gender {Male, Female};
 
     [SerializeField]
     public Canvas dialogueCanvas;
@@ -13,12 +14,13 @@ public class WanderingTalkingNPC : Entity
     public Dialogue dialogue;
    
     private AudioSource dialogueSound;
-
+    private AudioClip dialogueClip;
 
     public Queue<string> sentences;
 
     public Text dialogueText;
 
+    public Gender gender;
     private bool canStartConvo = false;
     private bool convoStarted = false;
     private bool convoEnded = false;
@@ -45,6 +47,11 @@ public class WanderingTalkingNPC : Entity
         waitCounter = waitTime;
         walkCounter = walkTime;
 
+        if(gender.Equals(Gender.Male)){
+            dialogueSound.clip = Resources.Load<AudioClip>("Sounds/maleGibberish");
+        } else{
+            dialogueSound.clip = Resources.Load<AudioClip>("Sounds/femaleGibberish");
+        }
         ChooseDirection();
     }
 

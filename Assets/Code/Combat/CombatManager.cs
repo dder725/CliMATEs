@@ -12,6 +12,7 @@ public class CombatManager : MonoBehaviour
     private AudioSource combatMusic;
     private AudioSource hitSound;
     public AudioSource mainMusic;
+    public AudioSource birdsChirp;
 
     public GameObject hud;
     public GameObject miniMap;
@@ -72,6 +73,7 @@ public class CombatManager : MonoBehaviour
         miniMap.SetActive(false);
         combatMusic.Play();
         mainMusic.Stop();
+        birdsChirp.Stop();
 
         // Switch cameras
         combatCamera.enabled = true;
@@ -200,6 +202,7 @@ public class CombatManager : MonoBehaviour
         // Reset the music sources
         combatMusic.Stop();
         mainMusic.Play();
+        birdsChirp.Play();
 
         Player.unfreezePlayer();
 
