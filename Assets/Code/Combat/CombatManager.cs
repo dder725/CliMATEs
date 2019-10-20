@@ -41,9 +41,22 @@ public class CombatManager : MonoBehaviour
     {
         Attack,
         Heal,
-        Flee
+        Flee,
+        AnimalMove
     }
     public static Move nextMove;
+
+    public enum AnimalMove
+    {
+        BeeMove,
+        ButterflyMove,
+        TurtleMove,
+        PolarBearMove
+    }
+    public static AnimalMove nextAnimalMove;
+    public static List<AnimalMove> availableAnimalMoves = new List<AnimalMove>();
+
+    public AnimalTokensScript animalTokensScript;
 
 
     // Start is called before the first frame update
@@ -92,6 +105,9 @@ public class CombatManager : MonoBehaviour
         // Set stat objects
         playerStats = player.GetComponent<CombatStats>();
         mobStats = mob.GetComponent<CombatStats>();
+
+        // Set the available animal moves
+        setAvailableAnimalMoves();
 
         // Set ready state
         ready = true;
@@ -213,5 +229,11 @@ public class CombatManager : MonoBehaviour
         // Switch cameras
         GameObject.Find("Combat Camera").GetComponent<Camera>().enabled = false;
         GameObject.Find("Main Camera").GetComponent<Camera>().enabled = true;
+    }
+
+    private void setAvailableAnimalMoves()
+    {      
+        // Get the list of available moves
+        availableAnimalMoves = animalTokensScript.GetAnimalMoves();
     }
 }

@@ -14,6 +14,12 @@ public class CombatSelection : MonoBehaviour
 	public GameObject ExitStatus;
 	public Text introductoryMessage;
 
+	public GameObject AnimalMovesPanel;
+
+	public GameObject AnimalMovesPrefabText;
+
+	private bool selectingAnimalMove = false;
+
 	private bool inCombat = false;
 	private bool combatActive = false;
 	private string monsterName;
@@ -21,13 +27,13 @@ public class CombatSelection : MonoBehaviour
 	public Text action2;
 	public Text action3;
 	public Text action4;
-	private Text[] actions;
+	private List<Text> actions = new List<Text>();
 	private int numSelections = 4;
 	private int actionSelection = 0;
 	
     void Start()
     {
-		actions = new Text[] {action1, action2, action3, action4};
+		setDefaultActions();
 
 		ExitPanel.gameObject.SetActive(false);
 		ExitStatus.gameObject.SetActive(false);
@@ -35,6 +41,21 @@ public class CombatSelection : MonoBehaviour
 		EventManager.StartListening("combatStart", new UnityAction(startCombat)); 
 		EventManager.StartListening("combatConclusion", new UnityAction(concludeCombat));
     }
+
+	private void setDefaultActions()
+	{
+		selectingAnimalMove = false;
+		actionSelection = 0;
+		numSelections = 4;
+
+		actions = new List<Text>()
+		{
+			action1,
+			action2,
+			action3,
+			action4
+		};
+	}
 
 
     void Update()
@@ -47,24 +68,93 @@ public class CombatSelection : MonoBehaviour
 						changePanel(Panel.ActionsPanel);
 					}
 					else {
-						// Perform the selected action
-						switch (actionSelection) {
-							case 0:
-								CombatManager.nextMove = CombatManager.Move.Attack;
-								break;
-							case 1:
-								CombatManager.nextMove = CombatManager.Move.Heal;
-								break;
-							case 2:
-								CombatManager.nextMove = CombatManager.Move.Flee;
-								break;
-							case 3:
-								// Show animal moves
-								break;
-						}
+						if (selectingAnimalMove)
+						{
+							CombatManager.nextMove = CombatManager.Move.AnimalMove;
+							switch (actionSelection)
+							{
+								case 0:
+									CombatManager.nextAnimalMove = CombatManager.AnimalMove.BeeMove;
+									break;
+								case 1:
+									CombatManager.nextAnimalMove = CombatManager.AnimalMove.ButterflyMove;
+									break;
+								case 2:
+									CombatManager.nextAnimalMove = CombatManager.AnimalMove.TurtleMove;
+									break;
+								case 3:
+									CombatManager.nextAnimalMove = CombatManager.AnimalMove.PolarBearMove;
+									break;
+								default:
+									break;
+							}
 
-						// Trigger the turn logic
-						EventManager.TriggerEvent("combatNextTurn");
+							// Reset the action menus
+							setDefaultActions();
+							changeSelection();
+
+							// Hide/remove animal moves
+							AnimalMovesPanel.SetActive(false);
+							foreach (Transform child in AnimalMovesPanel.transform)
+							{
+								Destroy(child.gameObject);
+							}
+
+							// Trigger the turn logic
+							EventManager.TriggerEvent("combatNextTurn");
+						}
+						else
+						{
+							// Perform the selected action
+							switch (actionSelection) {
+								case 0:
+									CombatManager.nextMove = CombatManager.Move.Attack;
+									break;
+								case 1:
+									CombatManager.nextMove = CombatManager.Move.Heal;
+									break;
+								case 2:
+									CombatManager.nextMove = CombatManager.Move.Flee;
+									break;
+								case 3:
+									// Show animal moves
+									AnimalMovesPanel.SetActive(true);
+									selectingAnimalMove = true;
+
+									actions.Clear();
+									numSelections = 0;
+									actionSelection = 0;
+
+
+									foreach (var move in CombatManager.availableAnimalMoves)
+									{
+										Debug.Log("Instantiating available move: " + move.ToString());
+										GameObject moveText = Instantiate(AnimalMovesPrefabText, AnimalMovesPanel.transform);
+										Text text = moveText.GetComponent<Text>();
+
+										// Update the actions list
+										actions.Add(text);
+										numSelections++;
+									
+										switch (move)
+										{
+											case CombatManager.AnimalMove.BeeMove:
+												text.text = "Sting";
+												break;
+											case CombatManager.AnimalMove.ButterflyMove:
+												text.text = "Cocoon";
+												break;
+											default:
+												break;
+										}
+									}
+									changeSelection();
+
+									break;
+							}
+							// Trigger the turn logic
+							EventManager.TriggerEvent("combatNextTurn");
+						}
 					}
 				}
 				else if (Input.GetKeyDown("right")) {

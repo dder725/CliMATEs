@@ -21,11 +21,12 @@ public class AnimalTokensScript : MonoBehaviour
         butterflyButton.gameObject.SetActive(false);
         turtleButton.gameObject.SetActive(false);
         polarBearButton.gameObject.SetActive(false);
-
         noAnimalsText.gameObject.SetActive(true);
 
-
-
+        beeButton.enabled = false;
+        butterflyButton.enabled = false;
+        turtleButton.enabled = false;
+        polarBearButton.enabled = false;
     }
 
 
@@ -60,8 +61,22 @@ public class AnimalTokensScript : MonoBehaviour
         polarBearButton.enabled = true;
     }
 
+    public List<CombatManager.AnimalMove> GetAnimalMoves() {
+        var moves = new List<CombatManager.AnimalMove>();
 
+        if (beeButton.enabled)
+            moves.Add(CombatManager.AnimalMove.BeeMove);
 
+        if (butterflyButton.enabled)
+            moves.Add(CombatManager.AnimalMove.ButterflyMove);
 
+        if (turtleButton.enabled)
+            moves.Add(CombatManager.AnimalMove.TurtleMove);
+
+        if (polarBearButton.enabled)
+            moves.Add(CombatManager.AnimalMove.PolarBearMove);
+
+        return moves;
+    }
 
 }
