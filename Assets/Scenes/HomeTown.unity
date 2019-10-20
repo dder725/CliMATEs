@@ -7767,7 +7767,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 21.972237
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -7775,22 +7775,22 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
+      time: 0.04551198
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     - serializedVersion: 3
       time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
+      value: 0.74522203
+      inSlope: -1.2161909
+      outSlope: -1.2161909
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.08765672
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -8225,7 +8225,7 @@ Transform:
   m_LocalScale: {x: 1.861865, y: 2.1648545, z: 1.0202}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &96925477
 BoxCollider2D:
@@ -8421,8 +8421,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f91eb99a881d7bf50ace1d69b0e179ff, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
-  m_Pitch: 1
+  m_Volume: 0.3
+  m_Pitch: 0.65
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -37938,7 +37938,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b9eff218e132a4e76be78840eca96fb2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -38258,7 +38258,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e1561814def80ba2784280493fa5c0d2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -38615,7 +38615,7 @@ Transform:
   - {fileID: 1017536917}
   - {fileID: 234853272}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &773633975
 GameObject:
@@ -38952,49 +38952,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 410, y: 211.1}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &819406000
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 819406001}
-  - component: {fileID: 819406002}
-  m_Layer: 0
-  m_Name: LevelManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &819406001
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 819406000}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1015864, y: 0.19503106, z: -7.5305524}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &819406002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 819406000}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &820007335
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40227,7 +40184,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1088040444
 MonoBehaviour:
@@ -40272,7 +40229,7 @@ Transform:
   - {fileID: 2067318222}
   - {fileID: 2118916406}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1128750103
 GameObject:
@@ -46042,7 +45999,7 @@ PrefabInstance:
     - target: {fileID: 377206778234656161, guid: 478de1f0379d8e95480b9e016b0ba3af,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 377206778234656161, guid: 478de1f0379d8e95480b9e016b0ba3af,
         type: 3}
@@ -47583,7 +47540,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e1561814def80ba2784280493fa5c0d2, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -47731,7 +47688,7 @@ Transform:
   - {fileID: 1294537674}
   - {fileID: 248481002}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1461047864
 GameObject:
@@ -48037,7 +47994,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1486891400
 MonoBehaviour:
@@ -48632,7 +48589,7 @@ RectTransform:
   - {fileID: 578232509}
   - {fileID: 460631610}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -48902,7 +48859,7 @@ PrefabInstance:
     - target: {fileID: 3201830390872234828, guid: 8462b2f09616e7036b85a77193a694d7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3201830390872234828, guid: 8462b2f09616e7036b85a77193a694d7,
         type: 3}
@@ -49491,7 +49448,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1836011166 stripped
 MonoBehaviour:
@@ -49680,7 +49637,7 @@ PrefabInstance:
     - target: {fileID: 3121739491660795473, guid: a35c30e674b5388b59d13e0b76341241,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 3121739491660795473, guid: a35c30e674b5388b59d13e0b76341241,
         type: 3}
@@ -49720,7 +49677,7 @@ MonoBehaviour:
   attack: 33
   defense: 7
   health: 100
-  combatName: 
+  combatName: Plastic Bag
 --- !u!61 &2012128750
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -50758,7 +50715,7 @@ PrefabInstance:
     - target: {fileID: 6012280756197034898, guid: e3f29f1d979a911498ebfbf5f6d0ae17,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6012280756197034898, guid: e3f29f1d979a911498ebfbf5f6d0ae17,
         type: 3}

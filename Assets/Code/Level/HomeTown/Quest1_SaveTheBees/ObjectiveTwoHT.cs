@@ -41,6 +41,7 @@ public class ObjectiveTwoHT : Objective
         Instantiate(shopKeeperNPC, new Vector3(30, -4, 0), Quaternion.identity);
         GameObject NPCInstance = GameObject.Find("ShopKeeperNPC(Clone)");
         shopKeeperNPCScript = NPCInstance.GetComponent<WanderingTalkingNPC>();
+        AudioSource audioSource = NPCInstance.AddComponent<AudioSource>();
     }
 
     private void Update()
