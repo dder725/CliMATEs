@@ -71,7 +71,6 @@ public class ObjectivesManager : MonoBehaviour
         currentObjective.SetObjectiveToInactive();
         currentObjective.RunTearDownLogicForObjective();
         Destroy(currentObjective);
-        //Debug.Log("CurrentObjective: " + currentObjective);
     }
 
     private void AdvanceToNextObjectiveOrCompleteLevel()
@@ -84,6 +83,7 @@ public class ObjectivesManager : MonoBehaviour
         {
             AdvanceToNextObjective();
         }
+        UpdateQuestLogName();
     }
 
     private bool CurrentObjectiveWasLastObjective()
@@ -94,7 +94,6 @@ public class ObjectivesManager : MonoBehaviour
     private void CompleteLevel()
     {
         levelIsCompleted = true;
-        // TODO Make GameManager kill this ObjectiveManager when level is completed
         Debug.Log("Level Complete");
     }
 
