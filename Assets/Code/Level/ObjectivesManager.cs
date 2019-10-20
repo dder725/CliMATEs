@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ObjectivesManager : MonoBehaviour
 {
@@ -94,6 +95,8 @@ public class ObjectivesManager : MonoBehaviour
     private void CompleteLevel()
     {
         levelIsCompleted = true;
+        // TODO Make GameManager kill this ObjectiveManager when level is completed
+        SceneManager.LoadScene("NextLevelScreen");
         Debug.Log("Level Complete");
     }
 

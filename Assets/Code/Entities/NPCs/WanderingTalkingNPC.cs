@@ -275,10 +275,10 @@ public class WanderingTalkingNPC : Entity
     {
         canStartConvo = false;
         convoStarted = false;
+        DisableDialogue();
         //Player can walk again when conversation is finished
         player = GameObject.Find("Player");
         Player.unfreezePlayer();
-        DisableDialogue();
         dialogueText.text = "Press \"t\" to talk";
     }
 
