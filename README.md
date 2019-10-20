@@ -5,6 +5,7 @@ This serious game concept game is developed as part of the SE306 course and is m
 In CliMATEs you play as a kid from a small town in a world affected by the ongoing effects of climate change and global warming. You vitness the harm climate change has on your environment and seek to help out and do your part in reverting the damages. 
 During the game you'll pick up small tips and contributions you can do to help, whilst also slowly discovering that the real climate parasites can't be stopped by simply planting flowers. 
 
+## Group members
 | Github username | University user name |
 |---|---|
 | dder725 | Daria Derecha (dder725) | 
