@@ -21,4 +21,9 @@ public class ExitMenu : MonoBehaviour
     {
         SceneManager.LoadScene("TitleScreen");
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
