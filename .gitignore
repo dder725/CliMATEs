@@ -413,3 +413,7 @@ MigrationBackup/
 
 .DS_Store
 *.x86_64
+
+Prototype_Data/Managed/
+
+Prototype_Data/
