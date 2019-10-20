@@ -152,7 +152,7 @@ public class WanderingTalkingNPC : Entity
 
         else
         {
-            Debug.Log("Collision that wasn't with player");
+           // Debug.Log("Collision that wasn't with player");
 
             //myRigidbody2D.velocity.Set(2, -2);
 
