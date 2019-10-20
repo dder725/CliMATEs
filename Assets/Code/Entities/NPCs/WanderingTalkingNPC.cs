@@ -43,16 +43,26 @@ public class WanderingTalkingNPC : Entity
         sentences = new Queue<string>();
 
         myRigidbody2D = GetComponent<Rigidbody2D>();
-        dialogueSound = GetComponent<AudioSource>();
+
+        //Set up the sound for dialogue voiceover
+         if(GetComponent<AudioSource>() == null){
+            dialogueSound = gameObject.AddComponent<AudioSource>();
+         } else{
+            dialogueSound = GetComponent<AudioSource>();
+         }
+         dialogueSound.volume = 0.2f;
         waitCounter = waitTime;
         walkCounter = walkTime;
 
+        // Select the soundbyte with respect to gender of an entity
         if(gender.Equals(Gender.Male)){
             dialogueSound.clip = Resources.Load<AudioClip>("Sounds/maleGibberish");
         } else{
             dialogueSound.clip = Resources.Load<AudioClip>("Sounds/femaleGibberish");
         }
+
         ChooseDirection();
+
     }
 
     void Update()
