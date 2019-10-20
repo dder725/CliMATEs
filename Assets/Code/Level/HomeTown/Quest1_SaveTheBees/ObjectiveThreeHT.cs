@@ -41,6 +41,7 @@ public class ObjectiveThreeHT : Objective
         player = GameObject.Find("Player");
         blockPlacingScript = player.GetComponent<BlockPlacing>();
         blockPlacingScript.CanPlaceBlocksNow();
+        FindObjectOfType<TriggerOnBeeObjective>().TriggerTutorial();
     }
 
     public override void RunTearDownLogicForObjective()

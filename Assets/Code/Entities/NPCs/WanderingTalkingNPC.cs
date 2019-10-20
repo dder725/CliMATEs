@@ -214,7 +214,10 @@ public class WanderingTalkingNPC : Entity
     public void StartDialogue(Dialogue dialogue)
     {
         sentences.Clear();
-        dialogueSound.Play();
+        if (dialogueSound != null)
+        {
+            dialogueSound.Play();
+        }
         foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
@@ -235,7 +238,10 @@ public class WanderingTalkingNPC : Entity
         }
 
         string sentence = sentences.Dequeue();
-        dialogueSound.Play();
+        if (dialogueSound != null)
+        {
+            dialogueSound.Play();
+        }
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
 
@@ -256,7 +262,7 @@ public class WanderingTalkingNPC : Entity
         canStartConvo = false;
         convoStarted = false;
         DisableDialogue();
-        //dialogueText.text = "Press \"t\" to talk";
+        dialogueText.text = "Press \"t\" to talk";
     }
 
 }
