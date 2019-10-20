@@ -13,6 +13,7 @@ public class WanderingTalkingNPC : Entity
 
     public Dialogue dialogue;
    
+    private AudioClip[] dialogueSounds; 
     private AudioSource dialogueSound;
     private AudioClip dialogueClip;
 
@@ -51,15 +52,22 @@ public class WanderingTalkingNPC : Entity
             dialogueSound = GetComponent<AudioSource>();
          }
          dialogueSound.volume = 0.2f;
-        waitCounter = waitTime;
-        walkCounter = walkTime;
-
+ 
         // Select the soundbyte with respect to gender of an entity
         if(gender.Equals(Gender.Male)){
-            dialogueSound.clip = Resources.Load<AudioClip>("Sounds/maleGibberish");
+         //   dialogueSound.clip = Resources.Load<AudioClip>("Sounds/maleGibberish");
+            dialogueSounds = Resources.LoadAll<AudioClip>("Sounds/maleSounds");
+            dialogueSound.pitch = 0.7f;
+
         } else{
-            dialogueSound.clip = Resources.Load<AudioClip>("Sounds/femaleGibberish");
+        //    dialogueSound.clip = Resources.Load<AudioClip>("Sounds/femaleGibberish");
+            dialogueSounds = Resources.LoadAll<AudioClip>("Sounds/femaleSounds");
+            dialogueSound.pitch = 1.3f;
         }
+        dialogueSound.clip = dialogueSounds[0];
+
+        waitCounter = waitTime;
+        walkCounter = walkTime;
 
         ChooseDirection();
 
@@ -68,7 +76,8 @@ public class WanderingTalkingNPC : Entity
     void Update()
     {
 
-
+        // Select random sound
+        
 
         if (canStartConvo && Input.GetKeyDown(KeyCode.T))
         {
@@ -214,6 +223,9 @@ public class WanderingTalkingNPC : Entity
     public void StartDialogue(Dialogue dialogue)
     {
         sentences.Clear();
+        // Select a random soundbyte
+        int index = Random.Range(0, dialogueSounds.Length);
+        dialogueSound.clip = dialogueSounds[index];
         dialogueSound.Play();
         foreach (string sentence in dialogue.sentences)
         {
@@ -235,6 +247,11 @@ public class WanderingTalkingNPC : Entity
         }
 
         string sentence = sentences.Dequeue();
+
+        //Select a random soundbyte
+        int index = Random.Range(0, dialogueSounds.Length);
+        dialogueSound.clip = dialogueSounds[index];
+
         dialogueSound.Play();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));

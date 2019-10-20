@@ -68,6 +68,7 @@ public class ObjectiveTwoHT : Objective
         Instantiate(mumNPC, new Vector3(-7, 10, 0), Quaternion.identity);
         GameObject NPCInstance = GameObject.Find("MumNPC(Clone)");
         mumNPCScript = NPCInstance.GetComponent<WanderingTalkingNPC>();
+        mumNPCScript.gender = WanderingTalkingNPC.Gender.Female;
     }
 
     public override void RunTearDownLogicForObjective()
