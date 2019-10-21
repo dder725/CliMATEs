@@ -395,6 +395,7 @@ MonoBehaviour:
   entityName: 
   following: {fileID: 0}
   distance: 0
+  player: {fileID: 0}
   canFollow: 1
   isFollowing: 0
   atLocation: 0

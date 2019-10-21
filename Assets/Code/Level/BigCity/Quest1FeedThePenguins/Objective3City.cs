@@ -8,6 +8,9 @@ public class Objective3City : Objective
     public Transform monster;
     private Monster monsterScript;
 
+    public Transform player;
+    private Player playerScript;
+
 
     public bool isDone;
     public override void GiveObjectiveRewards()
@@ -17,12 +20,19 @@ public class Objective3City : Objective
 
     public override bool ObjectiveGoalIsAchieved()
     {
-        return monsterScript.defeated || isDone;
+        if (playerScript.combatVictory || isDone){
+            playerScript.combatVictory = false;
+            return true;
+        } else
+        {
+            return false;
+        }
     }
 
     public override void RunStartUpLogicForObjective()
     {
         monsterScript = monster.GetComponent<Monster>();
+        playerScript = player.GetComponent<Player>();
 
     }
 
