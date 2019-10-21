@@ -22,7 +22,7 @@ public class TutorialManager : MonoBehaviour
     {
         animator.SetBool("isOpen", true);
 
-        Debug.Log(tutorial.sentences[0]);
+        //Debug.Log(tutorial.sentences[0]);
 
         nameText.text = tutorial.name;
 
@@ -31,7 +31,6 @@ public class TutorialManager : MonoBehaviour
         foreach (string sentence in tutorial.sentences)
         {
             sentences.Enqueue(sentence);
-            Debug.Log(sentence.Length);
         }
 
         DisplayNextSentence();

@@ -14,6 +14,7 @@ public class ObjectivesManager : MonoBehaviour
     private Objective currentObjective;
 
     private bool levelIsCompleted;
+    private bool skipObjective = false;
 
     public void Awake()
     {
@@ -52,18 +53,26 @@ public class ObjectivesManager : MonoBehaviour
     // Runs every frame of the game
     public void Update()
     {
+        
+        if (Input.GetKeyDown(KeyCode.P) && Input.GetKeyDown(KeyCode.O)){
+            skipObjective = true;
+            Debug.Log("Objective "+ currentObjectiveIndex + " has been skipped.");
+        }
+
         if (!levelIsCompleted && currentObjective != null)
         {
             AdvanceToNextObjectiveIfCompleted();
         }
+
     }
 
     private void AdvanceToNextObjectiveIfCompleted()
     {
-        if (currentObjective.ObjectiveGoalIsAchieved())
+        if (currentObjective.ObjectiveGoalIsAchieved() || skipObjective)
         {
             CompleteAndDestroyCurrentObjective();
             AdvanceToNextObjectiveOrCompleteLevel();
+            skipObjective = false;
         }
     }
 

@@ -59,7 +59,7 @@ public class CombatUI : MonoBehaviour
         Text damagePopUp;
         int damage = 0;
 
-        Debug.LogFormat(objName + "'s Health CHANGED by!" + damage);
+        // Debug.LogFormat(objName + "'s Health CHANGED by!" + damage);
 
 
         // Determine who's health changed
