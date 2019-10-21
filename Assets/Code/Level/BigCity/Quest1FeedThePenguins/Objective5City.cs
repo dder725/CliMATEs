@@ -12,6 +12,9 @@ public class Objective5City : Objective
     public Transform tokens;
     private AnimalTokensScript animalTokensScript;
     private HUDButtons HUDButtons;
+
+
+    public bool isDone;
     public override void GiveObjectiveRewards()
     {
         Debug.Log("Penguin token gained");
@@ -25,7 +28,7 @@ public class Objective5City : Objective
 
     public override bool ObjectiveGoalIsAchieved()
     {
-        return penguinCounter.CheckNumPenguins();
+        return penguinCounter.CheckNumPenguins() || isDone;
     }
 
     public override void RunStartUpLogicForObjective()
