@@ -24,7 +24,8 @@ public class WalkingNPC : Entity
    
 
             //give the speed to the animator....
-            animator.SetFloat("speed", speed);
+            // This doesn't work - says that "speed" is not a property
+            // animator.SetFloat("speed", speed);
 
             walkTime -= Time.deltaTime;
 

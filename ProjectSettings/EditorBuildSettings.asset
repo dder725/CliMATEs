@@ -8,16 +8,28 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Menu.unity
     guid: 2e24f3e259d4b1348a5ede0b54f70ff2
-  - enabled: 1
-    path: Assets/Scenes/HomeTown.unity
-    guid: a25a3619b784cf2b6a58483b546fccbd
   - enabled: 1
     path: Assets/Scenes/TitleScreen.unity
     guid: 4bb11fbb07d23894a9786ab376d4dcea
   - enabled: 1
     path: Assets/Scenes/CharacterCustomisation.unity
     guid: eedf5819ce05e9e498a641d11165f275
+  - enabled: 1
+    path: Assets/Scenes/HomeTown.unity
+    guid: a25a3619b784cf2b6a58483b546fccbd
+  - enabled: 1
+    path: Assets/Scenes/NextLevelScreen.unity
+    guid: 7eef34893d7165f43a03964682b482b6
+  - enabled: 1
+    path: Assets/Scenes/BigCity_magnus.unity
+    guid: 6ff5f13e0ee7b48a0a1255570f3112f4
+  - enabled: 1
+    path: Assets/Scenes/BeeInfo.unity
+    guid: 2f59fa00c334def44be3a05ad406a925
+  - enabled: 1
+    path: Assets/Scenes/TurtleInfo.unity
+    guid: 522f7c7e5b3f81441a19ad9055b10b6c
   m_configObjects: {}

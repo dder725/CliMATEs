@@ -10,27 +10,41 @@ public class ObjectiveThreeHT : Objective
 
 
     public Transform butterflyGirl;
+    public Transform bee;
+
     private WanderingTalkingNPC talkingNPCScript;
 
-    private AnimalTokensScript animalTokensScript;
+    private AnimalTokensScript animalTokensScript; 
+    private HUDButtons HUDButtons;
 
     private bool completed = false;
     private bool isCreated = false;
 
+    void Start()
+    {
+        animalTokensScript = FindObjectOfType<AnimalTokensScript>();
+        HUDButtons = FindObjectOfType<HUDButtons>();
+    }
+
     public override void GiveObjectiveRewards()
     {
         Debug.Log("Bee token gained");
-        animalTokensScript = FindObjectOfType<AnimalTokensScript>();
+        HUDButtons.ShowAnimals();
         animalTokensScript.ShowBeeToken();
     }
 
     public override bool ObjectiveGoalIsAchieved()
     {
+        
+
         if (blockPlacingScript.numberOfBlocks <= 0 && !isCreated)
         {
             SetupButterflyGirl();
             completed = true;
             isCreated = true;
+
+            //Spawn the bees to show the environment has changed 
+            SpawnBees();
         }
         return completed;
         //return blockPlacingScript.numberOfBlocks <= 0;
@@ -41,6 +55,7 @@ public class ObjectiveThreeHT : Objective
         player = GameObject.Find("Player");
         blockPlacingScript = player.GetComponent<BlockPlacing>();
         blockPlacingScript.CanPlaceBlocksNow();
+        FindObjectOfType<TriggerOnBeeObjective>().TriggerTutorial();
     }
 
     public override void RunTearDownLogicForObjective()
@@ -53,6 +68,31 @@ public class ObjectiveThreeHT : Objective
         Instantiate(butterflyGirl, new Vector3(34, -6, 0), Quaternion.identity);
         GameObject NPCInstance = GameObject.Find("ButterflyGirlNPC(Clone)");
         talkingNPCScript = NPCInstance.GetComponent<WanderingTalkingNPC>();
+        talkingNPCScript.gender = WanderingTalkingNPC.Gender.Female;
+    }
+
+    private void SpawnBees()
+    {
+
+        Instantiate(bee, new Vector3(34, 6, 0), Quaternion.identity);
+        GameObject beeClone = GameObject.Find("Bee(Clone)");
+        SpriteRenderer beeSprite = (SpriteRenderer)beeClone.GetComponent("SpriteRenderer");
+        beeSprite.flipX = false;
+
+        Instantiate(bee, new Vector3(37, 5, 0), Quaternion.identity);
+        GameObject beeClone1 = GameObject.Find("Bee(Clone)");
+        
+        Instantiate(bee, new Vector3(32, 11, 0), Quaternion.identity);
+        GameObject beeClone2 = GameObject.Find("Bee(Clone)");
+
+        Instantiate(bee, new Vector3(29, 6, 0), Quaternion.identity);
+        GameObject beeClone3 = GameObject.Find("Bee(Clone)");
+        SpriteRenderer bee3Sprite = (SpriteRenderer)beeClone3.GetComponent("SpriteRenderer");
+        bee3Sprite.flipX = false;
+
+
+
+
     }
 
 

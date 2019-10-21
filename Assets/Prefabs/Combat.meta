@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Prefabs/Combat.meta
 guid: a0a9455655436ccffb94811cc8dba326
+=======
+guid: b016b86fdabe6bf46989d34970de6dfe
+>>>>>>> 7e21f4be63b848217c977d59202e6bf155edf08c:Assets/Code/Level/BigCity/Quest1FeedThePenguins.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ObjectivesManager : MonoBehaviour
 {
@@ -17,6 +20,7 @@ public class ObjectivesManager : MonoBehaviour
         levelIsCompleted = false;
         currentObjectiveIndex = 1;
         StartNewObjective();
+        UpdateQuestLogName();
     }
 
     private void StartNewObjective()
@@ -69,7 +73,6 @@ public class ObjectivesManager : MonoBehaviour
         currentObjective.SetObjectiveToInactive();
         currentObjective.RunTearDownLogicForObjective();
         Destroy(currentObjective);
-        //Debug.Log("CurrentObjective: " + currentObjective);
     }
 
     private void AdvanceToNextObjectiveOrCompleteLevel()
@@ -82,6 +85,7 @@ public class ObjectivesManager : MonoBehaviour
         {
             AdvanceToNextObjective();
         }
+        UpdateQuestLogName();
     }
 
     private bool CurrentObjectiveWasLastObjective()
@@ -93,6 +97,10 @@ public class ObjectivesManager : MonoBehaviour
     {
         levelIsCompleted = true;
         // TODO Make GameManager kill this ObjectiveManager when level is completed
+      
+        PrefabUtility.SaveAsPrefabAsset(GameObject.Find("Achievement"), "Assets/Prefabs/AchievementUPD.prefab");
+      //  PrefabUtility.SaveAsPrefabAsset(GameObject.Find("Achievement"), "Assets/Prefabs/AchievementUPD.prefab", out bool success);
+        SceneManager.LoadScene("NextLevelScreen");
         Debug.Log("Level Complete");
     }
 
@@ -100,5 +108,18 @@ public class ObjectivesManager : MonoBehaviour
     {
         currentObjectiveIndex++;
         StartNewObjective();
+    }
+
+    private void UpdateQuestLogName()
+    {
+        Text textBox = GameObject.Find("QuestName").GetComponent<Text>();
+        if (!levelIsCompleted)
+        {
+            textBox.text = currentObjective.GetObjectiveName();
+        }
+        else
+        {
+            textBox.text = "Level complete!";
+        }
     }
 }

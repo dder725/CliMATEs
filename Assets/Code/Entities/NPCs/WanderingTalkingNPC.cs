@@ -13,17 +13,21 @@ public class WanderingTalkingNPC : Entity
 
     public Dialogue dialogue;
    
+    private AudioClip[] dialogueSounds; 
     private AudioSource dialogueSound;
     private AudioClip dialogueClip;
 
     public Queue<string> sentences;
+    string sentence = "";
 
     public Text dialogueText;
 
+    public static GameObject player;
     public Gender gender;
     private bool canStartConvo = false;
     private bool convoStarted = false;
     private bool convoEnded = false;
+    public bool canTalk = true;
 
     private Rigidbody2D myRigidbody2D;
 
@@ -36,6 +40,7 @@ public class WanderingTalkingNPC : Entity
     private float waitCounter;
 
     private int walkDirection;
+    private Coroutine c =null;
 
     void Start()
     {
@@ -50,16 +55,23 @@ public class WanderingTalkingNPC : Entity
          } else{
             dialogueSound = GetComponent<AudioSource>();
          }
-         dialogueSound.volume = 0.2f;
-        waitCounter = waitTime;
-        walkCounter = walkTime;
+         dialogueSound.volume = 0.5f;
 
         // Select the soundbyte with respect to gender of an entity
         if(gender.Equals(Gender.Male)){
-            dialogueSound.clip = Resources.Load<AudioClip>("Sounds/maleGibberish");
+         //   dialogueSound.clip = Resources.Load<AudioClip>("Sounds/maleGibberish");
+            dialogueSounds = Resources.LoadAll<AudioClip>("Sounds/maleSounds");
+            dialogueSound.pitch = 0.7f;
+
         } else{
-            dialogueSound.clip = Resources.Load<AudioClip>("Sounds/femaleGibberish");
+        //    dialogueSound.clip = Resources.Load<AudioClip>("Sounds/femaleGibberish");
+            dialogueSounds = Resources.LoadAll<AudioClip>("Sounds/femaleSounds");
+            dialogueSound.pitch = 1.3f;
         }
+        dialogueSound.clip = dialogueSounds[0];
+
+        waitCounter = waitTime;
+        walkCounter = walkTime;
 
         ChooseDirection();
 
@@ -68,13 +80,17 @@ public class WanderingTalkingNPC : Entity
     void Update()
     {
 
-
+        // Select random sound
+        
 
         if (canStartConvo && Input.GetKeyDown(KeyCode.T))
         {
 
             convoStarted = true;
             stopForConvo = true;
+            //Freezing player during conversations so user doesn't miss sentences
+            player = GameObject.Find("Player");
+            Player.freezePlayer();
             StartDialogue(dialogue);
         }
 
@@ -159,9 +175,9 @@ public class WanderingTalkingNPC : Entity
         } else {
             if (this.entityName.Equals("ForestMan"))
             {
-                Debug.LogError("COllided with a forestman");
                 AchievementManager.ach02Trigger = true;
             }
+            EnableDialogue();
         }
 
     }
@@ -171,30 +187,19 @@ public class WanderingTalkingNPC : Entity
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.name.Equals("Player"))
-        {
-            EnableDialogue();
-        }
-
-        else
-        {
-            //myRigidbody2D.velocity.Set(2, -2);
-
-            //ChooseDirection();
-
-            //Vector2 newVelo = new Vector2(-5, 0);
-            //myRigidbody2D.velocity = newVelo;
-            //walkCounter = 0;
-
-            //why is none of this changing the character's velocity???
-            //myRigidbody2D.velocity = new Vector2(-5, 0);
-        }
+        // if (other.name.Equals("Player") && canTalk)
+        // {
+        //     EnableDialogue();
+        // }
 
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        EndDialogue();
+        if (other.name.Equals("Player"))
+        {
+           EndDialogue();
+        }
     }
 
     private void EnableDialogue()
@@ -214,6 +219,9 @@ public class WanderingTalkingNPC : Entity
     public void StartDialogue(Dialogue dialogue)
     {
         sentences.Clear();
+        // Select a random soundbyte
+        int index = Random.Range(0, dialogueSounds.Length);
+        dialogueSound.clip = dialogueSounds[index];
         dialogueSound.Play();
         foreach (string sentence in dialogue.sentences)
         {
@@ -227,17 +235,29 @@ public class WanderingTalkingNPC : Entity
 
     public void DisplayNextSentence()
     {
-        if (sentences.Count == 0)
+
+        //End conversation when Count=1, so each NPC has an extra hint sentence for if they are reapproached
+        if (sentences.Count == 1)
         {
+            dialogueText.text = sentence;
             convoEnded = true;
             EndDialogue();
+            SetHintMessage();
             return;
         }
 
-        string sentence = sentences.Dequeue();
+        sentence = sentences.Dequeue();
+
+        //Select a random soundbyte
+        int index = Random.Range(0, dialogueSounds.Length);
+        dialogueSound.clip = dialogueSounds[index];
+
         dialogueSound.Play();
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+        //StopAllCoroutines();
+        if (c != null ){
+            StopCoroutine(c);
+        }        
+        c = StartCoroutine(TypeSentence(sentence));
 
     }
 
@@ -256,7 +276,31 @@ public class WanderingTalkingNPC : Entity
         canStartConvo = false;
         convoStarted = false;
         DisableDialogue();
-        //dialogueText.text = "Press \"t\" to talk";
+        // StopAllCoroutines();
+        if (c != null ){
+            StopCoroutine(c);
+        }
+        //Player can walk again when conversation is finished
+        player = GameObject.Find("Player");
+        Player.unfreezePlayer();
+
     }
+
+    public void SetHintMessage() 
+    {
+        Debug.Log("Conversation finished, set extra hint sentence");
+        sentence = sentences.Dequeue();
+        StartCoroutine(HintMessage(sentence));
+    }
+
+    IEnumerator HintMessage(string sentence)
+    {
+        //We don't want hint message to display instantly
+        yield return new WaitForSeconds(10);
+        dialogueText.text = sentence;
+        Debug.Log("Hint is set");
+        EnableDialogue();
+    }
+
 
 }

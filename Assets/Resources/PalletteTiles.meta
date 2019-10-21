@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Resources/PalletteTiles.meta
 guid: 962a4c30afc97dee29c7a2f0fc39aef5
+=======
+guid: b5a6c365d4d57ea448644f6e7dd3ae11
+>>>>>>> 7e21f4be63b848217c977d59202e6bf155edf08c:Assets/Code/Level/BigCity/Quest2SavingDinosaurs.meta
+=======
+guid: 8d41ef738fb7848b89906d2281d02bdc
+>>>>>>> 7e21f4be63b848217c977d59202e6bf155edf08c
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
