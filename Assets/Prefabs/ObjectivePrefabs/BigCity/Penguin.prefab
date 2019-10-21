@@ -142,7 +142,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: de9458d29084e7843975f26586da4677, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1b376c34896403d499163297efcf25ce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -230,9 +230,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   dialogue:
     name: Jim
-    sentences:
-    - Hello there
-    - I like bees
+    sentences: []
   dialogueText: {fileID: 5191153773601537859}
   gender: 0
   canTalk: 0
