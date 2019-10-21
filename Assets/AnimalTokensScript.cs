@@ -25,7 +25,10 @@ public class AnimalTokensScript : MonoBehaviour
         butterflyButton.gameObject.SetActive(false);
         turtleButton.gameObject.SetActive(false);
         penguinButton.gameObject.SetActive(false);
-        tuataraButton.gameObject.SetActive(false);
+        
+        if (tuataraButton != null)
+            tuataraButton.gameObject.SetActive(false);
+
         noAnimalsText.gameObject.SetActive(true);
 
         beeButton.enabled = false;
