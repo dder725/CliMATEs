@@ -23,7 +23,7 @@ public class Objective10City : Objective
 
         //animalTokensScript = FindObjectOfType<AnimalTokensScript>();
         animalTokensScript = tokens.GetComponent<AnimalTokensScript>();
-        //animalTokensScript.ShowTuataraToken();
+        animalTokensScript.ShowTuataraToken();
     }
 
     public override bool ObjectiveGoalIsAchieved()
