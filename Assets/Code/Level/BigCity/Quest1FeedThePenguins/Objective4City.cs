@@ -13,6 +13,8 @@ public class Objective4City : Objective
     private WanderingTalkingNPC portTalkingScript;
     private WalkingNPC portWalkingScript;
 
+
+    public bool isDone;
     public override void GiveObjectiveRewards()
     {
         playerInventory.hasFish = true;
@@ -20,7 +22,7 @@ public class Objective4City : Objective
 
     public override bool ObjectiveGoalIsAchieved()
     {
-        return portTalkingScript.ConversationFinished();
+        return portTalkingScript.ConversationFinished() || isDone;
     }
 
     public override void RunStartUpLogicForObjective()

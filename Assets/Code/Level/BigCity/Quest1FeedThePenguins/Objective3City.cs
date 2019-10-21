@@ -8,6 +8,8 @@ public class Objective3City : Objective
     public Transform monster;
     private Monster monsterScript;
 
+
+    public bool isDone;
     public override void GiveObjectiveRewards()
     {
         
@@ -15,7 +17,7 @@ public class Objective3City : Objective
 
     public override bool ObjectiveGoalIsAchieved()
     {
-        return monsterScript.defeated;
+        return monsterScript.defeated || isDone;
     }
 
     public override void RunStartUpLogicForObjective()

@@ -9,13 +9,15 @@ public class Objective1City : Objective
 
     public Transform sushiDaughter;
     private WanderingTalkingNPC sushiDaughterScript;
+
+    public bool isDone;
     public override void GiveObjectiveRewards()
     {
     }
 
     public override bool ObjectiveGoalIsAchieved()
     {
-        return sushiDaughterScript.ConversationFinished();
+        return sushiDaughterScript.ConversationFinished() || isDone;
     }
 
     public override void RunStartUpLogicForObjective()
