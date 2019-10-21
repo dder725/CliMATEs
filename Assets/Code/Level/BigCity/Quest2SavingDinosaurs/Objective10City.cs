@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Objective10City : Objective
 {
@@ -16,7 +18,7 @@ public class Objective10City : Objective
     public bool isDone;
     public override void GiveObjectiveRewards()
     {
-
+        SceneManager.LoadScene("ExitScreen");
         Debug.Log("Penguin token gained");
         HUDButtons = FindObjectOfType<HUDButtons>();
         HUDButtons.ShowAnimals();
@@ -24,6 +26,7 @@ public class Objective10City : Objective
         //animalTokensScript = FindObjectOfType<AnimalTokensScript>();
         animalTokensScript = tokens.GetComponent<AnimalTokensScript>();
         animalTokensScript.ShowTuataraToken();
+
     }
 
     public override bool ObjectiveGoalIsAchieved()
@@ -35,7 +38,7 @@ public class Objective10City : Objective
     {
         Instantiate(newEcoWorker, oldEcoWorker.position, Quaternion.identity);
         ecoWorkerScript = newEcoWorker.GetComponent<WanderingTalkingNPC>();
-        Destroy(oldEcoWorker);
+        Destroy(oldEcoWorker.gameObject);
     }
 
     public override void RunTearDownLogicForObjective()

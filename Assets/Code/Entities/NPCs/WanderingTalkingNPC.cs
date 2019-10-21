@@ -66,6 +66,8 @@ public class WanderingTalkingNPC : Entity
             //   dialogueSound.clip = Resources.Load<AudioClip>("Sounds/maleGibberish");
             dialogueSounds = Resources.LoadAll<AudioClip>("Sounds/maleSounds");
             dialogueSound.pitch = 0.7f;
+            dialogueSound.clip = dialogueSounds[0];
+
 
         }
         else if (gender.Equals(Gender.Penguin))
@@ -77,8 +79,9 @@ public class WanderingTalkingNPC : Entity
             //    dialogueSound.clip = Resources.Load<AudioClip>("Sounds/femaleGibberish");
             dialogueSounds = Resources.LoadAll<AudioClip>("Sounds/femaleSounds");
             dialogueSound.pitch = 1.3f;
+            dialogueSound.clip = dialogueSounds[0];
+
         }
-        dialogueSound.clip = dialogueSounds[0];
 
         waitCounter = waitTime;
         walkCounter = walkTime;
