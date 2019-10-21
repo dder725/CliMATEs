@@ -8,13 +8,15 @@ public class Objective2City : Objective
     public Transform sushiOwner;
     private WanderingTalkingNPC sushiOwnerScript;
 
+
+    public bool isDone;
     public override void GiveObjectiveRewards()
     {
     }
 
     public override bool ObjectiveGoalIsAchieved()
     {
-        return sushiOwnerScript.ConversationFinished();
+        return sushiOwnerScript.ConversationFinished() || isDone;
     }
 
     public override void RunStartUpLogicForObjective()

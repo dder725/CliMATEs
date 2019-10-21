@@ -42,9 +42,4 @@ public class ChangeAnimator : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

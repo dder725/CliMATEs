@@ -5,15 +5,19 @@ using UnityEngine;
 public class Objective1City : Objective
 {
 
+    private AnimalTokensScript animalTokensScript;
+
     public Transform sushiDaughter;
     private WanderingTalkingNPC sushiDaughterScript;
+
+    public bool isDone;
     public override void GiveObjectiveRewards()
     {
     }
 
     public override bool ObjectiveGoalIsAchieved()
     {
-        return sushiDaughterScript.ConversationFinished();
+        return sushiDaughterScript.ConversationFinished() || isDone;
     }
 
     public override void RunStartUpLogicForObjective()
@@ -31,7 +35,8 @@ public class Objective1City : Objective
     // Start is called before the first frame update
     void Start()
     {
-        
+        animalTokensScript = FindObjectOfType<AnimalTokensScript>();
+        animalTokensScript.ShowLevel1Tokens(); 
     }
 
     // Update is called once per frame
