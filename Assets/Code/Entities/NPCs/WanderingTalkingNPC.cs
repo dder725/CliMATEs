@@ -192,6 +192,18 @@ public class WanderingTalkingNPC : Entity
         //     EnableDialogue();
         // }
 
+
+        //Making the NPC stop if they hit something
+        //if (!other.name.Equals("Player"))
+        //{
+        //    Debug.Log("Collision");
+
+        //    //myRigidbody2D.velocity = new Vector2(0, 0);
+        //    //animator.SetFloat("Speed", 0); 
+        //    isWalking = false;
+        //}
+
+
     }
 
     void OnTriggerExit2D(Collider2D other)
