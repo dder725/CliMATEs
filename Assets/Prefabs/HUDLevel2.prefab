@@ -103,7 +103,7 @@ RectTransform:
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 507656600517686403}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -206,9 +206,9 @@ MonoBehaviour:
   butterflyButton: {fileID: 1043216200024385461}
   turtleButton: {fileID: 3913715919355072973}
   penguinButton: {fileID: 2246175246966616689}
-  tuataraButton: {fileID: 0}
-  polarBearButton: {fileID: 0}
+  tuataraButton: {fileID: 3913715919355072973}
   noAnimalsText: {fileID: 507656600294622272}
+  HUDButtons: {fileID: 507656601847081772}
 --- !u!1 &507656600409108600
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,7 +350,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e26a7823efc380609a3172be84699934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  achievementMenuPanel: {fileID: 0}
 --- !u!1 &507656600449127683
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,8 +494,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6147199121300057020}
-  - {fileID: 507656600294622273}
   - {fileID: 6952326063266961583}
+  - {fileID: 507656600294622273}
   m_Father: {fileID: 507656600408635421}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2242,9 +2241,8 @@ GameObject:
   - component: {fileID: 507656601847081747}
   - component: {fileID: 507656601847081744}
   - component: {fileID: 507656601847081772}
-  - component: {fileID: 507656601847081775}
   m_Layer: 5
-  m_Name: HUD 2
+  m_Name: HUDLevel2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2350,18 +2348,6 @@ MonoBehaviour:
   pauseMenuUI: {fileID: 507656601135218642}
   animalTokenWindow: {fileID: 507656600408635394}
   animalsButton: {fileID: 3240139712727952191}
---- !u!114 &507656601847081775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 507656601847081745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bdbf0e0357366c3590d0ffc65274e57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &507656602201482668
 GameObject:
   m_ObjectHideFlags: 0
@@ -2987,8 +2973,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6013309103823390426}
   m_HandleRect: {fileID: 6997567533537972382}
   m_Direction: 2
-  m_Value: 1.0000002
-  m_Size: 0.6819556
+  m_Value: 1
+  m_Size: 0.6819555
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3221,7 +3207,7 @@ RectTransform:
   m_GameObject: {fileID: 3594261918602262119}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 6088141537714094931}
   m_RootOrder: 0
@@ -3257,7 +3243,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bf9ee4337ad9c0140b4d6a7a1abe4f40, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 051c02f76f9b10b42a187f1faf324924, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3508,7 +3494,7 @@ GameObject:
   - component: {fileID: 4127812190683920447}
   - component: {fileID: 1827874403347403284}
   m_Layer: 5
-  m_Name: Button5
+  m_Name: TuataraBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3647,7 +3633,7 @@ RectTransform:
   - {fileID: 8064701392343813784}
   - {fileID: 8763029477220287417}
   m_Father: {fileID: 507656600517686403}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4285,7 +4271,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Bumble bee
+  m_text: 'Tuatara
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4354,10 +4342,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 4921742645179654169}
-    characterCount: 10
+    characterCount: 8
     spriteCount: 0
     spaceCount: 1
-    wordCount: 2
+    wordCount: 1
     linkCount: 0
     lineCount: 1
     pageCount: 1

@@ -11,6 +11,8 @@ public class Player : Entity
     Vector2 movement; //stores horizontal and vertical movement
     private Animator animator;
 
+    public bool combatVictory; 
+
     void Start()
     {
         froze = false;

@@ -16,7 +16,7 @@ public class HUDButtons : MonoBehaviour
 
      void Start()
     {
-        animalTokenWindow.SetActive(true);    
+        animalTokenWindow.SetActive(false);    
     }
 
 
@@ -54,18 +54,18 @@ public class HUDButtons : MonoBehaviour
 
     public void ShowAnimals()
     {
-        //bool animalTabIsActive = animalTokenWindow.activeSelf;
+        bool animaltabisactive = animalTokenWindow.activeSelf;
 
-        //if (animalTabIsActive)
-        //{
-        //    animalTokenWindow.SetActive(false);
-        //    EventSystem.current.SetSelectedGameObject(null);
+        if (animaltabisactive)
+        {
+            animalTokenWindow.SetActive(false);
+            EventSystem.current.SetSelectedGameObject(null);
 
-        //}
-        //else
-        //{
-        //    animalTokenWindow.SetActive(true);
-        //}
+        }
+        else
+        {
+            animalTokenWindow.SetActive(true);
+        }
     }
 
     public void LoadMenu()
