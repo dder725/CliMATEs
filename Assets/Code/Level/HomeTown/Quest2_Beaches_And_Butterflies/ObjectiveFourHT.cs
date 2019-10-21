@@ -8,6 +8,8 @@ public class ObjectiveFourHT : Objective
     public Transform surferDudeNPC;
     private WanderingTalkingNPC surferNPCScript;
 
+    public Transform mob;
+    private Monster mobScript;
 
     public override void GiveObjectiveRewards()
     {
@@ -15,12 +17,15 @@ public class ObjectiveFourHT : Objective
 
     public override bool ObjectiveGoalIsAchieved()
     {
-        return surferNPCScript.ConversationFinished();
+        Debug.Log(mobScript.defeated);
+        return mobScript.defeated;
     }
 
     public override void RunStartUpLogicForObjective()
     {
         SetupSurfer();
+
+        mobScript = mob.GetComponent<Monster>();
     }
 
     public override void RunTearDownLogicForObjective()
@@ -42,5 +47,5 @@ public class ObjectiveFourHT : Objective
     }
 
 
-    
+
 }
