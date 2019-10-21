@@ -52,8 +52,10 @@ public class AchievementManager : MonoBehaviour
     public static bool ach07Trigger;
     public bool ach07Triggered = false;
     // Update is called once per frame
+ 
     void Update()
     {
+        DontDestroyOnLoad(transform.gameObject);
         if (ach01Trigger & !ach01Triggered)
         {
             Debug.Log("Achievement 1 unlocking!");
@@ -79,6 +81,9 @@ public class AchievementManager : MonoBehaviour
         if (ach05Trigger & !ach05Triggered)
         {
             Debug.Log("Achievement 5 unlocking!");
+            GameObject parent = GameObject.Find("HUDLevel2");
+            gameObject.transform.parent = parent.transform;
+            gameObject.transform.localPosition = new Vector3(-50, 200, -299);  
             StartCoroutine(Trigger05Ach());
         }
         if (ach06Trigger & !ach06Triggered)

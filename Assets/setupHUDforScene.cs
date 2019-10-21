@@ -16,9 +16,9 @@ public class setupHUDforScene : MonoBehaviour
         if(prefab == null){
             Debug.Log("Failed to load prefab");
         }
-        GameObject achievements = Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
-        achievements.transform.parent = gameObject.transform;
-        achievements.transform.localPosition = new Vector3(-50, 200, -299);  
+        //GameObject achievements = Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+        //achievements.transform.parent = gameObject.transform;
+        //achievements.transform.localPosition = new Vector3(-50, 200, -299);  
 
              
 

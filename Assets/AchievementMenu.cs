@@ -17,10 +17,8 @@ public class AchievementMenu : MonoBehaviour
             GameObject hud = GameObject.Find("HUD");
             if(hud == null){
                 hud = GameObject.Find("HUDLevel2");
-                achievementMenuPanel = hud.transform.Find("AchievementUPD(Clone)/AchievementMenu").gameObject;
-            } else {
-                achievementMenuPanel = hud.transform.Find("Achievement/AchievementMenu").gameObject;
             }
+            achievementMenuPanel = hud.transform.Find("Achievement/AchievementMenu").gameObject;
             achievementMenuPanel.SetActive(true);
         }
 

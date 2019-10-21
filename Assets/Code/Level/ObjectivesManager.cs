@@ -106,8 +106,10 @@ public class ObjectivesManager : MonoBehaviour
     {
         levelIsCompleted = true;
         // TODO Make GameManager kill this ObjectiveManager when level is completed
-      
-        PrefabUtility.SaveAsPrefabAsset(GameObject.Find("Achievement"), "Assets/Prefabs/AchievementUPD.prefab");
+        GameObject achievement = GameObject.Find("Achievement");
+        achievement.transform.parent = null;
+        DontDestroyOnLoad(achievement.transform);
+        //PrefabUtility.SaveAsPrefabAsset(GameObject.Find("Achievement"), "Assets/Prefabs/AchievementUPD.prefab");
       //  PrefabUtility.SaveAsPrefabAsset(GameObject.Find("Achievement"), "Assets/Prefabs/AchievementUPD.prefab", out bool success);
         SceneManager.LoadScene("NextLevelScreen");
         Debug.Log("Level Complete");
