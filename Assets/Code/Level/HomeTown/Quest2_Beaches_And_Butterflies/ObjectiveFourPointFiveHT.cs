@@ -10,9 +10,13 @@ public class ObjectiveFourPointFiveHT : Objective
     private WanderingTalkingNPC surferNPCScript;
 
     private AnimalTokensScript animalTokensScript;
+    private HUDButtons HUDButtons;
 
     public override void GiveObjectiveRewards()
     {
+        HUDButtons = FindObjectOfType<HUDButtons>();
+        HUDButtons.ShowAnimals();
+
         //TODO - give turtle token
         animalTokensScript = FindObjectOfType<AnimalTokensScript>();
         animalTokensScript.ShowTurtleToken();

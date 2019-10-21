@@ -29,6 +29,10 @@ public class ObjectiveFourHT : Objective
 
     public override void RunTearDownLogicForObjective()
     {
+        GameObject rubbish = GameObject.Find("Rubbish");
+        Destroy(rubbish);
+
+
         DestroySurfer();
     }
 

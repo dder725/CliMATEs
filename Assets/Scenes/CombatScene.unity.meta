@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scenes/CombatScene.unity.meta
 guid: df31274e342d390da91c0feb602def7e
+=======
+guid: 29648a0cc2fc0a14fb046c863e509d9d
+folderAsset: yes
+>>>>>>> 093b965bbf0abc05b0fd87a2b55ee3706ae76c49:Assets/Resources/AnimalInfo/Penguin.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
