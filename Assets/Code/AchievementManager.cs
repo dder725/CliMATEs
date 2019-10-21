@@ -183,7 +183,7 @@ public class AchievementManager : MonoBehaviour
      IEnumerator Trigger05Ach()
     {
         achActive = true;
-        ach01Triggered = true;
+        ach05Triggered = true;
 
         achTitle.GetComponent<Text>().text = "Big Apple";
         achDescription.GetComponent<Text>().text = "You have arrived in the big city";
@@ -193,14 +193,14 @@ public class AchievementManager : MonoBehaviour
         achDescription.SetActive(true);
 
         achSound.Play();
-        ach01Image.SetActive(true);
+        ach05Image.SetActive(true);
 
         achNotification.SetActive(true);
         yield return new WaitForSeconds(7);
 
         //Resetting
         achNotification.SetActive(false);
-        ach01Image.SetActive(false);
+        ach05Image.SetActive(false);
         achTitle.GetComponent<Text>().text = "";
         achDescription.GetComponent<Text>().text = "";
         achActive = false;
