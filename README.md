@@ -17,7 +17,10 @@ During the game you'll pick up small tips and contributions you can do to help, 
 | willHol | Will Holmes (whol106) |
 
 ## Screenshots
-![Game screen](Screenshots/game_screen.png)
+![Start screen](screenshots/start.png)
+![Character screen](screenshots/character.png)
+![Game screen](screenshots/roaming.png)
+![Combat screen](screenshots/combat.png)
 
 ## Set up
 
