@@ -35,7 +35,7 @@ public class AnimalTokensScript : MonoBehaviour
         butterflyButton.enabled = false;
         turtleButton.enabled = false;
         penguinButton.enabled = false;
-        tuataraButton.enabled = false;
+       // tuataraButton.enabled = false;
     }
 
     public void ShowLevel1Tokens(){
