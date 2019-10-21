@@ -78,18 +78,6 @@ public class HUDButtons : MonoBehaviour
 
     }
 
-    //public void HideAnimals()
-    //{
-
-    //    if (animalTokenWindow.activeSelf)
-    //    {
-    //        animalTokenWindow.SetActive(false);
-    //        EventSystem.current.SetSelectedGameObject(null);
-
-    //    }
-
-    //}
-
     public void LoadMenu()
     {
 

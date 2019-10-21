@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class AnimalTokensScript : MonoBehaviour
 {
@@ -23,7 +24,9 @@ public class AnimalTokensScript : MonoBehaviour
         beeButton.gameObject.SetActive(false);
         butterflyButton.gameObject.SetActive(false);
         turtleButton.gameObject.SetActive(false);
-        //penguinButton.gameObject.SetActive(false);
+        penguinButton.gameObject.SetActive(false);
+
+
         tuataraButton.gameObject.SetActive(false);
         polarBearButton.gameObject.SetActive(false);
 
@@ -66,6 +69,15 @@ public class AnimalTokensScript : MonoBehaviour
     }
 
 
+
+    public void OpenBeeInfo()
+    {
+
+        SceneManager.LoadScene("BeeInfo", LoadSceneMode.Additive);
+        Time.timeScale = 0;
+
+
+    }
 
 
 
