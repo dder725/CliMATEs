@@ -9,10 +9,7 @@ public class ObjectiveThreeHT : Objective
     private BlockPlacing blockPlacingScript;
 
 
-    public Transform butterflyGirl;
     public Transform bee;
-
-    private WanderingTalkingNPC talkingNPCScript;
 
     private AnimalTokensScript animalTokensScript; 
     private HUDButtons HUDButtons;
@@ -39,9 +36,7 @@ public class ObjectiveThreeHT : Objective
 
         if (blockPlacingScript.numberOfBlocks <= 0 && !isCreated)
         {
-            SetupButterflyGirl();
             completed = true;
-            isCreated = true;
 
             //Spawn the bees to show the environment has changed 
             SpawnBees();
@@ -63,13 +58,7 @@ public class ObjectiveThreeHT : Objective
         blockPlacingScript.CanNotPlaceBlocksNow();
     }
 
-    private void SetupButterflyGirl()
-    {
-        Instantiate(butterflyGirl, new Vector3(34, -6, 0), Quaternion.identity);
-        GameObject NPCInstance = GameObject.Find("ButterflyGirlNPC(Clone)");
-        talkingNPCScript = NPCInstance.GetComponent<WanderingTalkingNPC>();
-        talkingNPCScript.gender = WanderingTalkingNPC.Gender.Female;
-    }
+    
 
     private void SpawnBees()
     {
