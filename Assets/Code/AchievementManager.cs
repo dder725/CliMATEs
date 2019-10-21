@@ -12,6 +12,10 @@ public class AchievementManager : MonoBehaviour
     public GameObject achTitle;
     public GameObject achDescription;
 
+    public ScrollRect achListView;
+    public GameObject achListContent;
+    public GameObject achListItemPrefab;
+
     //Achievement 01 -- First CliMATE
     public GameObject ach01Image;
     
@@ -43,6 +47,8 @@ public class AchievementManager : MonoBehaviour
 
         achTitle.GetComponent<Text>().text = "First CliMATE!";
         achDescription.GetComponent<Text>().text = "Your first buddy has joined your adventure";
+        updateAchievementList("First CliMATE!", "Your first buddy has joined your adventure", ach01Image);
+       
         achTitle.SetActive(true);
         achDescription.SetActive(true);
 
@@ -66,15 +72,18 @@ public class AchievementManager : MonoBehaviour
 
         achTitle.GetComponent<Text>().text = "The Hermitage";
         achDescription.GetComponent<Text>().text = "You found the forest hermit";
+        updateAchievementList(achTitle.GetComponent<Text>().text, achDescription.GetComponent<Text>().text, ach02Image);
+
         achTitle.SetActive(true);
         achDescription.SetActive(true);
-
+        // Add achievement to the list
         achSound.Play();
         ach02Image.SetActive(true);
       
         achNotification.SetActive(true);
         yield return new WaitForSeconds(7);
 
+        
         //Resetting
         achNotification.SetActive(false);
         ach02Image.SetActive(false);
@@ -82,4 +91,19 @@ public class AchievementManager : MonoBehaviour
         achDescription.GetComponent<Text>().text = "";
         achActive = false;
     }
+
+    private void updateAchievementList(string title, string description, GameObject image){
+        Debug.Log("Updating the list");
+        GameObject achievementItem = Instantiate(achListItemPrefab);
+        GameObject itemTitle = achievementItem.transform.Find("AchievementTitle").gameObject;
+        itemTitle.GetComponent<Text>().text = title;
+        GameObject itemDescription = achievementItem.transform.Find("AchievementDescription").gameObject;
+        itemDescription.GetComponent<Text>().text = description;
+        GameObject itemImage = achievementItem.transform.Find("achImage").gameObject;
+        itemImage.GetComponent<RawImage>().texture = image.GetComponent<RawImage>().texture;
+        achievementItem.transform.SetParent(achListContent.transform, false);
+
+    }
+
+
 }
