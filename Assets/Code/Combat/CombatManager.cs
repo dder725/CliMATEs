@@ -22,7 +22,8 @@ public class CombatManager : MonoBehaviour
     public enum CombatStatus
     {
         Win,
-        Lose
+        Lose,
+        Flee
     }
     public static CombatStatus combatStatus;
 
@@ -35,6 +36,8 @@ public class CombatManager : MonoBehaviour
     public static CombatStats mobStats;
     public Transform mobSpawn;
     public Transform mobOriginalPosition;
+
+    public static Collider2D collision;
 
 
     public enum Move
@@ -132,8 +135,8 @@ public class CombatManager : MonoBehaviour
 
                 break;
             case Move.Flee:
-
-                break;
+                playerFlee();
+                return;
             case Move.AnimalMove:
                 Debug.Log("Executing animal move: " + nextAnimalMove);
 
@@ -193,6 +196,12 @@ public class CombatManager : MonoBehaviour
 
     }
 
+    private void playerFlee()
+    {
+        combatStatus = CombatStatus.Flee;
+        EventManager.TriggerEvent("combatConclusion");
+    }
+
     private void beeMove()
     {
         int damage = 20;
@@ -227,17 +236,15 @@ public class CombatManager : MonoBehaviour
             Destroy(mob);
             mob = null;
         }
-        else
+        else if (combatStatus == CombatStatus.Lose || combatStatus == CombatStatus.Flee)
         {
             // Return mob to original location
             mob.transform.position = mobOriginalPosition.position;
 
 
-            // TODO: Reset player
+            // Reset player
             player.transform.position = GameObject.Find("PlayerRespawn").transform.position;
             playerStats.health = 100;
-
-
         }
 
         // Reset the music sources

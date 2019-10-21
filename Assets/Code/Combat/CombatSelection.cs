@@ -120,6 +120,9 @@ public class CombatSelection : MonoBehaviour
 									EventManager.TriggerEvent("combatNextTurn");
 									break;
 								case 3:
+									if (CombatManager.availableAnimalMoves.Count == 0)
+										break;
+
 									// Show animal moves
 									AnimalMovesPanel.SetActive(true);
 									selectingAnimalMove = true;
@@ -127,7 +130,6 @@ public class CombatSelection : MonoBehaviour
 									actions.Clear();
 									numSelections = 0;
 									actionSelection = 0;
-
 
 									foreach (var move in CombatManager.availableAnimalMoves)
 									{
@@ -234,9 +236,13 @@ public class CombatSelection : MonoBehaviour
 			exitStatus.text = "VICTORY!";
 			exitPanelText.text = "THE WILD " + monsterName.ToUpper() +" HAS VANISHED!";
 		}
-		else {
+		else if (CombatManager.combatStatus == CombatManager.CombatStatus.Lose) {
 			exitStatus.text = "YOU LOSE!";
 			exitPanelText.text = "THE WILD " + monsterName.ToUpper() +" KNOCKED YOU OUT!";
+		}
+		else if (CombatManager.combatStatus == CombatManager.CombatStatus.Flee) {
+			exitStatus.text = "YOU RAN AWAY!";
+			exitPanelText.text = "THE WILD " + monsterName.ToUpper() +" SCARED YOU OFF!";
 		}
 
 		ExitPanel.gameObject.SetActive(true);
