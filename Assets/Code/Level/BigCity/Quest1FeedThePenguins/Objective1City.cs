@@ -17,6 +17,7 @@ public class Objective1City : Objective
 
     public override bool ObjectiveGoalIsAchieved()
     {
+        AchievementManager.ach05Trigger = true;
         return sushiDaughterScript.ConversationFinished() || isDone;
     }
 
