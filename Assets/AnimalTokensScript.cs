@@ -15,7 +15,7 @@ public class AnimalTokensScript : MonoBehaviour
 
     [SerializeField] private Text noAnimalsText;
 
-    private HUDButtons HUDButtons;
+    public HUDButtons HUDButtons;
 
 
     // Start is called before the first frame update
@@ -36,10 +36,9 @@ public class AnimalTokensScript : MonoBehaviour
     }
 
     public void ShowLevel1Tokens(){
-        beeButton.gameObject.SetActive(true);
-        butterflyButton.gameObject.SetActive(true);
-        turtleButton.gameObject.SetActive(true);
-        noAnimalsText.gameObject.SetActive(false);
+        ShowBeeToken();
+        ShowButterflyToken();
+        ShowTurtleToken();
     }
 
     public void ShowBeeToken()
@@ -108,7 +107,7 @@ public class AnimalTokensScript : MonoBehaviour
 
     private void DisplayAnimalsWindow()
     {
-        HUDButtons = FindObjectOfType<HUDButtons>();
+        
         HUDButtons.ShowAnimals();
     }
 
