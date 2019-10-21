@@ -275,8 +275,8 @@ public class CombatManager : MonoBehaviour
         GameObject.Find("Main Camera").GetComponent<Camera>().enabled = true;
 
         // Trigger an achievement (Will only work for the first battle)
-        AchievementManager.ach04Trigger = true;
-
+        if (combatStatus == CombatStatus.Win)
+            AchievementManager.ach04Trigger = true;
     }
 
     private void setAvailableAnimalMoves()

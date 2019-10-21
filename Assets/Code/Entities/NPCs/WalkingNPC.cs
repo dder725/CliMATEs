@@ -16,8 +16,8 @@ public class WalkingNPC : Entity
     // Update is called once per frame
     void Update()
     {
-
-        animator.SetBool("isWalking", isWalking);
+        if (animator != null)
+            animator.SetBool("isWalking", isWalking);
 
         if (isWalking == true)
         {
