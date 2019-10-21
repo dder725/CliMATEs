@@ -13,6 +13,7 @@ public class ObjectiveSix : Objective
     private bool notCreated = true;
 
     private AnimalTokensScript animalTokensScript;
+    private HUDButtons HUDButtons;
 
     private void Update()
     {
@@ -25,7 +26,10 @@ public class ObjectiveSix : Objective
     }
     public override void GiveObjectiveRewards()
     {
-        
+
+        HUDButtons = FindObjectOfType<HUDButtons>();
+        HUDButtons.ShowAnimals();
+
         animalTokensScript = FindObjectOfType<AnimalTokensScript>();
         animalTokensScript.ShowButterflyToken();
     }
