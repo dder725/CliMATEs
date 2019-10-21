@@ -22,6 +22,7 @@ public class Objective4City : Objective
 
     public override bool ObjectiveGoalIsAchieved()
     {
+        AchievementManager.ach06Trigger = true;
         return portTalkingScript.ConversationFinished() || isDone;
     }
 
