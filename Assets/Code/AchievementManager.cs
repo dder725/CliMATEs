@@ -94,6 +94,11 @@ public class AchievementManager : MonoBehaviour
 
     private void updateAchievementList(string title, string description, GameObject image){
         Debug.Log("Updating the list");
+        if(achListView.transform.Find("EmptyAchievementsText") != null){
+            Destroy(achListView.transform.Find("EmptyAchievementsText").gameObject);
+        } else{
+            Debug.Log("Could not find the empty achievements text");
+        }
         GameObject achievementItem = Instantiate(achListItemPrefab);
         GameObject itemTitle = achievementItem.transform.Find("AchievementTitle").gameObject;
         itemTitle.GetComponent<Text>().text = title;
