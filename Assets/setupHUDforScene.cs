@@ -12,10 +12,8 @@ public class setupHUDforScene : MonoBehaviour
         animalTokensScript = FindObjectOfType<AnimalTokensScript>();
         animalTokensScript.ShowLevel1Tokens(); 
         // Show all successful achievements
-        GameObject prefab = (GameObject) AssetDatabase.LoadMainAssetAtPath("Assets/Prefabs/AchievementUPD.prefab");
-        if(prefab == null){
-            Debug.Log("Failed to load prefab");
-        }
+       // GameObject prefab = (GameObject) AssetDatabase.LoadMainAssetAtPath("Assets/Prefabs/AchievementUPD.prefab");
+        
         //GameObject achievements = Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
         //achievements.transform.parent = gameObject.transform;
         //achievements.transform.localPosition = new Vector3(-50, 200, -299);  

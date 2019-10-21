@@ -9,7 +9,7 @@ public class nextLevelShortCut : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         Debug.Log("COllided with a beehive");
-        PrefabUtility.SaveAsPrefabAsset(GameObject.Find("Achievement"), "Assets/Prefabs/AchievementUPD.prefab");
+        //PrefabUtility.SaveAsPrefabAsset(GameObject.Find("Achievement"), "Assets/Prefabs/AchievementUPD.prefab");
         SceneManager.LoadScene("NextLevelScreen");
     }
 }
