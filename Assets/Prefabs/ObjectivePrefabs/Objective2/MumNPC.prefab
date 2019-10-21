@@ -102,6 +102,26 @@ PrefabInstance:
       propertyPath: dialogue.sentences.Array.data[4]
       value: Make sure you plant the seeds nice and close to the beehives!
       objectReference: {fileID: 0}
+    - target: {fileID: 7458702818930658510, guid: d6a4f8fd7fbda4dfd96a0fcc4edaee92,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 5.261949
+      objectReference: {fileID: 0}
+    - target: {fileID: 7458702818930658510, guid: d6a4f8fd7fbda4dfd96a0fcc4edaee92,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 15.460477
+      objectReference: {fileID: 0}
+    - target: {fileID: 7458702818930658510, guid: d6a4f8fd7fbda4dfd96a0fcc4edaee92,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.1435337
+      objectReference: {fileID: 0}
+    - target: {fileID: 7458702818930658510, guid: d6a4f8fd7fbda4dfd96a0fcc4edaee92,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 8.4723015
+      objectReference: {fileID: 0}
     - target: {fileID: 6767056184113855328, guid: d6a4f8fd7fbda4dfd96a0fcc4edaee92,
         type: 3}
       propertyPath: m_Sprite

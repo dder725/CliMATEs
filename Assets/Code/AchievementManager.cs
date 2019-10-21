@@ -37,7 +37,7 @@ public class AchievementManager : MonoBehaviour
     public static bool ach04Trigger;
     public bool ach04Triggered = false;
 
-     //Achievement 05 -- Big Apple
+    //Achievement 05 -- Big Apple
     public GameObject ach05Image;
     public static bool ach05Trigger;
     public bool ach05Triggered = false;
@@ -81,10 +81,15 @@ public class AchievementManager : MonoBehaviour
             Debug.Log("Achievement 5 unlocking!");
             StartCoroutine(Trigger05Ach());
         }
-         if (ach06Trigger & !ach06Triggered)
+        if (ach06Trigger & !ach06Triggered)
         {
             Debug.Log("Achievement 6 unlocking!");
             StartCoroutine(Trigger06Ach());
+        }
+        if (ach07Trigger & !ach07Triggered)
+        {
+            Debug.Log("Achievement 7 unlocking!");
+            StartCoroutine(Trigger07Ach());
         }
     }
 
@@ -168,7 +173,7 @@ public class AchievementManager : MonoBehaviour
         achActive = false;
     }
 
-       IEnumerator Trigger04Ach()
+    IEnumerator Trigger04Ach()
     {
         achActive = true;
         ach04Triggered = true;
@@ -195,7 +200,7 @@ public class AchievementManager : MonoBehaviour
         achActive = false;
     }
 
-     IEnumerator Trigger05Ach()
+    IEnumerator Trigger05Ach()
     {
         achActive = true;
         ach05Triggered = true;
@@ -221,7 +226,7 @@ public class AchievementManager : MonoBehaviour
         achActive = false;
     }
 
-     IEnumerator Trigger06Ach()
+    IEnumerator Trigger06Ach()
     {
         achActive = true;
         ach06Triggered = true;
@@ -242,6 +247,32 @@ public class AchievementManager : MonoBehaviour
         //Resetting
         achNotification.SetActive(false);
         ach06Image.SetActive(false);
+        achTitle.GetComponent<Text>().text = "";
+        achDescription.GetComponent<Text>().text = "";
+        achActive = false;
+    }
+
+    IEnumerator Trigger07Ach()
+    {
+        achActive = true;
+        ach07Triggered = true;
+
+        achTitle.GetComponent<Text>().text = "Eco Friendly";
+        achDescription.GetComponent<Text>().text = "You have saved this city and its CliMATEs!";
+        updateAchievementList(achTitle.GetComponent<Text>().text, achDescription.GetComponent<Text>().text, ach07Image);
+
+        achTitle.SetActive(true);
+        achDescription.SetActive(true);
+
+        achSound.Play();
+        ach07Image.SetActive(true);
+
+        achNotification.SetActive(true);
+        yield return new WaitForSeconds(7);
+
+        //Resetting
+        achNotification.SetActive(false);
+        ach07Image.SetActive(false);
         achTitle.GetComponent<Text>().text = "";
         achDescription.GetComponent<Text>().text = "";
         achActive = false;

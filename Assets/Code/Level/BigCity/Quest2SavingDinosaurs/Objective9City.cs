@@ -9,13 +9,17 @@ public class Objective9City : Objective
     private WanderingTalkingNPC bossScript;
 
     public bool isDone;
-    
+
     public override void GiveObjectiveRewards()
     {
+     
     }
 
     public override bool ObjectiveGoalIsAchieved()
     {
+        Debug.Log("Yay!!");
+        AchievementManager.ach07Trigger = true;
+
         return bossScript.ConversationFinished() || isDone;
     }
 

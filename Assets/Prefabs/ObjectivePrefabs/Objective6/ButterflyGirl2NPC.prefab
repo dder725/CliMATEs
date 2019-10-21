@@ -190,6 +190,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -1.4
       objectReference: {fileID: 0}
+    - target: {fileID: 3311779247689403928, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
+        type: 3}
+      propertyPath: m_Name
+      value: ButterflyGirlSprite
+      objectReference: {fileID: 0}
     - target: {fileID: 7149072904177754333, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
         type: 3}
       propertyPath: m_Sprite
@@ -211,10 +216,25 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 3.2
       objectReference: {fileID: 0}
-    - target: {fileID: 3311779247689403928, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
+    - target: {fileID: 6439391969847596915, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
         type: 3}
-      propertyPath: m_Name
-      value: ButterflyGirlSprite
+      propertyPath: m_Offset.y
+      value: -1.2913551
+      objectReference: {fileID: 0}
+    - target: {fileID: 6439391969847596915, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 9.024237
+      objectReference: {fileID: 0}
+    - target: {fileID: 6439391969847596915, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.21027446
+      objectReference: {fileID: 0}
+    - target: {fileID: 6439391969847596915, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 13.452974
       objectReference: {fileID: 0}
     - target: {fileID: 4206487983363111061, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
         type: 3}
