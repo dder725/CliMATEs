@@ -5,15 +5,15 @@ using UnityEngine.UI;
 
 public class WanderingTalkingNPC : Entity
 {
-    public enum Gender {Male, Female, Penguin};
+    public enum Gender { Male, Female, Penguin };
 
     [SerializeField]
     public Canvas dialogueCanvas;
     public Animator animator;
 
     public Dialogue dialogue;
-   
-    private AudioClip[] dialogueSounds; 
+
+    private AudioClip[] dialogueSounds;
     private AudioSource dialogueSound;
     private AudioClip dialogueClip;
 
@@ -40,7 +40,7 @@ public class WanderingTalkingNPC : Entity
     private float waitCounter;
 
     private int walkDirection;
-    private Coroutine c =null;
+    private Coroutine c = null;
 
     void Start()
     {
@@ -50,23 +50,31 @@ public class WanderingTalkingNPC : Entity
         myRigidbody2D = GetComponent<Rigidbody2D>();
 
         //Set up the sound for dialogue voiceover
-         if(GetComponent<AudioSource>() == null){
+        if (GetComponent<AudioSource>() == null)
+        {
             dialogueSound = gameObject.AddComponent<AudioSource>();
-         } else{
+        }
+        else
+        {
             dialogueSound = GetComponent<AudioSource>();
-         }
-         dialogueSound.volume = 0.5f;
+        }
+        dialogueSound.volume = 0.5f;
 
         // Select the soundbyte with respect to gender of an entity
-        if(gender.Equals(Gender.Male)){
-         //   dialogueSound.clip = Resources.Load<AudioClip>("Sounds/maleGibberish");
+        if (gender.Equals(Gender.Male))
+        {
+            //   dialogueSound.clip = Resources.Load<AudioClip>("Sounds/maleGibberish");
             dialogueSounds = Resources.LoadAll<AudioClip>("Sounds/maleSounds");
             dialogueSound.pitch = 0.7f;
 
-        } else if(gender.Equals(Gender.Penguin)){
-            dialogueSounds = Resources.LoadAll<AudioClip>("Sounds/penguinSounds");
-        }else{
-        //    dialogueSound.clip = Resources.Load<AudioClip>("Sounds/femaleGibberish");
+        }
+        else if (gender.Equals(Gender.Penguin))
+        {
+            canStartConvo = false;
+        }
+        else
+        {
+            //    dialogueSound.clip = Resources.Load<AudioClip>("Sounds/femaleGibberish");
             dialogueSounds = Resources.LoadAll<AudioClip>("Sounds/femaleSounds");
             dialogueSound.pitch = 1.3f;
         }
@@ -83,7 +91,7 @@ public class WanderingTalkingNPC : Entity
     {
 
         // Select random sound
-        
+
 
         if (canStartConvo && Input.GetKeyDown(KeyCode.T))
         {
@@ -92,7 +100,10 @@ public class WanderingTalkingNPC : Entity
             stopForConvo = true;
             //Freezing player during conversations so user doesn't miss sentences
             player = GameObject.Find("Player");
-            Player.freezePlayer();
+            if (!gender.Equals(Gender.Penguin))
+            {
+                Player.freezePlayer();
+            }
             StartDialogue(dialogue);
         }
 
@@ -174,7 +185,9 @@ public class WanderingTalkingNPC : Entity
         if (!collision.name.Equals("Player"))
         {
             ChooseDirection();
-        } else {
+        }
+        else
+        {
             if (this.entityName.Equals("ForestMan"))
             {
                 AchievementManager.ach02Trigger = true;
@@ -212,7 +225,7 @@ public class WanderingTalkingNPC : Entity
     {
         if (other.name.Equals("Player"))
         {
-           EndDialogue();
+            EndDialogue();
         }
     }
 
@@ -268,9 +281,10 @@ public class WanderingTalkingNPC : Entity
 
         dialogueSound.Play();
         //StopAllCoroutines();
-        if (c != null ){
+        if (c != null)
+        {
             StopCoroutine(c);
-        }        
+        }
         c = StartCoroutine(TypeSentence(sentence));
 
     }
@@ -291,7 +305,8 @@ public class WanderingTalkingNPC : Entity
         convoStarted = false;
         DisableDialogue();
         // StopAllCoroutines();
-        if (c != null ){
+        if (c != null)
+        {
             StopCoroutine(c);
         }
         //Player can walk again when conversation is finished
@@ -300,7 +315,7 @@ public class WanderingTalkingNPC : Entity
 
     }
 
-    public void SetHintMessage() 
+    public void SetHintMessage()
     {
         Debug.Log("Conversation finished, set extra hint sentence");
         sentence = sentences.Dequeue();
