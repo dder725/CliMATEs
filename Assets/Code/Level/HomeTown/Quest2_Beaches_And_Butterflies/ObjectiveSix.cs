@@ -32,7 +32,7 @@ public class ObjectiveSix : Objective
 
     public override bool ObjectiveGoalIsAchieved()
     {
-        return blockPlacingScript.numberOfBlocks <= 0 && butterflyGirlNPCScript.ConversationFinished();
+        return blockPlacingScript.numberOfBlocks <= 0; // && butterflyGirlNPCScript.ConversationFinished();
     }
 
     public override void RunStartUpLogicForObjective()

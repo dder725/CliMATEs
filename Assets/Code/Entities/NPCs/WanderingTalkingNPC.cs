@@ -21,6 +21,7 @@ public class WanderingTalkingNPC : Entity
 
     public Text dialogueText;
 
+    public static GameObject player;
     public Gender gender;
     private bool canStartConvo = false;
     private bool convoStarted = false;
@@ -52,7 +53,7 @@ public class WanderingTalkingNPC : Entity
             dialogueSound = GetComponent<AudioSource>();
          }
          dialogueSound.volume = 0.2f;
- 
+
         // Select the soundbyte with respect to gender of an entity
         if(gender.Equals(Gender.Male)){
          //   dialogueSound.clip = Resources.Load<AudioClip>("Sounds/maleGibberish");
@@ -84,6 +85,9 @@ public class WanderingTalkingNPC : Entity
 
             convoStarted = true;
             stopForConvo = true;
+            //Freezing player during conversations so user doesn't miss sentences
+            player = GameObject.Find("Player");
+            Player.freezePlayer();
             StartDialogue(dialogue);
         }
 
@@ -168,7 +172,6 @@ public class WanderingTalkingNPC : Entity
         } else {
             if (this.entityName.Equals("ForestMan"))
             {
-                Debug.LogError("COllided with a forestman");
                 AchievementManager.ach02Trigger = true;
             }
         }
@@ -273,6 +276,9 @@ public class WanderingTalkingNPC : Entity
         canStartConvo = false;
         convoStarted = false;
         DisableDialogue();
+        //Player can walk again when conversation is finished
+        player = GameObject.Find("Player");
+        Player.unfreezePlayer();
         dialogueText.text = "Press \"t\" to talk";
     }
 
