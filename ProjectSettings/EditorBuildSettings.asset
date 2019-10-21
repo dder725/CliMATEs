@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BeeInfo.unity
     guid: 2f59fa00c334def44be3a05ad406a925
+  - enabled: 1
+    path: Assets/Scenes/TurtleInfo.unity
+    guid: 522f7c7e5b3f81441a19ad9055b10b6c
   m_configObjects: {}

@@ -79,6 +79,14 @@ public class AnimalTokensScript : MonoBehaviour
 
     }
 
+    public void OpenTurtleInfo()
+    {
+
+        SceneManager.LoadScene("TurtleInfo", LoadSceneMode.Additive);
+        Time.timeScale = 0;
+
+    }
+
 
 
 

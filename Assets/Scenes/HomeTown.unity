@@ -8194,8 +8194,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6086648122788805143}
   m_HandleRect: {fileID: 7356582050445241427}
   m_Direction: 2
-  m_Value: 1.0000002
-  m_Size: 0.6819555
+  m_Value: 1
+  m_Size: 0.68195546
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9358,7 +9358,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4405106282076695804}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 984007889}
+        m_MethodName: OpenTurtleInfo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &3702064772846645016
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9537,6 +9548,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 481801362291250675, guid: 905ab3aa3ff798641b5aad6fd642dd30,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 481801362291250675, guid: 905ab3aa3ff798641b5aad6fd642dd30,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenTurtleInfo
+      objectReference: {fileID: 0}
+    - target: {fileID: 481801362291250675, guid: 905ab3aa3ff798641b5aad6fd642dd30,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5900743233223152800, guid: 905ab3aa3ff798641b5aad6fd642dd30,
         type: 3}

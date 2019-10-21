@@ -18,9 +18,18 @@ public class AnimalInfoScript : MonoBehaviour
     }
 
 
-    public void ExitButton()
+    public void ExitBeeButton()
     {
         SceneManager.UnloadSceneAsync("BeeInfo");
         Time.timeScale = 1;
     }
+
+    public void ExitTurtleButton()
+    {
+        SceneManager.UnloadSceneAsync("TurtleInfo");
+        Time.timeScale = 1;
+
+    }
+
+
 }
