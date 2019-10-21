@@ -28,6 +28,7 @@ public class CombatManager : MonoBehaviour
 
     public static GameObject player;
     public static CombatStats playerStats;
+    private Player playerScript;
     public Transform playerSpawn;
     public Transform playerOriginalPosition;
 
@@ -91,6 +92,9 @@ public class CombatManager : MonoBehaviour
         playerOriginalPosition.position = player.transform.position;
         player.transform.position = playerSpawn.position;
 
+        playerScript = player.GetComponent<Player>();
+        playerScript.combatVictory = false;
+
         // Set stat objects
         playerStats = player.GetComponent<CombatStats>();
         mobStats = mob.GetComponent<CombatStats>();
@@ -128,6 +132,14 @@ public class CombatManager : MonoBehaviour
         if (mobStats.health <= 0)
         {
             combatStatus = CombatStatus.Win;
+
+            //set as defeated
+
+            Monster mobScript = mob.GetComponent<Monster>();
+            mobScript.defeated = true;
+
+            Debug.Log(mobScript.defeated);
+
             EventManager.TriggerEvent("combatConclusion");
             return;
         }
@@ -184,13 +196,7 @@ public class CombatManager : MonoBehaviour
             // Return player to the original location
             player.transform.position = playerOriginalPosition.position;
 
-            //set as defeated
-
-            Monster mobScript = mob.GetComponent<Monster>();
-            mobScript.defeated = true;
-
-            Debug.Log(mobScript.defeated);
-            
+            playerScript.combatVictory = true;
 
             // Remove mob
             Destroy(mob);
