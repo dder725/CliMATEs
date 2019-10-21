@@ -184,26 +184,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -1.4
       objectReference: {fileID: 0}
-    - target: {fileID: 4018759485255812684, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: -0.48365402
-      objectReference: {fileID: 0}
-    - target: {fileID: 4018759485255812684, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: -1.1550527
-      objectReference: {fileID: 0}
-    - target: {fileID: 4018759485255812684, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 17.359886
-      objectReference: {fileID: 0}
-    - target: {fileID: 3311779247689403928, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
-        type: 3}
-      propertyPath: m_Name
-      value: ButterflyGirlSprite
-      objectReference: {fileID: 0}
     - target: {fileID: 7149072904177754333, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
         type: 3}
       propertyPath: m_Sprite
@@ -224,6 +204,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 3.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3311779247689403928, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
+        type: 3}
+      propertyPath: m_Name
+      value: ButterflyGirlSprite
       objectReference: {fileID: 0}
     - target: {fileID: 4206487983363111061, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
         type: 3}

@@ -96,7 +96,6 @@ public class ObjectivesManager : MonoBehaviour
     {
         levelIsCompleted = true;
         // TODO Make GameManager kill this ObjectiveManager when level is completed
-        //SceneManager.MoveGameObjectToScene(GameObject.Find("HUD"), SceneManager.GetSceneByName("BigCity_magnus"));
         SceneManager.LoadScene("NextLevelScreen");
         Debug.Log("Level Complete");
     }

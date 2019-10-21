@@ -57,8 +57,6 @@ public class CombatManager : MonoBehaviour
         EventManager.StartListening("combatStart", new UnityAction(startCombat));
         EventManager.StartListening("combatNextTurn", new UnityAction(nextTurn));
         EventManager.StartListening("combatExit", new UnityAction(exitCombat));
-
-
     }
 
     // Update is called once per frame
@@ -184,14 +182,6 @@ public class CombatManager : MonoBehaviour
             // Return player to the original location
             player.transform.position = playerOriginalPosition.position;
 
-            //set as defeated
-
-            Monster mobScript = mob.GetComponent<Monster>();
-            mobScript.defeated = true;
-
-            Debug.Log(mobScript.defeated);
-            
-
             // Remove mob
             Destroy(mob);
             mob = null;
@@ -223,9 +213,5 @@ public class CombatManager : MonoBehaviour
         // Switch cameras
         GameObject.Find("Combat Camera").GetComponent<Camera>().enabled = false;
         GameObject.Find("Main Camera").GetComponent<Camera>().enabled = true;
-
-        // Trigger an achievement (Will only work for the first battle)
-        AchievementManager.ach04Trigger = true;
-
     }
 }
