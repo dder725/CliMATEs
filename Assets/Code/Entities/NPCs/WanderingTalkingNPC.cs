@@ -40,6 +40,7 @@ public class WanderingTalkingNPC : Entity
     private float waitCounter;
 
     private int walkDirection;
+    private Coroutine c =null;
 
     void Start()
     {
@@ -176,6 +177,7 @@ public class WanderingTalkingNPC : Entity
             {
                 AchievementManager.ach02Trigger = true;
             }
+            EnableDialogue();
         }
 
     }
@@ -185,10 +187,10 @@ public class WanderingTalkingNPC : Entity
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.name.Equals("Player") && canTalk)
-        {
-            EnableDialogue();
-        }
+        // if (other.name.Equals("Player") && canTalk)
+        // {
+        //     EnableDialogue();
+        // }
 
     }
 
@@ -196,7 +198,7 @@ public class WanderingTalkingNPC : Entity
     {
         if (other.name.Equals("Player"))
         {
-           //EndDialogue();
+           EndDialogue();
         }
     }
 
@@ -209,7 +211,7 @@ public class WanderingTalkingNPC : Entity
 
     private void DisableDialogue()
     {
-        //dialogueCanvas.enabled = false;
+        dialogueCanvas.enabled = false;
         stopForConvo = false;
         canStartConvo = false;
     }
@@ -240,6 +242,7 @@ public class WanderingTalkingNPC : Entity
             dialogueText.text = sentence;
             convoEnded = true;
             EndDialogue();
+            SetHintMessage();
             return;
         }
 
@@ -250,8 +253,11 @@ public class WanderingTalkingNPC : Entity
         dialogueSound.clip = dialogueSounds[index];
 
         dialogueSound.Play();
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+        //StopAllCoroutines();
+        if (c != null ){
+            StopCoroutine(c);
+        }        
+        c = StartCoroutine(TypeSentence(sentence));
 
     }
 
@@ -270,21 +276,29 @@ public class WanderingTalkingNPC : Entity
         canStartConvo = false;
         convoStarted = false;
         DisableDialogue();
-        StopAllCoroutines();
+        // StopAllCoroutines();
+        if (c != null ){
+            StopCoroutine(c);
+        }
         //Player can walk again when conversation is finished
         player = GameObject.Find("Player");
         Player.unfreezePlayer();
+
+    }
+
+    public void SetHintMessage() 
+    {
         Debug.Log("Conversation finished, set extra hint sentence");
         sentence = sentences.Dequeue();
         StartCoroutine(HintMessage(sentence));
     }
-
 
     IEnumerator HintMessage(string sentence)
     {
         //We don't want hint message to display instantly
         yield return new WaitForSeconds(10);
         dialogueText.text = sentence;
+        Debug.Log("Hint is set");
         EnableDialogue();
     }
 

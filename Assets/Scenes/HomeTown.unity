@@ -3063,6 +3063,7 @@ MonoBehaviour:
   levelID: 1
   surferDudeNPC: {fileID: 480104489348810541, guid: 22d7bc7cfb7ca5849ac1fb34bf82281f,
     type: 3}
+  mob: {fileID: 2012128754}
 --- !u!114 &1486891402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3098,6 +3099,8 @@ MonoBehaviour:
   objectiveID: 6
   levelID: 1
   shopKeeperNPC: {fileID: 2723168499729834143, guid: 6af6631e3896b3e4f8427ab81590b305,
+    type: 3}
+  butterflyGirlNPC: {fileID: 6698218039988221055, guid: 71948e4f4af2f644293d5a9fa2053690,
     type: 3}
 --- !u!114 &1486891404
 MonoBehaviour:
@@ -4022,6 +4025,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enter: 1
+  defeated: 0
+--- !u!4 &2012128754 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3121739491660795473, guid: a35c30e674b5388b59d13e0b76341241,
+    type: 3}
+  m_PrefabInstance: {fileID: 2012128747}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2020328018
 GameObject:
   m_ObjectHideFlags: 0
