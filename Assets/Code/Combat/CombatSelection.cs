@@ -109,12 +109,15 @@ public class CombatSelection : MonoBehaviour
 							switch (actionSelection) {
 								case 0:
 									CombatManager.nextMove = CombatManager.Move.Attack;
+									EventManager.TriggerEvent("combatNextTurn");
 									break;
 								case 1:
 									CombatManager.nextMove = CombatManager.Move.Heal;
+									EventManager.TriggerEvent("combatNextTurn");									
 									break;
 								case 2:
 									CombatManager.nextMove = CombatManager.Move.Flee;
+									EventManager.TriggerEvent("combatNextTurn");
 									break;
 								case 3:
 									// Show animal moves
@@ -152,8 +155,6 @@ public class CombatSelection : MonoBehaviour
 
 									break;
 							}
-							// Trigger the turn logic
-							EventManager.TriggerEvent("combatNextTurn");
 						}
 					}
 				}

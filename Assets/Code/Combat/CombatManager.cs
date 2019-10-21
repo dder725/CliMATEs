@@ -134,6 +134,24 @@ public class CombatManager : MonoBehaviour
             case Move.Flee:
 
                 break;
+            case Move.AnimalMove:
+                Debug.Log("Executing animal move: " + nextAnimalMove);
+
+                switch (nextAnimalMove)
+                {
+                    case AnimalMove.BeeMove:
+                        beeMove();
+                        break;
+                    case AnimalMove.ButterflyMove:
+                        break;
+                    case AnimalMove.TurtleMove:
+                        break;
+                    case AnimalMove.PolarBearMove:
+                        break;
+                    default:
+                        break;
+                }
+                break;
             default:
                 break;
         }
@@ -173,6 +191,13 @@ public class CombatManager : MonoBehaviour
         mobStats.health = Math.Max(0, mobStats.health - damage);
         hitSound.Play();
 
+    }
+
+    private void beeMove()
+    {
+        int damage = 20;
+        mobStats.health = Math.Max(0, mobStats.health - damage);
+        hitSound.Play();
     }
 
     private void mobAttack()
