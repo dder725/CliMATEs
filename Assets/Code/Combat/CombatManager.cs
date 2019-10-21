@@ -213,5 +213,9 @@ public class CombatManager : MonoBehaviour
         // Switch cameras
         GameObject.Find("Combat Camera").GetComponent<Camera>().enabled = false;
         GameObject.Find("Main Camera").GetComponent<Camera>().enabled = true;
+
+        // Trigger an achievement (Will only work for the first battle)
+        AchievementManager.ach04Trigger = true;
+
     }
 }

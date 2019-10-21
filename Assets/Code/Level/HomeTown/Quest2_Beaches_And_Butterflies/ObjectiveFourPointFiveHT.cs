@@ -16,6 +16,9 @@ public class ObjectiveFourPointFiveHT : Objective
         //TODO - give turtle token
         animalTokensScript = FindObjectOfType<AnimalTokensScript>();
         animalTokensScript.ShowTurtleToken();
+
+        // Unlock the Surf Up! achievement
+        AchievementManager.ach03Trigger = true;
     }
 
     public override bool ObjectiveGoalIsAchieved()
