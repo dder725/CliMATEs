@@ -20,7 +20,7 @@ public class AnimalInfoScript : MonoBehaviour
 
     public void ExitButton()
     {
-        SceneManager.UnloadSceneAsync("AnimalInfo");
+        SceneManager.UnloadSceneAsync("BeeInfo");
         Time.timeScale = 1;
     }
 }

@@ -67,13 +67,6 @@ public class HUDButtons : MonoBehaviour
             animalTokenWindow.SetActive(true);
         }
 
-
-        //if (EventSystem.current.currentSelectedGameObject == animalsButton)
-        //{
-        //    Debug.Log("Yes");
-        //    animalTokenWindow.SetActive(true);
-        //}
-
         
 
     }

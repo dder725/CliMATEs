@@ -13,6 +13,7 @@ public class ObjectiveThreeHT : Objective
     private WanderingTalkingNPC talkingNPCScript;
 
     private AnimalTokensScript animalTokensScript;
+    private HUDButtons HUDButtons;
 
     private bool completed = false;
     private bool isCreated = false;
@@ -20,6 +21,9 @@ public class ObjectiveThreeHT : Objective
     public override void GiveObjectiveRewards()
     {
         Debug.Log("Bee token gained");
+        HUDButtons = FindObjectOfType<HUDButtons>();
+        HUDButtons.ShowAnimals();
+
         animalTokensScript = FindObjectOfType<AnimalTokensScript>();
         animalTokensScript.ShowBeeToken();
     }
