@@ -6249,6 +6249,8 @@ MonoBehaviour:
   levelID: 1
   shopKeeperNPC: {fileID: 2723168499729834143, guid: 6af6631e3896b3e4f8427ab81590b305,
     type: 3}
+  butterflyGirlNPC: {fileID: 6698218039988221055, guid: 71948e4f4af2f644293d5a9fa2053690,
+    type: 3}
 --- !u!114 &1486891404
 MonoBehaviour:
   m_ObjectHideFlags: 0

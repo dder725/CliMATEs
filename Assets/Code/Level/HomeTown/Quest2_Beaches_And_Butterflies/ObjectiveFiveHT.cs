@@ -7,9 +7,13 @@ public class ObjectiveFiveHT : Objective
 
     public Transform shopKeeperNPC;
     private WanderingTalkingNPC shopKeeperNPCScript;
+    public Transform butterflyGirlNPC;
+    private WanderingTalkingNPC butterflyGirlNPCScript;
+
     public override void GiveObjectiveRewards()
     {
-
+            Destroy(GameObject.Find("ButterflyGirlNPC(Clone)"));
+            SetupButterflyGirlNPC();
     }
 
     public override bool ObjectiveGoalIsAchieved()
@@ -32,6 +36,13 @@ public class ObjectiveFiveHT : Objective
         Instantiate(shopKeeperNPC, new Vector3(30, -4, 0), Quaternion.identity);
         GameObject NPCInstance = GameObject.Find("ShopKeeper2NPC(Clone)");
         shopKeeperNPCScript = NPCInstance.GetComponent<WanderingTalkingNPC>();
+    }
+
+        private void SetupButterflyGirlNPC()
+    {
+        Instantiate(butterflyGirlNPC, new Vector3(34, 2, 0), Quaternion.identity);
+        GameObject NPCInstance = GameObject.Find("ButterflyGirl2NPC(Clone)");
+        butterflyGirlNPCScript = NPCInstance.GetComponent<WanderingTalkingNPC>();
     }
 
 }

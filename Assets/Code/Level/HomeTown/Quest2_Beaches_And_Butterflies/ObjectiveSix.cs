@@ -18,14 +18,14 @@ public class ObjectiveSix : Objective
     {
         if(blockPlacingScript.numberOfBlocks <= 0 && notCreated)
         {
-            Destroy(GameObject.Find("ButterflyGirlNPC(Clone)"));
-            SetupButterflyGirlNPC();
+            // Destroy(GameObject.Find("ButterflyGirlNPC(Clone)"));
+            // SetupButterflyGirlNPC();
             notCreated = false;
         }
     }
     public override void GiveObjectiveRewards()
     {
-        //TODO - give butterfly token
+        
         animalTokensScript = FindObjectOfType<AnimalTokensScript>();
         animalTokensScript.ShowButterflyToken();
     }
@@ -47,10 +47,10 @@ public class ObjectiveSix : Objective
     {
     }
 
-    private void SetupButterflyGirlNPC()
-    {
-        Instantiate(butterflyGirlNPC, new Vector3(34, 2, 0), Quaternion.identity);
-        GameObject NPCInstance = GameObject.Find("ButterflyGirl2NPC(Clone)");
-        butterflyGirlNPCScript = NPCInstance.GetComponent<WanderingTalkingNPC>();
-    }
+    // private void SetupButterflyGirlNPC()
+    // {
+    //     Instantiate(butterflyGirlNPC, new Vector3(34, 2, 0), Quaternion.identity);
+    //     GameObject NPCInstance = GameObject.Find("ButterflyGirl2NPC(Clone)");
+    //     butterflyGirlNPCScript = NPCInstance.GetComponent<WanderingTalkingNPC>();
+    // }
 }
