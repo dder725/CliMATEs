@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
+using UnityEngine.SceneManagement;
 
 public class HUDButtons : MonoBehaviour
 {
@@ -75,8 +76,8 @@ public class HUDButtons : MonoBehaviour
 
     public void QuitGame()
     {
-
-        Application.Quit();
+        SceneManager.LoadScene("ExitScreen");
+        //Application.Quit();
 
     }
 }
