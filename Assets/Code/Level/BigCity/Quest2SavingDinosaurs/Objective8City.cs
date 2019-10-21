@@ -17,12 +17,20 @@ public class Objective8City : Objective
     public bool isDone;
     public override void GiveObjectiveRewards()
     {
+
+        smogRenderer.enabled = false;
     }
 
     public override bool ObjectiveGoalIsAchieved()
     {
-        Debug.Log(playerScript.combatVictory);
-        return playerScript.combatVictory || isDone ;
+        if(playerScript.combatVictory || isDone)
+        {
+            playerScript.combatVictory = false;
+            return true;
+        } else
+        {
+            return false;
+        }
     }
 
     public override void RunStartUpLogicForObjective()
@@ -40,6 +48,5 @@ public class Objective8City : Objective
 
     public override void RunTearDownLogicForObjective()
     {
-        smogRenderer.enabled = false;
     }
 }
