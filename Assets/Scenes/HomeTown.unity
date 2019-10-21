@@ -548,22 +548,22 @@ PrefabInstance:
     - target: {fileID: 6439391969847596915, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
         type: 3}
       propertyPath: m_Offset.y
-      value: -0.48962688
+      value: 4.2361317
       objectReference: {fileID: 0}
     - target: {fileID: 6439391969847596915, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
         type: 3}
       propertyPath: m_Size.y
-      value: 19.461332
+      value: 17.17992
       objectReference: {fileID: 0}
     - target: {fileID: 6439391969847596915, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
         type: 3}
       propertyPath: m_Offset.x
-      value: 0.29909468
+      value: 0.2175684
       objectReference: {fileID: 0}
     - target: {fileID: 6439391969847596915, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
         type: 3}
       propertyPath: m_Size.x
-      value: 8.352002
+      value: 9.493349
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ffc8e23ca2daea43bebaaeb1f76df36, type: 3}
@@ -3474,8 +3474,6 @@ MonoBehaviour:
   objectiveDescription: 
   objectiveID: 3
   levelID: 1
-  butterflyGirl: {fileID: 4529136314874152115, guid: cf67587bb897cb74cb7d6506a3f023f2,
-    type: 3}
   bee: {fileID: 1163793427}
 --- !u!114 &1486891401
 MonoBehaviour:
@@ -4566,7 +4564,7 @@ PrefabInstance:
     - target: {fileID: 2302095228289945187, guid: d6a4f8fd7fbda4dfd96a0fcc4edaee92,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 37.251797
+      value: 37.22
       objectReference: {fileID: 0}
     - target: {fileID: 2302095228289945187, guid: d6a4f8fd7fbda4dfd96a0fcc4edaee92,
         type: 3}
@@ -4613,6 +4611,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2302095228289945187, guid: d6a4f8fd7fbda4dfd96a0fcc4edaee92,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.16206273
+      objectReference: {fileID: 0}
     - target: {fileID: 6257138246062593360, guid: d6a4f8fd7fbda4dfd96a0fcc4edaee92,
         type: 3}
       propertyPath: dialogueSound
@@ -4622,6 +4625,26 @@ PrefabInstance:
         type: 3}
       propertyPath: gender
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7458702818930658510, guid: d6a4f8fd7fbda4dfd96a0fcc4edaee92,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 4.728537
+      objectReference: {fileID: 0}
+    - target: {fileID: 7458702818930658510, guid: d6a4f8fd7fbda4dfd96a0fcc4edaee92,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 14.169438
+      objectReference: {fileID: 0}
+    - target: {fileID: 7458702818930658510, guid: d6a4f8fd7fbda4dfd96a0fcc4edaee92,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.6643553
+      objectReference: {fileID: 0}
+    - target: {fileID: 7458702818930658510, guid: d6a4f8fd7fbda4dfd96a0fcc4edaee92,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 6.0658617
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6a4f8fd7fbda4dfd96a0fcc4edaee92, type: 3}
@@ -5868,17 +5891,17 @@ PrefabInstance:
     - target: {fileID: 2936302530589394047, guid: b1ebd5f0effa8d246b17ed8813c4199d,
         type: 3}
       propertyPath: m_Offset.y
-      value: -1.1431484
+      value: 3.2101712
       objectReference: {fileID: 0}
     - target: {fileID: 2936302530589394047, guid: b1ebd5f0effa8d246b17ed8813c4199d,
         type: 3}
       propertyPath: m_Size.y
-      value: 18.019691
+      value: 14.234229
       objectReference: {fileID: 0}
     - target: {fileID: 2936302530589394047, guid: b1ebd5f0effa8d246b17ed8813c4199d,
         type: 3}
       propertyPath: m_Offset.x
-      value: 0.3828553
+      value: 0.38285542
       objectReference: {fileID: 0}
     - target: {fileID: 2936302530589394047, guid: b1ebd5f0effa8d246b17ed8813c4199d,
         type: 3}
