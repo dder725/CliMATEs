@@ -18,6 +18,7 @@ public class WanderingTalkingNPC : Entity
     private AudioClip dialogueClip;
 
     public Queue<string> sentences;
+    string sentence = "";
 
     public Text dialogueText;
 
@@ -195,8 +196,7 @@ public class WanderingTalkingNPC : Entity
     {
         if (other.name.Equals("Player"))
         {
-
-            EndDialogue();
+           //EndDialogue();
         }
     }
 
@@ -209,7 +209,7 @@ public class WanderingTalkingNPC : Entity
 
     private void DisableDialogue()
     {
-        dialogueCanvas.enabled = false;
+        //dialogueCanvas.enabled = false;
         stopForConvo = false;
         canStartConvo = false;
     }
@@ -234,24 +234,16 @@ public class WanderingTalkingNPC : Entity
     public void DisplayNextSentence()
     {
 
-        if (sentences.Count == 0)
-        {
-            Debug.Log("Count = 0");
-            convoEnded = true;
-            EndDialogue();
-            return;
-        }
-
-        //End conversation when Count=1, so each NPC has an extra sentence for if they are reapproached
+        //End conversation when Count=1, so each NPC has an extra hint sentence for if they are reapproached
         if (sentences.Count == 1)
         {
-            Debug.Log("Count = 1");
+            dialogueText.text = sentence;
             convoEnded = true;
             EndDialogue();
             return;
         }
 
-        string sentence = sentences.Dequeue();
+        sentence = sentences.Dequeue();
 
         //Select a random soundbyte
         int index = Random.Range(0, dialogueSounds.Length);
@@ -279,12 +271,11 @@ public class WanderingTalkingNPC : Entity
         convoStarted = false;
         DisableDialogue();
         StopAllCoroutines();
-        dialogueText.text = "Press \"t\" to talk";
         //Player can walk again when conversation is finished
         player = GameObject.Find("Player");
         Player.unfreezePlayer();
-        Debug.Log("Conversation finished, set extra sentence");
-        string sentence = sentences.Dequeue();
+        Debug.Log("Conversation finished, set extra hint sentence");
+        sentence = sentences.Dequeue();
         StartCoroutine(HintMessage(sentence));
     }
 
@@ -294,6 +285,7 @@ public class WanderingTalkingNPC : Entity
         //We don't want hint message to display instantly
         yield return new WaitForSeconds(10);
         dialogueText.text = sentence;
+        EnableDialogue();
     }
 
 
