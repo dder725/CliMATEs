@@ -18,15 +18,11 @@ public class Monster : MonoBehaviour
         
     }
     
-    public void ShowCombatView() {
-        UnityEngine.Debug.Log("Entering combat view!");
-        CombatManager.mob = this.gameObject;
-        EventManager.TriggerEvent("combatStart");
-    }
-    
     void OnTriggerEnter2D(Collider2D other)
     {
         UnityEngine.Debug.Log("Detected collision!");
-        ShowCombatView();
+        CombatManager.mob = this.gameObject;
+        CombatManager.collision = other;
+        EventManager.TriggerEvent("combatStart");
     }
 }
