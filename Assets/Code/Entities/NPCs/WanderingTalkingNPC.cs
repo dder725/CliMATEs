@@ -18,6 +18,7 @@ public class WanderingTalkingNPC : Entity
     private AudioClip dialogueClip;
 
     public Queue<string> sentences;
+    string sentence = "";
 
     public Text dialogueText;
 
@@ -39,6 +40,7 @@ public class WanderingTalkingNPC : Entity
     private float waitCounter;
 
     private int walkDirection;
+    private Coroutine c =null;
 
     void Start()
     {
@@ -175,6 +177,7 @@ public class WanderingTalkingNPC : Entity
             {
                 AchievementManager.ach02Trigger = true;
             }
+            EnableDialogue();
         }
 
     }
@@ -184,10 +187,10 @@ public class WanderingTalkingNPC : Entity
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.name.Equals("Player") && canTalk)
-        {
-            EnableDialogue();
-        }
+        // if (other.name.Equals("Player") && canTalk)
+        // {
+        //     EnableDialogue();
+        // }
 
     }
 
@@ -195,8 +198,7 @@ public class WanderingTalkingNPC : Entity
     {
         if (other.name.Equals("Player"))
         {
-
-            EndDialogue();
+           EndDialogue();
         }
     }
 
@@ -234,32 +236,28 @@ public class WanderingTalkingNPC : Entity
     public void DisplayNextSentence()
     {
 
-        if (sentences.Count == 0)
-        {
-            Debug.Log("Count = 0");
-            convoEnded = true;
-            EndDialogue();
-            return;
-        }
-
-        //End conversation when Count=1, so each NPC has an extra sentence for if they are reapproached
+        //End conversation when Count=1, so each NPC has an extra hint sentence for if they are reapproached
         if (sentences.Count == 1)
         {
-            Debug.Log("Count = 1");
+            dialogueText.text = sentence;
             convoEnded = true;
             EndDialogue();
+            SetHintMessage();
             return;
         }
 
-        string sentence = sentences.Dequeue();
+        sentence = sentences.Dequeue();
 
         //Select a random soundbyte
         int index = Random.Range(0, dialogueSounds.Length);
         dialogueSound.clip = dialogueSounds[index];
 
         dialogueSound.Play();
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+        //StopAllCoroutines();
+        if (c != null ){
+            StopCoroutine(c);
+        }        
+        c = StartCoroutine(TypeSentence(sentence));
 
     }
 
@@ -278,22 +276,30 @@ public class WanderingTalkingNPC : Entity
         canStartConvo = false;
         convoStarted = false;
         DisableDialogue();
-        StopAllCoroutines();
-        dialogueText.text = "Press \"t\" to talk";
+        // StopAllCoroutines();
+        if (c != null ){
+            StopCoroutine(c);
+        }
         //Player can walk again when conversation is finished
         player = GameObject.Find("Player");
         Player.unfreezePlayer();
-        Debug.Log("Conversation finished, set extra sentence");
-        string sentence = sentences.Dequeue();
-        StartCoroutine(HintMessage(sentence));
+
     }
 
+    public void SetHintMessage() 
+    {
+        Debug.Log("Conversation finished, set extra hint sentence");
+        sentence = sentences.Dequeue();
+        StartCoroutine(HintMessage(sentence));
+    }
 
     IEnumerator HintMessage(string sentence)
     {
         //We don't want hint message to display instantly
         yield return new WaitForSeconds(10);
         dialogueText.text = sentence;
+        Debug.Log("Hint is set");
+        EnableDialogue();
     }
 
 

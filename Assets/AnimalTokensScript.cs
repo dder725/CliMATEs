@@ -31,6 +31,12 @@ public class AnimalTokensScript : MonoBehaviour
 
     }
 
+    public void ShowLevel1Tokens(){
+        beeButton.gameObject.SetActive(true);
+        butterflyButton.gameObject.SetActive(true);
+        turtleButton.gameObject.SetActive(true);
+        noAnimalsText.gameObject.SetActive(false);
+    }
 
     public void ShowBeeToken()
     {

@@ -65,6 +65,7 @@ public class ObjectiveThreeHT : Objective
         Instantiate(butterflyGirl, new Vector3(34, -6, 0), Quaternion.identity);
         GameObject NPCInstance = GameObject.Find("ButterflyGirlNPC(Clone)");
         talkingNPCScript = NPCInstance.GetComponent<WanderingTalkingNPC>();
+        talkingNPCScript.gender = WanderingTalkingNPC.Gender.Female;
     }
 
     private void SpawnBees()
