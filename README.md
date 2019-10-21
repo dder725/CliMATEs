@@ -44,3 +44,12 @@ This 2D RPG-game is made with a focus on Climate Change. The game consists of tw
 
 ### Development and technical spesific
 This game is developed using Unity. <Add something more about technicalities about the game here>
+
+#### Map Generation 
+For generating the map, Unity's TileMap feature was chosen. This allows us to premake different tiles and use a brush to paint them on a `TileMap`. TileMap also supports layers with ECS, so components such as collision box can be added to entire layers. For more complex map features such as water, the RuleTile from Unities add-on [2D extras](https://github.com/Unity-Technologies/2d-extras) was chosen. A RuleTile allows you to define patterns for different tiles which as a whole draws a more complex shape. All assets used in the project are either found for free on different assets sites on the Internet or YouTube, or made ourselves.
+  
+#### Managers
+The game utelizes several managers, including `ObjectiveManager`, `EventManager` and `TutorialManager`. These work as the overreaching component for their area of responsebility. E.g. the `ObjectiveManager` keeps track of the different `Objective` classes and when each one should be run.  
+
+#### HUD
+The HUD system is developed using the build in UI GameObject in Unity. This uses a Canvas with an overlay rendering setting, which allows it to be rendered on top of what ever is rendered by the `MainCamera`. 
