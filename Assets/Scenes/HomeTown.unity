@@ -3665,7 +3665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b733fbea86cff254ca7f299a391e715f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveName: Go to the pier to head to the city
+  objectiveName: Go to the pier and press "O" + "P" to ride the turtle!
   objectiveDescription: 
   objectiveID: 9
   levelID: 1
@@ -5386,6 +5386,11 @@ PrefabInstance:
       propertyPath: HUDButtons
       value: 
       objectReference: {fileID: 1633802206}
+    - target: {fileID: 3871982469637815039, guid: b0986d4dee16d3d408ecd7cd6985be0c,
+        type: 3}
+      propertyPath: animalTokenWindow
+      value: 
+      objectReference: {fileID: 338274435}
     - target: {fileID: 3871982469637815038, guid: b0986d4dee16d3d408ecd7cd6985be0c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5526,11 +5531,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 111653968}
-    - target: {fileID: 3871982469637815039, guid: b0986d4dee16d3d408ecd7cd6985be0c,
-        type: 3}
-      propertyPath: animalTokenWindow
-      value: 
-      objectReference: {fileID: 338274435}
     - target: {fileID: 3871982469865967771, guid: b0986d4dee16d3d408ecd7cd6985be0c,
         type: 3}
       propertyPath: ach06Image
@@ -5596,6 +5596,36 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4926648995844203990, guid: c89eb7e6ed121401196d5225c1a5598c,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926648995844203990, guid: c89eb7e6ed121401196d5225c1a5598c,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926648995844203988, guid: c89eb7e6ed121401196d5225c1a5598c,
+        type: 3}
+      propertyPath: entityName
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926648995844203988, guid: c89eb7e6ed121401196d5225c1a5598c,
+        type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 616567354}
+    - target: {fileID: 4926648995844203988, guid: c89eb7e6ed121401196d5225c1a5598c,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 616567355}
+    - target: {fileID: 4926648995844203988, guid: c89eb7e6ed121401196d5225c1a5598c,
+        type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4926648995844204011, guid: c89eb7e6ed121401196d5225c1a5598c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5660,36 +5690,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4926648995844203988, guid: c89eb7e6ed121401196d5225c1a5598c,
-        type: 3}
-      propertyPath: entityName
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4926648995844203988, guid: c89eb7e6ed121401196d5225c1a5598c,
-        type: 3}
-      propertyPath: rb
-      value: 
-      objectReference: {fileID: 616567354}
-    - target: {fileID: 4926648995844203988, guid: c89eb7e6ed121401196d5225c1a5598c,
-        type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 616567355}
-    - target: {fileID: 4926648995844203988, guid: c89eb7e6ed121401196d5225c1a5598c,
-        type: 3}
-      propertyPath: speed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4926648995844203990, guid: c89eb7e6ed121401196d5225c1a5598c,
-        type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4926648995844203990, guid: c89eb7e6ed121401196d5225c1a5598c,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4926648996215770639, guid: c89eb7e6ed121401196d5225c1a5598c,
         type: 3}
