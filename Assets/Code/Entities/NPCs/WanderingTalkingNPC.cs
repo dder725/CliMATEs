@@ -64,7 +64,7 @@ public class WanderingTalkingNPC : Entity
             dialogueSound.pitch = 0.7f;
 
         } else if(gender.Equals(Gender.Penguin)){
-            dialogueSounds = Resources.LoadAll<AudioClip>("Sounds/penguinSounds");
+            canStartConvo = false;
         }else{
         //    dialogueSound.clip = Resources.Load<AudioClip>("Sounds/femaleGibberish");
             dialogueSounds = Resources.LoadAll<AudioClip>("Sounds/femaleSounds");
@@ -85,7 +85,7 @@ public class WanderingTalkingNPC : Entity
         // Select random sound
         
 
-        if (canStartConvo && Input.GetKeyDown(KeyCode.T))
+        if (canStartConvo && Input.GetKeyDown(KeyCode.T) && !gender.Equals(Gender.Penguin))
         {
 
             convoStarted = true;
@@ -258,6 +258,8 @@ public class WanderingTalkingNPC : Entity
             EndDialogue();
             SetHintMessage();
             return;
+        } else {
+            EndDialogue();
         }
 
         sentence = sentences.Dequeue();
