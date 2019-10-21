@@ -12,7 +12,6 @@ public class AnimalTokensScript : MonoBehaviour
     public Button turtleButton;
     public Button penguinButton;
     public Button tuataraButton;
-    public Button polarBearButton;
 
     [SerializeField] private Text noAnimalsText;
 
@@ -25,10 +24,7 @@ public class AnimalTokensScript : MonoBehaviour
         butterflyButton.gameObject.SetActive(false);
         turtleButton.gameObject.SetActive(false);
         penguinButton.gameObject.SetActive(false);
-
-
-       // tuataraButton.gameObject.SetActive(false);
-       // polarBearButton.gameObject.SetActive(false);
+        tuataraButton.gameObject.SetActive(false);
 
         noAnimalsText.gameObject.SetActive(true);
 
@@ -74,6 +70,12 @@ public class AnimalTokensScript : MonoBehaviour
         penguinButton.enabled = true;
     }
 
+    public void ShowTuataraToken()
+    {
+        tuataraButton.gameObject.SetActive(true);
+        tuataraButton.enabled = true;
+    }
+
 
 
     public void OpenBeeInfo()
@@ -90,7 +92,6 @@ public class AnimalTokensScript : MonoBehaviour
 
         SceneManager.LoadScene("TurtleInfo", LoadSceneMode.Additive);
         Time.timeScale = 0;
-
     }
 
 

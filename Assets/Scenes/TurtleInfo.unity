@@ -258,11 +258,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Bee populations have been steadily decreasing globally as the effects of
-    climate change starve bees of their food. \n\nStudies suggest that climate change
-    is affecting flowering times leading to bees not having enough flowers available
-    throughout the whole season. \n\nAlongside other bee species, bumble bees are
-    responsible for pollinating 70% of fruit, vegetables, nuts and seeds. \n\n"
+  m_text: "Green sea turtles live in both marine and terrestrial habitats and so the
+    effects of climate change can be damaging for this endangered species.\n\nWith
+    melting polar ice caps and sea levels rising, the beaches, where turtles spend
+    a lot of their time, are disappearing. \n\nRising oceanic temperatures due to
+    climate change also threaten green sea turtles as they negatively impact their
+    food sources such as coral reefs. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -307,7 +308,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.27
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 326
+  m_firstOverflowCharacterIndex: 271
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -331,12 +332,12 @@ MonoBehaviour:
   m_margin: {x: 22.493286, y: 0, z: 91.841644, w: 0}
   m_textInfo:
     textComponent: {fileID: 86170803}
-    characterCount: 382
+    characterCount: 419
     spriteCount: 0
-    spaceCount: 62
-    wordCount: 56
+    spaceCount: 71
+    wordCount: 68
     linkCount: 0
-    lineCount: 10
+    lineCount: 11
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -707,8 +708,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Map showing where green sea turtles can be found around the world in tropical
-    and sub-tropical waters.
+  m_Text: 'Green sea turtles can be found around the world in tropical and sub-tropical
+    waters.
 
 '
 --- !u!222 &400432153
