@@ -8,20 +8,23 @@ public class Objective7City : Objective
     public Transform factoryWorker;
     private WanderingTalkingNPC factoryWorkerScript;
 
-
-    public Transform protester1;
+    public Transform citizen1;
     private WanderingTalkingNPC npcScript1;
-   
-    public Transform protester2;
+
+    public Transform citizen2;
     private WanderingTalkingNPC npcScript2;
-    
-    public Transform protester3;  
+
+    public Transform citizen3;
     private WanderingTalkingNPC npcScript3;
-    
-    public Transform protester4;
+
+    public Transform citizen4;
     private WanderingTalkingNPC npcScript4;
+
+    public Transform citizen5;
+    private WanderingTalkingNPC npcScript5;
     public override void GiveObjectiveRewards()
     {
+
     }
 
     public override bool ObjectiveGoalIsAchieved()
@@ -32,30 +35,21 @@ public class Objective7City : Objective
     public override void RunStartUpLogicForObjective()
     {
         factoryWorkerScript = factoryWorker.GetComponent<WanderingTalkingNPC>();
-        factoryWorkerScript.canTalk = true;
 
-        SpawnNPC(protester1, npcScript1, 25, 30, WanderingTalkingNPC.Gender.Female, "Some climate slogan");
+        npcScript1 = citizen1.GetComponent<WanderingTalkingNPC>();
 
-        SpawnNPC(protester2, npcScript2, 26, 27, WanderingTalkingNPC.Gender.Male, "Some climate slogan");
+        npcScript2 = citizen2.GetComponent<WanderingTalkingNPC>();
 
-        SpawnNPC(protester3, npcScript3, 22, 25, WanderingTalkingNPC.Gender.Male, "Some climate slogan");
+        npcScript3 = citizen3.GetComponent<WanderingTalkingNPC>();
 
-        SpawnNPC(protester4, npcScript4, 24, 33, WanderingTalkingNPC.Gender.Female, "Some climate slogan");
+        npcScript4 = citizen4.GetComponent<WanderingTalkingNPC>();
 
-
+        npcScript5 = citizen5.GetComponent<WanderingTalkingNPC>();
     }
 
     public override void RunTearDownLogicForObjective()
     {
+
     }
 
-    private void SpawnNPC(Transform npc, WanderingTalkingNPC npcScript, int x, int y, WanderingTalkingNPC.Gender gender, string speech)
-    {
-        Instantiate(npc, new Vector3(x, y, 0), Quaternion.identity);
-        GameObject NPCInstance = GameObject.Find("Protestor");
-        npcScript = NPCInstance.GetComponent<WanderingTalkingNPC>();
-        npcScript.gender = gender;
-        npcScript.dialogue.sentences[0] = speech;
-        npcScript.canTalk = true;
-    }
 }

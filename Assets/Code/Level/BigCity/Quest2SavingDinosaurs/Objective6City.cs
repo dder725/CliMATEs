@@ -6,28 +6,28 @@ public class Objective6City : Objective
 {
 
     public Transform ecoWorker;
-    private WanderingTalkingNPC talkingScript;
+    private WanderingTalkingNPC ecoWorkerScript;
 
 
     public bool isDone;
+
     public override void GiveObjectiveRewards()
     {
-
     }
 
     public override bool ObjectiveGoalIsAchieved()
     {
-        return talkingScript.ConversationFinished() || isDone;
+        return ecoWorkerScript.ConversationFinished() || isDone;
     }
 
     public override void RunStartUpLogicForObjective()
     {
-        talkingScript = ecoWorker.GetComponent<WanderingTalkingNPC>();
-        talkingScript.canTalk = true;
+        ecoWorkerScript = ecoWorker.GetComponent<WanderingTalkingNPC>();
+        ecoWorkerScript.canTalk = true;
     }
 
     public override void RunTearDownLogicForObjective()
     {
-    }
 
+    }
 }
