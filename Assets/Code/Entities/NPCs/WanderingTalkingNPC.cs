@@ -186,25 +186,15 @@ public class WanderingTalkingNPC : Entity
             EnableDialogue();
         }
 
-        else
-        {
-            //myRigidbody2D.velocity.Set(2, -2);
-
-            //ChooseDirection();
-
-            //Vector2 newVelo = new Vector2(-5, 0);
-            //myRigidbody2D.velocity = newVelo;
-            //walkCounter = 0;
-
-            //why is none of this changing the character's velocity???
-            //myRigidbody2D.velocity = new Vector2(-5, 0);
-        }
-
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        EndDialogue();
+        if (other.name.Equals("Player"))
+        {
+
+            EndDialogue();
+        }
     }
 
     private void EnableDialogue()

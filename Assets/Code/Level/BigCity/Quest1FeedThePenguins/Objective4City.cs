@@ -10,28 +10,34 @@ public class Objective4City : Objective
     private Inventory playerInventory;
 
     public Transform portWorker;
-    private WanderingTalkingNPC portWorkerScript;
+    private WanderingTalkingNPC portTalkingScript;
+    private WalkingNPC portWalkingScript;
 
     public override void GiveObjectiveRewards()
     {
-
+        playerInventory.hasFish = true;
     }
 
     public override bool ObjectiveGoalIsAchieved()
     {
-        return portWorkerScript.ConversationFinished();
+        return portTalkingScript.ConversationFinished();
     }
 
     public override void RunStartUpLogicForObjective()
     {
-        Instantiate(portWorker, new Vector2(60, -44), Quaternion.identity);
-        GameObject NPCInstance = GameObject.Find("PortWorker");
-        portWorkerScript = NPCInstance.GetComponent<WanderingTalkingNPC>();
+        portTalkingScript = portWorker.GetComponent<WanderingTalkingNPC>();
+        portWalkingScript = portWorker.GetComponent<WalkingNPC>();
+        playerInventory = player.GetComponent<Inventory>();
+
+        portWalkingScript.walkDirection = 1;
+        portWalkingScript.walkTime = 4;
+        portWalkingScript.speed = 3;
+
+        portTalkingScript.canTalk = true;
     }
 
     public override void RunTearDownLogicForObjective()
     {
-        playerInventory.hasFish = true;
     }
   
 }
