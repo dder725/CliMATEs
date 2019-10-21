@@ -41,6 +41,16 @@ public class AchievementManager : MonoBehaviour
     public GameObject ach05Image;
     public static bool ach05Trigger;
     public bool ach05Triggered = false;
+
+    //Achievement 06 -- Oily Situation
+    public GameObject ach06Image;
+    public static bool ach06Trigger;
+    public bool ach06Triggered = false;
+
+    //Achievement 07 -- Eco Friendly
+    public GameObject ach07Image;
+    public static bool ach07Trigger;
+    public bool ach07Triggered = false;
     // Update is called once per frame
     void Update()
     {
@@ -68,8 +78,13 @@ public class AchievementManager : MonoBehaviour
         }
         if (ach05Trigger & !ach05Triggered)
         {
-            Debug.Log("Achievement 3 unlocking!");
+            Debug.Log("Achievement 5 unlocking!");
             StartCoroutine(Trigger05Ach());
+        }
+         if (ach06Trigger & !ach06Triggered)
+        {
+            Debug.Log("Achievement 6 unlocking!");
+            StartCoroutine(Trigger06Ach());
         }
     }
 
@@ -201,6 +216,32 @@ public class AchievementManager : MonoBehaviour
         //Resetting
         achNotification.SetActive(false);
         ach05Image.SetActive(false);
+        achTitle.GetComponent<Text>().text = "";
+        achDescription.GetComponent<Text>().text = "";
+        achActive = false;
+    }
+
+     IEnumerator Trigger06Ach()
+    {
+        achActive = true;
+        ach06Triggered = true;
+
+        achTitle.GetComponent<Text>().text = "Oily Situation";
+        achDescription.GetComponent<Text>().text = "You have cleaned the oil spill near town";
+        updateAchievementList(achTitle.GetComponent<Text>().text, achDescription.GetComponent<Text>().text, ach06Image);
+
+        achTitle.SetActive(true);
+        achDescription.SetActive(true);
+
+        achSound.Play();
+        ach06Image.SetActive(true);
+
+        achNotification.SetActive(true);
+        yield return new WaitForSeconds(7);
+
+        //Resetting
+        achNotification.SetActive(false);
+        ach06Image.SetActive(false);
         achTitle.GetComponent<Text>().text = "";
         achDescription.GetComponent<Text>().text = "";
         achActive = false;

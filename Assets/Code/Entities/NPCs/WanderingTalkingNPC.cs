@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class WanderingTalkingNPC : Entity
 {
-    public enum Gender {Male, Female};
+    public enum Gender {Male, Female, Penguin};
 
     [SerializeField]
     public Canvas dialogueCanvas;
@@ -63,7 +63,9 @@ public class WanderingTalkingNPC : Entity
             dialogueSounds = Resources.LoadAll<AudioClip>("Sounds/maleSounds");
             dialogueSound.pitch = 0.7f;
 
-        } else{
+        } else if(gender.Equals(Gender.Penguin)){
+            dialogueSounds = Resources.LoadAll<AudioClip>("Sounds/penguinSounds");
+        }else{
         //    dialogueSound.clip = Resources.Load<AudioClip>("Sounds/femaleGibberish");
             dialogueSounds = Resources.LoadAll<AudioClip>("Sounds/femaleSounds");
             dialogueSound.pitch = 1.3f;
