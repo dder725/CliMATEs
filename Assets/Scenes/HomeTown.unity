@@ -548,22 +548,22 @@ PrefabInstance:
     - target: {fileID: 6439391969847596915, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
         type: 3}
       propertyPath: m_Offset.y
-      value: -0.48962688
+      value: 4.2361317
       objectReference: {fileID: 0}
     - target: {fileID: 6439391969847596915, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
         type: 3}
       propertyPath: m_Size.y
-      value: 19.461332
+      value: 17.17992
       objectReference: {fileID: 0}
     - target: {fileID: 6439391969847596915, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
         type: 3}
       propertyPath: m_Offset.x
-      value: 0.29909468
+      value: 0.2175684
       objectReference: {fileID: 0}
     - target: {fileID: 6439391969847596915, guid: 5ffc8e23ca2daea43bebaaeb1f76df36,
         type: 3}
       propertyPath: m_Size.x
-      value: 8.352002
+      value: 9.493349
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ffc8e23ca2daea43bebaaeb1f76df36, type: 3}
@@ -3465,6 +3465,7 @@ GameObject:
   - component: {fileID: 1486891397}
   - component: {fileID: 1486891396}
   - component: {fileID: 1486891400}
+  - component: {fileID: 1486891405}
   - component: {fileID: 1486891401}
   - component: {fileID: 1486891402}
   - component: {fileID: 1486891403}
@@ -3556,8 +3557,6 @@ MonoBehaviour:
   objectiveDescription: 
   objectiveID: 3
   levelID: 1
-  butterflyGirl: {fileID: 4529136314874152115, guid: cf67587bb897cb74cb7d6506a3f023f2,
-    type: 3}
   bee: {fileID: 1163793427}
 --- !u!114 &1486891401
 MonoBehaviour:
@@ -3573,7 +3572,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveName: Go to the beach.
   objectiveDescription: 
-  objectiveID: 4
+  objectiveID: 5
   levelID: 1
   surferDudeNPC: {fileID: 480104489348810541, guid: 22d7bc7cfb7ca5849ac1fb34bf82281f,
     type: 3}
@@ -3592,7 +3591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveName: Clean up the beach.
   objectiveDescription: 
-  objectiveID: 5
+  objectiveID: 6
   levelID: 1
   surferDudeNPC: {fileID: 7374197277473483396, guid: af0f2c2d930ee0a4eb427e15a93628a8,
     type: 3}
@@ -3610,7 +3609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveName: Trade with the Shopkeeper for milkweed.
   objectiveDescription: 
-  objectiveID: 6
+  objectiveID: 7
   levelID: 1
   shopKeeperNPC: {fileID: 2723168499729834143, guid: 6af6631e3896b3e4f8427ab81590b305,
     type: 3}
@@ -3630,10 +3629,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveName: Plant the milkweed by the beehives.
   objectiveDescription: 
-  objectiveID: 7
+  objectiveID: 8
   levelID: 1
   blockPlacingScript: {fileID: 616567357}
   butterflyGirlNPC: {fileID: 6698218039988221055, guid: 71948e4f4af2f644293d5a9fa2053690,
+    type: 3}
+--- !u!114 &1486891405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486891395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a0f9d65224ad6b459f2fba37e5488c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveName: 
+  objectiveDescription: 
+  objectiveID: 4
+  levelID: 1
+  butterflyGirl: {fileID: 4529136314874152115, guid: dec23def3cdb4f855b11db235370f161,
     type: 3}
 --- !u!1 &1531235399
 GameObject:
@@ -4728,7 +4745,7 @@ PrefabInstance:
     - target: {fileID: 2302095228289945187, guid: d6a4f8fd7fbda4dfd96a0fcc4edaee92,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 37.251797
+      value: 37.22
       objectReference: {fileID: 0}
     - target: {fileID: 2302095228289945187, guid: d6a4f8fd7fbda4dfd96a0fcc4edaee92,
         type: 3}
@@ -4775,6 +4792,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2302095228289945187, guid: d6a4f8fd7fbda4dfd96a0fcc4edaee92,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.16206273
+      objectReference: {fileID: 0}
     - target: {fileID: 6257138246062593360, guid: d6a4f8fd7fbda4dfd96a0fcc4edaee92,
         type: 3}
       propertyPath: dialogueSound
@@ -4784,6 +4806,26 @@ PrefabInstance:
         type: 3}
       propertyPath: gender
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7458702818930658510, guid: d6a4f8fd7fbda4dfd96a0fcc4edaee92,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 4.728537
+      objectReference: {fileID: 0}
+    - target: {fileID: 7458702818930658510, guid: d6a4f8fd7fbda4dfd96a0fcc4edaee92,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 14.169438
+      objectReference: {fileID: 0}
+    - target: {fileID: 7458702818930658510, guid: d6a4f8fd7fbda4dfd96a0fcc4edaee92,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.6643553
+      objectReference: {fileID: 0}
+    - target: {fileID: 7458702818930658510, guid: d6a4f8fd7fbda4dfd96a0fcc4edaee92,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 6.0658617
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6a4f8fd7fbda4dfd96a0fcc4edaee92, type: 3}
@@ -6030,17 +6072,17 @@ PrefabInstance:
     - target: {fileID: 2936302530589394047, guid: b1ebd5f0effa8d246b17ed8813c4199d,
         type: 3}
       propertyPath: m_Offset.y
-      value: -1.1431484
+      value: 3.2101712
       objectReference: {fileID: 0}
     - target: {fileID: 2936302530589394047, guid: b1ebd5f0effa8d246b17ed8813c4199d,
         type: 3}
       propertyPath: m_Size.y
-      value: 18.019691
+      value: 14.234229
       objectReference: {fileID: 0}
     - target: {fileID: 2936302530589394047, guid: b1ebd5f0effa8d246b17ed8813c4199d,
         type: 3}
       propertyPath: m_Offset.x
-      value: 0.3828553
+      value: 0.38285542
       objectReference: {fileID: 0}
     - target: {fileID: 2936302530589394047, guid: b1ebd5f0effa8d246b17ed8813c4199d,
         type: 3}

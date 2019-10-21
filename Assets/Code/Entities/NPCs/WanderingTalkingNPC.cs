@@ -102,8 +102,10 @@ public class WanderingTalkingNPC : Entity
             player = GameObject.Find("Player");
             if (!gender.Equals(Gender.Penguin))
             {
+                Debug.Log("Player is frozen");
                 Player.freezePlayer();
             }
+            Debug.Log("Dialogue Starting");
             StartDialogue(dialogue);
         }
 
@@ -328,7 +330,7 @@ public class WanderingTalkingNPC : Entity
         yield return new WaitForSeconds(10);
         dialogueText.text = sentence;
         Debug.Log("Hint is set");
-        EnableDialogue();
+        dialogueCanvas.enabled = true;
     }
 
 
