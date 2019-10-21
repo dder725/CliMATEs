@@ -8,6 +8,7 @@ public class ObjectiveFourPointFiveHT : Objective
 
     public Transform surferDudeNPC;
     private WanderingTalkingNPC surferNPCScript;
+    
 
     private AnimalTokensScript animalTokensScript;
 
@@ -16,6 +17,9 @@ public class ObjectiveFourPointFiveHT : Objective
         //TODO - give turtle token
         animalTokensScript = FindObjectOfType<AnimalTokensScript>();
         animalTokensScript.ShowTurtleToken();
+
+        // Unlock the Surf Up! achievement
+        AchievementManager.ach03Trigger = true;
     }
 
     public override bool ObjectiveGoalIsAchieved()

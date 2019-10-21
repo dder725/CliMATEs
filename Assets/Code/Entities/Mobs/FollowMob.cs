@@ -7,30 +7,77 @@ public class FollowMob : Entity
     public Entity following;
     public float distance;
 
+    public Transform player;
+    private Inventory playerInventory;
+
+    public bool canFollow = false;
+    public bool isFollowing = false;
+    public bool atLocation = false;
+
+    public Transform mob;
+    private WanderingTalkingNPC wanderScript;
+
+    private float walkTime;
+    private float waitTime;
+    private float wanderSpeed;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        wanderScript = mob.GetComponent<WanderingTalkingNPC>();
+        walkTime = wanderScript.walkTime;
+        waitTime = wanderScript.waitTime;
+        wanderSpeed = wanderScript.speed;
+
+        playerInventory = player.GetComponent<Inventory>();
+       
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (following.GetComponent<Rigidbody2D>().transform.position.y > (GetComponent<Rigidbody2D>().transform.position.y + distance)) {
-            GetComponent<Rigidbody2D>().transform.position += Vector3.up * speed * Time.deltaTime;
-        }
-        if (following.GetComponent<Rigidbody2D>().transform.position.y < (GetComponent<Rigidbody2D>().transform.position.y - distance))
+        if(isFollowing)
         {
-            GetComponent<Rigidbody2D>().transform.position += Vector3.down * speed * Time.deltaTime;
+            if (following.GetComponent<Rigidbody2D>().transform.position.y > (GetComponent<Rigidbody2D>().transform.position.y + distance))
+            {
+                GetComponent<Rigidbody2D>().transform.position += Vector3.up * speed * Time.deltaTime;
+            }
+            if (following.GetComponent<Rigidbody2D>().transform.position.y < (GetComponent<Rigidbody2D>().transform.position.y - distance))
+            {
+                GetComponent<Rigidbody2D>().transform.position += Vector3.down * speed * Time.deltaTime;
+            }
+            if (following.GetComponent<Rigidbody2D>().transform.position.x > (GetComponent<Rigidbody2D>().transform.position.x + distance))
+            {
+                GetComponent<Rigidbody2D>().transform.position += Vector3.right * speed * Time.deltaTime;
+            }
+            if (following.GetComponent<Rigidbody2D>().transform.position.x < (GetComponent<Rigidbody2D>().transform.position.x - distance))
+            {
+                GetComponent<Rigidbody2D>().transform.position += Vector3.left * speed * Time.deltaTime;
+            }
         }
-        if (following.GetComponent<Rigidbody2D>().transform.position.x > (GetComponent<Rigidbody2D>().transform.position.x + distance))
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.name.Equals("Player") && playerInventory.hasFish)
         {
-            GetComponent<Rigidbody2D>().transform.position += Vector3.right * speed * Time.deltaTime;
+            wanderScript.speed = 0f;
+            wanderScript.walkTime = 0f;
+            wanderScript.waitTime = 0f;
+            isFollowing = true;
         }
-        if (following.GetComponent<Rigidbody2D>().transform.position.x < (GetComponent<Rigidbody2D>().transform.position.x - distance))
-        {
-            GetComponent<Rigidbody2D>().transform.position += Vector3.left * speed * Time.deltaTime;
-        }
+    }
+
+    public void SetWalkTime(float walkTime)
+    {
+        this.walkTime = walkTime;
+    }
+
+    public void SetWaitTime(float waitTime)
+    {
+        this.waitTime = waitTime;
     }
 }

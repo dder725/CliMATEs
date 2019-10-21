@@ -26,6 +26,7 @@ public class WanderingTalkingNPC : Entity
     private bool canStartConvo = false;
     private bool convoStarted = false;
     private bool convoEnded = false;
+    public bool canTalk = true;
 
     private Rigidbody2D myRigidbody2D;
 
@@ -183,30 +184,20 @@ public class WanderingTalkingNPC : Entity
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.name.Equals("Player"))
+        if (other.name.Equals("Player") && canTalk)
         {
             EnableDialogue();
-        }
-
-        else
-        {
-            //myRigidbody2D.velocity.Set(2, -2);
-
-            //ChooseDirection();
-
-            //Vector2 newVelo = new Vector2(-5, 0);
-            //myRigidbody2D.velocity = newVelo;
-            //walkCounter = 0;
-
-            //why is none of this changing the character's velocity???
-            //myRigidbody2D.velocity = new Vector2(-5, 0);
         }
 
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-       // EndDialogue();
+        if (other.name.Equals("Player"))
+        {
+
+            EndDialogue();
+        }
     }
 
     private void EnableDialogue()
@@ -287,6 +278,8 @@ public class WanderingTalkingNPC : Entity
         canStartConvo = false;
         convoStarted = false;
         DisableDialogue();
+        StopAllCoroutines();
+        dialogueText.text = "Press \"t\" to talk";
         //Player can walk again when conversation is finished
         player = GameObject.Find("Player");
         Player.unfreezePlayer();
