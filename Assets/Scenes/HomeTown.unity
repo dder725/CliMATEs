@@ -6532,7 +6532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d71606314337548fc90471a414dfa562, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveName: Plant flowers.
+  objectiveName: Plant the flowers near the beehives to the east
   objectiveDescription: 
   objectiveID: 3
   levelID: 1
@@ -6625,7 +6625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a0f9d65224ad6b459f2fba37e5488c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveName: 
+  objectiveName: Talk to the little girl
   objectiveDescription: 
   objectiveID: 4
   levelID: 1
@@ -10672,36 +10672,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4926648995844203990, guid: c89eb7e6ed121401196d5225c1a5598c,
-        type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4926648995844203990, guid: c89eb7e6ed121401196d5225c1a5598c,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4926648995844203988, guid: c89eb7e6ed121401196d5225c1a5598c,
-        type: 3}
-      propertyPath: entityName
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4926648995844203988, guid: c89eb7e6ed121401196d5225c1a5598c,
-        type: 3}
-      propertyPath: rb
-      value: 
-      objectReference: {fileID: 616567354}
-    - target: {fileID: 4926648995844203988, guid: c89eb7e6ed121401196d5225c1a5598c,
-        type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 616567355}
-    - target: {fileID: 4926648995844203988, guid: c89eb7e6ed121401196d5225c1a5598c,
-        type: 3}
-      propertyPath: speed
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 4926648995844204011, guid: c89eb7e6ed121401196d5225c1a5598c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10766,6 +10736,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926648995844203988, guid: c89eb7e6ed121401196d5225c1a5598c,
+        type: 3}
+      propertyPath: entityName
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926648995844203988, guid: c89eb7e6ed121401196d5225c1a5598c,
+        type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 616567354}
+    - target: {fileID: 4926648995844203988, guid: c89eb7e6ed121401196d5225c1a5598c,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 616567355}
+    - target: {fileID: 4926648995844203988, guid: c89eb7e6ed121401196d5225c1a5598c,
+        type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926648995844203990, guid: c89eb7e6ed121401196d5225c1a5598c,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926648995844203990, guid: c89eb7e6ed121401196d5225c1a5598c,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4926648996215770639, guid: c89eb7e6ed121401196d5225c1a5598c,
         type: 3}
