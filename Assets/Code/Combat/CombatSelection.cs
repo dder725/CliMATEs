@@ -149,6 +149,18 @@ public class CombatSelection : MonoBehaviour
 											case CombatManager.AnimalMove.ButterflyMove:
 												text.text = "Cocoon";
 												break;
+                                            case CombatManager.AnimalMove.TurtleMove:
+                                                text.text = "Clobber";
+                                                break;
+                                            case CombatManager.AnimalMove.PolarBearMove:
+                                                text.text = "Claw";
+                                                break;
+                                            case CombatManager.AnimalMove.PenguinMove:
+                                                text.text = "Peck";
+                                                break;
+                                            case CombatManager.AnimalMove.TuataraMove:
+                                                text.text = "Bite";
+                                                break;
 											default:
 												break;
 										}

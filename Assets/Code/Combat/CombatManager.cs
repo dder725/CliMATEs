@@ -76,8 +76,6 @@ public class CombatManager : MonoBehaviour
         EventManager.StartListening("combatStart", new UnityAction(startCombat));
         EventManager.StartListening("combatNextTurn", new UnityAction(nextTurn));
         EventManager.StartListening("combatExit", new UnityAction(exitCombat));
-
-
     }
 
     // Update is called once per frame
@@ -154,10 +152,19 @@ public class CombatManager : MonoBehaviour
                         beeMove();
                         break;
                     case AnimalMove.ButterflyMove:
+                        butterflyMove();
                         break;
                     case AnimalMove.TurtleMove:
+                        turtleMove();
                         break;
                     case AnimalMove.PolarBearMove:
+                        polarBearMove();
+                        break;
+                    case AnimalMove.TuataraMove:
+                        tuataraMove();
+                        break;
+                    case AnimalMove.PenguinMove:
+                        penguinMove();
                         break;
                     default:
                         break;
@@ -221,6 +228,41 @@ public class CombatManager : MonoBehaviour
     private void beeMove()
     {
         int damage = 20;
+        mobStats.health = Math.Max(0, mobStats.health - damage);
+        hitSound.Play();
+    }
+    
+    private void butterflyMove()
+    {
+        int damage = 30;
+        mobStats.health = Math.Max(0, mobStats.health - damage);
+        hitSound.Play();
+    }
+
+    private void turtleMove()
+    {
+        int damage = 40;
+        mobStats.health = Math.Max(0, mobStats.health - damage);
+        hitSound.Play();
+    }
+
+    private void polarBearMove()
+    {
+        int damage = 50;
+        mobStats.health = Math.Max(0, mobStats.health - damage);
+        hitSound.Play();
+    }
+
+    private void tuataraMove()
+    {
+        int damage = 60;
+        mobStats.health = Math.Max(0, mobStats.health - damage);
+        hitSound.Play();
+    }
+
+    private void penguinMove()
+    {
+        int damage = 70;
         mobStats.health = Math.Max(0, mobStats.health - damage);
         hitSound.Play();
     }
