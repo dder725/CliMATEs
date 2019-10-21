@@ -57,6 +57,8 @@ public class CombatManager : MonoBehaviour
         EventManager.StartListening("combatStart", new UnityAction(startCombat));
         EventManager.StartListening("combatNextTurn", new UnityAction(nextTurn));
         EventManager.StartListening("combatExit", new UnityAction(exitCombat));
+
+
     }
 
     // Update is called once per frame
@@ -181,6 +183,14 @@ public class CombatManager : MonoBehaviour
         {
             // Return player to the original location
             player.transform.position = playerOriginalPosition.position;
+
+            //set as defeated
+
+            Monster mobScript = mob.GetComponent<Monster>();
+            mobScript.defeated = true;
+
+            Debug.Log(mobScript.defeated);
+            
 
             // Remove mob
             Destroy(mob);

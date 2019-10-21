@@ -25,6 +25,7 @@ public class WanderingTalkingNPC : Entity
     private bool canStartConvo = false;
     private bool convoStarted = false;
     private bool convoEnded = false;
+    public bool canTalk = true;
 
     private Rigidbody2D myRigidbody2D;
 
@@ -180,7 +181,7 @@ public class WanderingTalkingNPC : Entity
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.name.Equals("Player"))
+        if (other.name.Equals("Player") && canTalk)
         {
             EnableDialogue();
         }
@@ -273,6 +274,7 @@ public class WanderingTalkingNPC : Entity
         canStartConvo = false;
         convoStarted = false;
         DisableDialogue();
+        StopAllCoroutines();
         dialogueText.text = "Press \"t\" to talk";
     }
 

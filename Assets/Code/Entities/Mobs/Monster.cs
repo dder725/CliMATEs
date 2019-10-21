@@ -5,6 +5,8 @@ using UnityEngine;
 public class Monster : MonoBehaviour
 {
     public bool enter = true;
+
+    public bool defeated = false;
 	
     // Start is called before the first frame update
     void Start()

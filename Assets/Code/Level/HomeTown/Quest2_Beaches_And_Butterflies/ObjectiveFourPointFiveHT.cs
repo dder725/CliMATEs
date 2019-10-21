@@ -8,6 +8,7 @@ public class ObjectiveFourPointFiveHT : Objective
 
     public Transform surferDudeNPC;
     private WanderingTalkingNPC surferNPCScript;
+    
 
     private AnimalTokensScript animalTokensScript;
 
