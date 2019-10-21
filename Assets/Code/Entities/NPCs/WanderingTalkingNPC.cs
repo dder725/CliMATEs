@@ -206,7 +206,7 @@ public class WanderingTalkingNPC : Entity
 
     void OnTriggerExit2D(Collider2D other)
     {
-        EndDialogue();
+       // EndDialogue();
     }
 
     private void EnableDialogue()
@@ -242,8 +242,19 @@ public class WanderingTalkingNPC : Entity
 
     public void DisplayNextSentence()
     {
+
         if (sentences.Count == 0)
         {
+            Debug.Log("Count = 0");
+            convoEnded = true;
+            EndDialogue();
+            return;
+        }
+
+        //End conversation when Count=1, so each NPC has an extra sentence for if they are reapproached
+        if (sentences.Count == 1)
+        {
+            Debug.Log("Count = 1");
             convoEnded = true;
             EndDialogue();
             return;
@@ -279,7 +290,18 @@ public class WanderingTalkingNPC : Entity
         //Player can walk again when conversation is finished
         player = GameObject.Find("Player");
         Player.unfreezePlayer();
-        dialogueText.text = "Press \"t\" to talk";
+        Debug.Log("Conversation finished, set extra sentence");
+        string sentence = sentences.Dequeue();
+        StartCoroutine(HintMessage(sentence));
     }
+
+
+    IEnumerator HintMessage(string sentence)
+    {
+        //We don't want hint message to display instantly
+        yield return new WaitForSeconds(10);
+        dialogueText.text = sentence;
+    }
+
 
 }
