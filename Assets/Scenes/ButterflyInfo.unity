@@ -147,15 +147,15 @@ RectTransform:
   m_GameObject: {fileID: 21384130}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.08, z: 1}
   m_Children: []
   m_Father: {fileID: 1195135018}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 362, y: -74}
-  m_SizeDelta: {x: 473.4, y: 238.33002}
+  m_AnchoredPosition: {x: 368, y: -71}
+  m_SizeDelta: {x: 863, y: 874}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &21384132
 MonoBehaviour:
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 44779f0e240fe084fa269f577599eae4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8149cec813ec68143bc3c12c78ba64bb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -377,7 +377,7 @@ MonoBehaviour:
 
     Lifespan: 2-6 weeks
 
-    Fun fact: can travel 150km per day when migrating!
+    Fun fact: they can travel up to 150km per day!
 
 '
 --- !u!222 &155244728
@@ -498,15 +498,15 @@ RectTransform:
   m_GameObject: {fileID: 532547849}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.35, y: 0.35, z: 1}
+  m_LocalScale: {x: 0.28, y: 0.28, z: 1}
   m_Children: []
   m_Father: {fileID: 1889259454}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 38, y: 84}
-  m_SizeDelta: {x: 865, y: 107}
+  m_AnchoredPosition: {x: 64, y: 81}
+  m_SizeDelta: {x: 1344, y: 134}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &532547851
 MonoBehaviour:
@@ -767,7 +767,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 114, y: -22.56948}
+  m_AnchoredPosition: {x: 114, y: -16}
   m_SizeDelta: {x: 456.2, y: 49.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &822230908
@@ -1241,8 +1241,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Map showing the natural distribution of bees worldwide - bees are not native
-    to NZ!
+  m_Text: 'Increases in extreme weather caused by climate change hurts our whole eco-system.
 
 '
 --- !u!222 &1139709208

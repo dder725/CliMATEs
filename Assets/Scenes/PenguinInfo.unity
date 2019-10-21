@@ -147,15 +147,15 @@ RectTransform:
   m_GameObject: {fileID: 21384130}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.27, z: 1}
   m_Children: []
   m_Father: {fileID: 1195135018}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 362, y: -74}
-  m_SizeDelta: {x: 473.4, y: 238.33002}
+  m_AnchoredPosition: {x: 364, y: -69}
+  m_SizeDelta: {x: 320, y: 320}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &21384132
 MonoBehaviour:
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 44779f0e240fe084fa269f577599eae4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ddbf1ae248868794eb56470caccce036, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -362,7 +362,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 13
+    m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -498,15 +498,15 @@ RectTransform:
   m_GameObject: {fileID: 532547849}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.35, y: 0.35, z: 1}
+  m_LocalScale: {x: 0.28, y: 0.28, z: 1}
   m_Children: []
   m_Father: {fileID: 1889259454}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 38, y: 84}
-  m_SizeDelta: {x: 865, y: 107}
+  m_AnchoredPosition: {x: 73, y: 84}
+  m_SizeDelta: {x: 1382, y: 134}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &532547851
 MonoBehaviour:
@@ -767,7 +767,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 114, y: -22.56948}
+  m_AnchoredPosition: {x: 114, y: -16}
   m_SizeDelta: {x: 456.2, y: 49.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &822230908
@@ -1234,10 +1234,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Map showing the natural distribution of bees worldwide - bees are not native
-    to NZ!
-
-'
+  m_Text: The little blue penguin, known as korora in Maori, is native to NZ and can
+    also be found in Australia.
 --- !u!222 &1139709208
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1385,14 +1383,14 @@ RectTransform:
   m_GameObject: {fileID: 1649614480}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0176, y: 0.9, z: 1.0176}
+  m_LocalScale: {x: 1.0176, y: 0.7, z: 1.0176}
   m_Children: []
   m_Father: {fileID: 1195135018}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 304, y: 86}
+  m_AnchoredPosition: {x: 317, y: 86}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1649614482
