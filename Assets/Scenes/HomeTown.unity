@@ -3465,6 +3465,7 @@ GameObject:
   - component: {fileID: 1486891397}
   - component: {fileID: 1486891396}
   - component: {fileID: 1486891400}
+  - component: {fileID: 1486891405}
   - component: {fileID: 1486891401}
   - component: {fileID: 1486891402}
   - component: {fileID: 1486891403}
@@ -3571,7 +3572,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveName: Go to the beach.
   objectiveDescription: 
-  objectiveID: 4
+  objectiveID: 5
   levelID: 1
   surferDudeNPC: {fileID: 480104489348810541, guid: 22d7bc7cfb7ca5849ac1fb34bf82281f,
     type: 3}
@@ -3590,7 +3591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveName: Clean up the beach.
   objectiveDescription: 
-  objectiveID: 5
+  objectiveID: 6
   levelID: 1
   surferDudeNPC: {fileID: 7374197277473483396, guid: af0f2c2d930ee0a4eb427e15a93628a8,
     type: 3}
@@ -3608,7 +3609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveName: Trade with the Shopkeeper for milkweed.
   objectiveDescription: 
-  objectiveID: 6
+  objectiveID: 7
   levelID: 1
   shopKeeperNPC: {fileID: 2723168499729834143, guid: 6af6631e3896b3e4f8427ab81590b305,
     type: 3}
@@ -3628,10 +3629,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveName: Plant the milkweed by the beehives.
   objectiveDescription: 
-  objectiveID: 7
+  objectiveID: 8
   levelID: 1
   blockPlacingScript: {fileID: 616567357}
   butterflyGirlNPC: {fileID: 6698218039988221055, guid: 71948e4f4af2f644293d5a9fa2053690,
+    type: 3}
+--- !u!114 &1486891405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486891395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a0f9d65224ad6b459f2fba37e5488c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveName: 
+  objectiveDescription: 
+  objectiveID: 4
+  levelID: 1
+  butterflyGirl: {fileID: 4529136314874152115, guid: dec23def3cdb4f855b11db235370f161,
     type: 3}
 --- !u!1 &1531235399
 GameObject:
