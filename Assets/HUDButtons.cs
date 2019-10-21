@@ -16,7 +16,7 @@ public class HUDButtons : MonoBehaviour
 
      void Start()
     {
-        animalTokenWindow.SetActive(false);    
+        animalTokenWindow.SetActive(true);    
     }
 
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -96,7 +97,9 @@ public class ObjectivesManager : MonoBehaviour
     {
         levelIsCompleted = true;
         // TODO Make GameManager kill this ObjectiveManager when level is completed
-        //SceneManager.MoveGameObjectToScene(GameObject.Find("HUD"), SceneManager.GetSceneByName("BigCity_magnus"));
+      
+        PrefabUtility.SaveAsPrefabAsset(GameObject.Find("Achievement"), "Assets/Prefabs/AchievementUPD.prefab");
+      //  PrefabUtility.SaveAsPrefabAsset(GameObject.Find("Achievement"), "Assets/Prefabs/AchievementUPD.prefab", out bool success);
         SceneManager.LoadScene("NextLevelScreen");
         Debug.Log("Level Complete");
     }

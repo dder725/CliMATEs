@@ -14,7 +14,7 @@ public class Objective5City : Objective
     {
 
         animalTokensScript = FindObjectOfType<AnimalTokensScript>();
-        animalTokensScript.ShowPolarBearToken();
+        animalTokensScript.ShowPenguinToken();
     }
 
     public override bool ObjectiveGoalIsAchieved()

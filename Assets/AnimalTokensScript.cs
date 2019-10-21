@@ -27,14 +27,20 @@ public class AnimalTokensScript : MonoBehaviour
         penguinButton.gameObject.SetActive(false);
 
 
-        tuataraButton.gameObject.SetActive(false);
-        polarBearButton.gameObject.SetActive(false);
+       // tuataraButton.gameObject.SetActive(false);
+       // polarBearButton.gameObject.SetActive(false);
 
         noAnimalsText.gameObject.SetActive(true);
 
 
     }
 
+    public void ShowLevel1Tokens(){
+        beeButton.gameObject.SetActive(true);
+        butterflyButton.gameObject.SetActive(true);
+        turtleButton.gameObject.SetActive(true);
+        noAnimalsText.gameObject.SetActive(false);
+    }
 
     public void ShowBeeToken()
     {
