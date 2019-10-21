@@ -54,9 +54,9 @@ public class HUDButtons : MonoBehaviour
 
     public void ShowAnimals()
     {
-        bool animaltabisactive = animalTokenWindow.activeSelf;
+        bool animalTabIsActive = animalTokenWindow.activeSelf;
 
-        if (animaltabisactive)
+        if (animalTabIsActive)
         {
             animalTokenWindow.SetActive(false);
             EventSystem.current.SetSelectedGameObject(null);
@@ -64,7 +64,7 @@ public class HUDButtons : MonoBehaviour
         }
         else
         {
-            animalTokenWindow.SetActive(true);
+        animalTokenWindow.SetActive(true);
         }
     }
 
