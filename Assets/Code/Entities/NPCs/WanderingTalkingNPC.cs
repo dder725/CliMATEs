@@ -55,7 +55,7 @@ public class WanderingTalkingNPC : Entity
          } else{
             dialogueSound = GetComponent<AudioSource>();
          }
-         dialogueSound.volume = 0.2f;
+         dialogueSound.volume = 0.5f;
 
         // Select the soundbyte with respect to gender of an entity
         if(gender.Equals(Gender.Male)){

@@ -36,6 +36,11 @@ public class AchievementManager : MonoBehaviour
     public GameObject ach04Image;
     public static bool ach04Trigger;
     public bool ach04Triggered = false;
+
+     //Achievement 05 -- Big Apple
+    public GameObject ach05Image;
+    public static bool ach05Trigger;
+    public bool ach05Triggered = false;
     // Update is called once per frame
     void Update()
     {
@@ -55,15 +60,16 @@ public class AchievementManager : MonoBehaviour
             Debug.Log("Achievement 3 unlocking!");
             StartCoroutine(Trigger03Ach());
         }
-        if (ach03Trigger & !ach03Triggered)
-        {
-            Debug.Log("Achievement 3 unlocking!");
-            StartCoroutine(Trigger03Ach());
-        }
+
         if (ach04Trigger & !ach04Triggered)
         {
             Debug.Log("Achievement 4 unlocking!");
             StartCoroutine(Trigger04Ach());
+        }
+        if (ach05Trigger & !ach05Triggered)
+        {
+            Debug.Log("Achievement 3 unlocking!");
+            StartCoroutine(Trigger05Ach());
         }
     }
 
@@ -74,7 +80,7 @@ public class AchievementManager : MonoBehaviour
 
         achTitle.GetComponent<Text>().text = "First CliMATE!";
         achDescription.GetComponent<Text>().text = "Your first buddy has joined your adventure";
-        updateAchievementList("First CliMATE!", "Your first buddy has joined your adventure", ach01Image);
+        updateAchievementList(achTitle.GetComponent<Text>().text, achDescription.GetComponent<Text>().text, ach01Image);
 
         achTitle.SetActive(true);
         achDescription.SetActive(true);
@@ -169,6 +175,32 @@ public class AchievementManager : MonoBehaviour
         //Resetting
         achNotification.SetActive(false);
         ach03Image.SetActive(false);
+        achTitle.GetComponent<Text>().text = "";
+        achDescription.GetComponent<Text>().text = "";
+        achActive = false;
+    }
+
+     IEnumerator Trigger05Ach()
+    {
+        achActive = true;
+        ach01Triggered = true;
+
+        achTitle.GetComponent<Text>().text = "Big Apple";
+        achDescription.GetComponent<Text>().text = "You have arrived in the big city";
+        updateAchievementList(achTitle.GetComponent<Text>().text, achDescription.GetComponent<Text>().text, ach05Image);
+
+        achTitle.SetActive(true);
+        achDescription.SetActive(true);
+
+        achSound.Play();
+        ach01Image.SetActive(true);
+
+        achNotification.SetActive(true);
+        yield return new WaitForSeconds(7);
+
+        //Resetting
+        achNotification.SetActive(false);
+        ach01Image.SetActive(false);
         achTitle.GetComponent<Text>().text = "";
         achDescription.GetComponent<Text>().text = "";
         achActive = false;
