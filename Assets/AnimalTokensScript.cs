@@ -25,9 +25,7 @@ public class AnimalTokensScript : MonoBehaviour
         butterflyButton.gameObject.SetActive(false);
         turtleButton.gameObject.SetActive(false);
         penguinButton.gameObject.SetActive(false);
-        
-        if (tuataraButton != null)
-            tuataraButton.gameObject.SetActive(false);
+        tuataraButton.gameObject.SetActive(false);
 
         noAnimalsText.gameObject.SetActive(true);
 
@@ -49,7 +47,9 @@ public class AnimalTokensScript : MonoBehaviour
         //Disable the 'no animals' text
         noAnimalsText.gameObject.SetActive(false);
 
-        DisplayAnimalsWindow();
+        //DisplayAnimalsWindow();
+
+        HUDButtons.animalTokenWindow.SetActive(true);
 
         beeButton.gameObject.SetActive(true);
         beeButton.enabled = true;
@@ -108,10 +108,30 @@ public class AnimalTokensScript : MonoBehaviour
         Time.timeScale = 0;
     }
 
+    public void OpenButterflyInfo()
+    {
+        SceneManager.LoadScene("ButterflyInfo", LoadSceneMode.Additive);
+        Time.timeScale = 0;
+    }
+
+    public void OpenPenguinInfo()
+    {
+        SceneManager.LoadScene("PenguinInfo", LoadSceneMode.Additive);
+        Time.timeScale = 0;
+    }
+
+
+    public void OpenTuataraInfo()
+    {
+        SceneManager.LoadScene("TuataraInfo", LoadSceneMode.Additive);
+        Time.timeScale = 0;
+    }
+
     private void DisplayAnimalsWindow()
     {
-        
-        HUDButtons.ShowAnimals();
+
+        HUDButtons.animalTokenWindow.SetActive(true);
+
     }
 
     public List<CombatManager.AnimalMove> GetAnimalMoves() {

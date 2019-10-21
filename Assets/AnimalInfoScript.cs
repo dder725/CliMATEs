@@ -31,5 +31,26 @@ public class AnimalInfoScript : MonoBehaviour
 
     }
 
+    public void ExitButterflyButton()
+    {
+        SceneManager.UnloadSceneAsync("ButterflyInfo");
+        Time.timeScale = 1;
+
+    }
+
+    public void ExitPenguinButton()
+    {
+        SceneManager.UnloadSceneAsync("PenguinInfo");
+        Time.timeScale = 1;
+
+    }
+
+    public void ExitTuataraButton()
+    {
+        SceneManager.UnloadSceneAsync("TuataraInfo");
+        Time.timeScale = 1;
+
+    }
+
 
 }
