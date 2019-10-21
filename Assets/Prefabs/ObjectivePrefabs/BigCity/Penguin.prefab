@@ -83,6 +83,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8731756444222692770}
   - component: {fileID: 4431767122967474793}
+  - component: {fileID: 6151484053172081802}
   m_Layer: 0
   m_Name: penguinSprite
   m_TagString: Untagged
@@ -98,8 +99,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3894691276195802879}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 0}
+  m_LocalPosition: {x: -0.3, y: -0.794, z: 0}
+  m_LocalScale: {x: 2.4, y: 2.4, z: 0}
   m_Children: []
   m_Father: {fileID: 5701596291596745495}
   m_RootOrder: 0
@@ -153,6 +154,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &6151484053172081802
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3894691276195802879}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f8e2b1fa25aeead4e9c46b68708d492b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5382180443728486201
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,14 +409,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bb6fef7689b748eb91231fefed6d04b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 2
   entityName: 
   following: {fileID: 0}
-  distance: 0
+  distance: 2
   player: {fileID: 0}
   canFollow: 1
   isFollowing: 0
   atLocation: 0
+  animator: {fileID: 6151484053172081802}
   mob: {fileID: 5701596291596745495}
 --- !u!58 &4371627220062694825
 CircleCollider2D:

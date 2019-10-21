@@ -13,6 +13,9 @@ public class FollowMob : Entity
     public bool canFollow = false;
     public bool isFollowing = false;
     public bool atLocation = false;
+    public Animator animator;
+
+    private Rigidbody2D rb;
 
     public Transform mob;
     private WanderingTalkingNPC wanderScript;
@@ -25,10 +28,12 @@ public class FollowMob : Entity
     // Start is called before the first frame update
     void Start()
     {
+        rb = following.GetComponent<Rigidbody2D>();
         wanderScript = mob.GetComponent<WanderingTalkingNPC>();
         walkTime = wanderScript.walkTime;
         waitTime = wanderScript.waitTime;
         wanderSpeed = wanderScript.speed;
+    
 
         playerInventory = player.GetComponent<Inventory>();
        
@@ -43,31 +48,53 @@ public class FollowMob : Entity
             if (following.GetComponent<Rigidbody2D>().transform.position.y > (GetComponent<Rigidbody2D>().transform.position.y + distance))
             {
                 GetComponent<Rigidbody2D>().transform.position += Vector3.up * speed * Time.deltaTime;
+                animator.SetFloat("Vertical", 1); //y movement
+
+
             }
             if (following.GetComponent<Rigidbody2D>().transform.position.y < (GetComponent<Rigidbody2D>().transform.position.y - distance))
             {
                 GetComponent<Rigidbody2D>().transform.position += Vector3.down * speed * Time.deltaTime;
+                animator.SetFloat("Vertical", -1); //y movement
+
             }
             if (following.GetComponent<Rigidbody2D>().transform.position.x > (GetComponent<Rigidbody2D>().transform.position.x + distance))
             {
                 GetComponent<Rigidbody2D>().transform.position += Vector3.right * speed * Time.deltaTime;
+                animator.SetFloat("Horizontal", 1);
             }
             if (following.GetComponent<Rigidbody2D>().transform.position.x < (GetComponent<Rigidbody2D>().transform.position.x - distance))
             {
                 GetComponent<Rigidbody2D>().transform.position += Vector3.left * speed * Time.deltaTime;
+                animator.SetFloat("Horizontal", -1);
             }
+
+       
+           
         }
-        
+
+        //setting the animator
+        if (animator != null)
+        {
+            Debug.Log("Animator working in FollowMob");
+           // animator.SetFloat("Horizontal", rb.velocity.x); //x movement 
+            //animator.SetFloat("Vertical", rb.velocity.y); //y movement
+            animator.SetFloat("Speed", 2);
+
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.name.Equals("Player") && playerInventory.hasFish)
         {
-            wanderScript.speed = 0f;
-            wanderScript.walkTime = 0f;
-            wanderScript.waitTime = 0f;
+            Destroy(wanderScript);
+           // wanderScript.speed = 0f;
+            //wanderScript.walkTime = 0f;
+            //wanderScript.waitTime = 0f;
             isFollowing = true;
+
         }
     }
 
